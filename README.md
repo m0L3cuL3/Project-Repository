@@ -1,10 +1,16 @@
 # Project Repository
 
-## Developed by
+## Description
+This is a project repository for school.
+
+## Written in
+- VB.NET
+
+### Developed by
 - Sean Baang :octocat:
 - Gecel Rodriguez :metal:
 
-### Progress
+#### Progress
 - [X] Login System
 - [ ] Project Approval System
 - [ ] File System
