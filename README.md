@@ -1,8 +1,8 @@
 # Project Repository
 
 ## Developed by
-- Sean Baang
-- Gecel Rodriguez
+- Sean Baang :octocat:
+- Gecel Rodriguez :metal:
 
 ### Progress
 - [X] Login System
