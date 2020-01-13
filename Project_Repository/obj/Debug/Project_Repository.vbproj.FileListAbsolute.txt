@@ -1,0 +1,12 @@
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\bin\Debug\Project_Repository.exe
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\bin\Debug\Project_Repository.pdb
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\bin\Debug\Project_Repository.xml
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.vbprojResolveAssemblyReference.cache
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.LoginForm.resources
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.Resources.resources
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.vbproj.GenerateResource.Cache
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.vbproj.CoreCompileInputs.cache
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.exe
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.xml
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.pdb
+D:\CodingFiles\Midterm CC15\Project_Repository\Project_Repository\obj\Debug\Project_Repository.StudentForm.resources
