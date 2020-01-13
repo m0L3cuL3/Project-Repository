@@ -1,0 +1,33 @@
+Baang and Rodriguez
+1. Project Repository System (PRS)
+	a. Admin
+		i.    Provide user/password to each member
+		ii.   Create new user, changing request.
+    		iii.  Can send notification to all members
+    		iv.   Create different types of roles and granting permission
+		v.    Can archive any file
+
+	b. Head of Department
+		i.    Can see project details
+    		ii.   Final Approve project according to requirement
+
+	c. Instructors
+		i.    Can see project details
+		ii.   Temporary Approve project according to requirement
+		iii.  Can archive any file
+		
+
+	d. Student
+		i.    Can change own profile details and user/password given by admin
+		ii.   Upload a soft copy of the project
+		iii.  Can delete own file (log activity for security purposes)
+
+Functions:
+	a. Search
+	b. Sort and Filter
+		1. Year
+		2. Different Departments (courses)
+		3. College Year Level
+	c. Upload
+	d. Download
+	e. View
