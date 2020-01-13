@@ -16,5 +16,5 @@ This is a project repository for school.
 - [ ] File System
 - [ ] MySQL Database ***(To be implemented last)***
 - [ ] Admin Panel
-- [ ] Student Panel
+- [ ] Student Panel ***(In progress)***
 - [ ] Head Of Department Panel
