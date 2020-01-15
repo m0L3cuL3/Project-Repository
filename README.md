@@ -17,8 +17,8 @@ The features of this program are the following:
 - VB.NET
 
 ### Developed by
-- Sean Baang :octocat:
-- Gecel Rodriguez :metal:
+- Sean Baang :octocat: [Facebook](https://www.facebook.com/m0L3cul3)
+- Gecel Rodriguez :metal: [Facebook](https://www.facebook.com/CeonRz)
 
 #### Progress
 - [X] Login System
