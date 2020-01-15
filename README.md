@@ -2,7 +2,8 @@
 
 ## Description
 Project Repository Management System. This allows students/instructors
-to create and upload their own projects with their own repositories.
+to create and upload their own projects with ease. Basically it's a knockoff
+of Github.
 
 ## Features
 The features of this program are the following:
