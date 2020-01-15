@@ -13,7 +13,7 @@ This is a project repository for school.
 #### Progress
 - [X] Login System
 - [ ] Project Approval System
-- [ ] File System
+- [X] File System
 - [ ] MySQL Database ***(To be implemented last)***
 - [ ] Admin Panel
 - [ ] Student Panel ***(In progress)***
