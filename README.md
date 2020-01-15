@@ -1,7 +1,17 @@
 # Project Repository
 
 ## Description
-This is a project repository for school.
+Project Repository Management System. This allows students/instructors
+to create and upload their own projects with their own repositories.
+
+## Features
+The features of this program are the following:
+- [X] Login System
+- [X] File System
+- [ ] Project Approval System
+- [ ] MySQL Database
+- [ ] Memory Management for Database ***(Admin access only)***
+- [ ] Event Logging
 
 ## Written in
 - VB.NET
@@ -18,3 +28,4 @@ This is a project repository for school.
 - [ ] Admin Panel
 - [X] Student Panel
 - [ ] Head Of Department Panel
+- [ ] Event Logger
