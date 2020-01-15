@@ -1,0 +1,13 @@
+C:\Users\Ceon Rodriguez\Desktop\PRS\bin\Debug\PRS.exe.config
+C:\Users\Ceon Rodriguez\Desktop\PRS\bin\Debug\PRS.exe
+C:\Users\Ceon Rodriguez\Desktop\PRS\bin\Debug\PRS.pdb
+C:\Users\Ceon Rodriguez\Desktop\PRS\bin\Debug\PRS.xml
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.vbprojAssemblyReference.cache
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.StudentForm.resources
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.Resources.resources
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.vbproj.GenerateResource.cache
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.exe
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.xml
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.pdb
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.projectPanel.resources
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.myRepositories.resources
