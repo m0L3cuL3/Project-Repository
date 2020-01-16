@@ -26,7 +26,7 @@ The features of this program are the following:
 - [ ] Project Approval System
 - [X] File System
 - [ ] MySQL Database ***(To be implemented last)***
-- [ ] Admin Panel
+- [X] Admin Panel
 - [X] Student Panel
-- [ ] Head Of Department Panel
+- [X] Head Of Department Panel
 - [ ] Event Logger

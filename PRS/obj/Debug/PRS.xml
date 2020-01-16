@@ -22,12 +22,32 @@ PRS
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:PRS.My.Resources.Resources.archiveBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.archiveBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PRS.My.Resources.Resources.backBtn">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:PRS.My.Resources.Resources.backBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.checkMark">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.closeAdminBtn">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -82,7 +102,22 @@ PRS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PRS.My.Resources.Resources.loginHeader">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PRS.My.Resources.Resources.logo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.Logo_IT">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.logoGlow">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -93,6 +128,16 @@ PRS
 </summary>
 </member>
 <member name="P:PRS.My.Resources.Resources.logoutBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.minimizeAdminBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.minimizeAdminBtnHover">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -127,12 +172,47 @@ PRS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PRS.My.Resources.Resources.pendingMark">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.pendingMark2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.pendingProjectsBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.pendingProjectsBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.restoreBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.restoreBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PRS.My.Resources.Resources.settingsBtn">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:PRS.My.Resources.Resources.settingsBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.Solid_BG_PNG_2">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

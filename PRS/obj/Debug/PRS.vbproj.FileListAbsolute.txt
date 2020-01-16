@@ -11,3 +11,7 @@ C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.xml
 C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.pdb
 C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.projectPanel.resources
 C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.myRepositories.resources
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.HeadOfDepartmentForm.resources
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.InstructorForm.resources
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.LoginForm.resources
+C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.AdminForm.resources

@@ -3,6 +3,43 @@
     Dim mouseX As Integer
     Dim mouseY As Integer
 
+    Dim isHide As Boolean
+
+    Dim flowPanel As New FlowLayoutPanel
+
+    Private Sub profileButton_Click(sender As Object, e As EventArgs) Handles profileButton.Click
+        sliderTMR.Start()
+    End Sub
+
+    Private Sub profilebackBtn_Click(sender As Object, e As EventArgs) Handles profilebackBtn.Click
+        sliderTMR.Start()
+    End Sub
+
+    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'this is for the sliding feature.
+        isHide = False
+        profilePanel.Width = 0
+
+    End Sub
+
+    Private Sub sliderTMR_Tick(sender As Object, e As EventArgs) Handles sliderTMR.Tick
+        If isHide Then
+            profilePanel.Width = profilePanel.Width + 15
+            If profilePanel.Width >= 280 Then
+                sliderTMR.Stop()
+                isHide = False
+                Refresh()
+            End If
+        Else
+            profilePanel.Width = profilePanel.Width - 20
+            If profilePanel.Width <= 0 Then
+                sliderTMR.Stop()
+                isHide = True
+                Refresh()
+            End If
+        End If
+    End Sub
+
     Private Sub Dashboard_MouseDown(sender As Object, e As MouseEventArgs) Handles Dashboard.MouseDown
         draggable = True
         mouseX = Cursor.Position.X - Me.Left
@@ -20,7 +57,7 @@
         draggable = False
     End Sub
 
-    Private Sub closeBtn_MouseHover(sender As Object, e As EventArgs) Handles closeBtn.MouseHover
+    Private Sub closeBtn_MouseEnter(sender As Object, e As EventArgs) Handles closeBtn.MouseEnter
         closeBtn.Image = My.Resources.closeBtnHover
     End Sub
 
@@ -32,7 +69,7 @@
         Close()
     End Sub
 
-    Private Sub minimizeBtn_MouseHover(sender As Object, e As EventArgs) Handles minimizeBtn.MouseHover
+    Private Sub minimizeBtn_MouseEnter(sender As Object, e As EventArgs) Handles minimizeBtn.MouseEnter
         minimizeBtn.Image = My.Resources.minimizeBtnHover
     End Sub
 
@@ -45,7 +82,7 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub settingsBtn_MouseHover(sender As Object, e As EventArgs) Handles settingsBtn.MouseHover
+    Private Sub settingsBtn_MouseEnter(sender As Object, e As EventArgs) Handles settingsBtn.MouseEnter
         settingsBtn.Image = My.Resources.settingsBtnHover
     End Sub
 
@@ -53,7 +90,7 @@
         settingsBtn.Image = My.Resources.settingsBtn
     End Sub
 
-    Private Sub searchBtn_MouseHover(sender As Object, e As EventArgs) Handles searchBtn.MouseHover
+    Private Sub searchBtn_MouseEnter(sender As Object, e As EventArgs) Handles searchBtn.MouseEnter
         searchBtn.Image = My.Resources.neutralBtnHover
     End Sub
 
@@ -61,7 +98,7 @@
         searchBtn.Image = My.Resources.neutralBtn
     End Sub
 
-    Private Sub downloadBtn_MouseHover(sender As Object, e As EventArgs) Handles downloadBtn.MouseHover
+    Private Sub downloadBtn_MouseEnter(sender As Object, e As EventArgs) Handles downloadBtn.MouseEnter
         downloadBtn.Image = My.Resources.generalBtnHover
         downloadBtn.ForeColor = Color.White
     End Sub
@@ -70,7 +107,7 @@
         downloadBtn.Image = My.Resources.neutralBtn
     End Sub
 
-    Private Sub homeBtn_MouseHover(sender As Object, e As EventArgs) Handles homeBtn.MouseHover
+    Private Sub homeBtn_MouseEnter(sender As Object, e As EventArgs) Handles homeBtn.MouseEnter
         homeBtn.BackgroundImage = My.Resources.homeBtnHover
     End Sub
 
@@ -78,7 +115,7 @@
         homeBtn.BackgroundImage = My.Resources.homeBtn
     End Sub
 
-    Private Sub myprojectsBtn_MouseHover(sender As Object, e As EventArgs) Handles myprojectsBtn.MouseHover
+    Private Sub myprojectsBtn_MouseEnter(sender As Object, e As EventArgs) Handles myprojectsBtn.MouseEnter
         myprojectsBtn.BackgroundImage = My.Resources.myProjectsBtnHover
     End Sub
 
@@ -86,7 +123,7 @@
         myprojectsBtn.BackgroundImage = My.Resources.myProjectsBtn
     End Sub
 
-    Private Sub profilebackBtn_MouseHover(sender As Object, e As EventArgs) Handles profilebackBtn.MouseHover
+    Private Sub profilebackBtn_MouseEnter(sender As Object, e As EventArgs) Handles profilebackBtn.MouseEnter
         profilebackBtn.Image = My.Resources.backBtnHover
     End Sub
 
@@ -94,7 +131,7 @@
         profilebackBtn.Image = My.Resources.backBtn
     End Sub
 
-    Private Sub logoutBtn_MouseHover(sender As Object, e As EventArgs) Handles logoutBtn.MouseHover
+    Private Sub logoutBtn_MouseEnter(sender As Object, e As EventArgs) Handles logoutBtn.MouseEnter
         logoutBtn.Image = My.Resources.logoutBtnHover
     End Sub
 
@@ -102,7 +139,8 @@
         logoutBtn.Image = My.Resources.logoutBtn
     End Sub
 
-    Private Sub profileButton_MouseHover(sender As Object, e As EventArgs) Handles profileButton.MouseHover
+
+    Private Sub profileButton_MouseEnter(sender As Object, e As EventArgs) Handles profileButton.MouseEnter
         profileButton.Image = My.Resources.generalBtnHover
     End Sub
 
@@ -110,4 +148,22 @@
         profileButton.Image = My.Resources.generalBtn
     End Sub
 
+    Private Sub testBtn_Click(sender As Object, e As EventArgs) Handles testBtn.Click
+        createLayoutProject()
+        AddProject()
+    End Sub
+
+    Public Sub createLayoutProject()
+        flowPanel.Dock = DockStyle.Fill
+
+        flowPanel.AutoScroll = True
+        mainPanel.Controls.Add(flowPanel)
+
+    End Sub
+
+    Public Sub AddProject()
+        Dim pp As New projectPanel
+
+        flowPanel.Controls.Add(pp)
+    End Sub
 End Class
