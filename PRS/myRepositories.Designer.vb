@@ -28,14 +28,18 @@ Partial Class myRepositories
         Me.MRuploadBtn = New System.Windows.Forms.Button()
         Me.MRsearchBtn = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.customDirTb = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.sdLabel = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.presetCb = New System.Windows.Forms.ComboBox()
+        Me.currDirTb = New System.Windows.Forms.TextBox()
         Me.MRdeleteBtn = New System.Windows.Forms.Button()
         Me.MRcopyBtn = New System.Windows.Forms.Button()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.folderListView = New System.Windows.Forms.ListView()
+        Me.NameHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.SizeHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.TypeHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.LastModifiedHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -102,11 +106,11 @@ Partial Class myRepositories
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel3.Controls.Add(Me.TextBox2)
+        Me.Panel3.Controls.Add(Me.customDirTb)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.sdLabel)
-        Me.Panel3.Controls.Add(Me.ComboBox1)
-        Me.Panel3.Controls.Add(Me.TextBox1)
+        Me.Panel3.Controls.Add(Me.presetCb)
+        Me.Panel3.Controls.Add(Me.currDirTb)
         Me.Panel3.Controls.Add(Me.MRdeleteBtn)
         Me.Panel3.Controls.Add(Me.MRcopyBtn)
         Me.Panel3.Location = New System.Drawing.Point(200, 262)
@@ -114,12 +118,12 @@ Partial Class myRepositories
         Me.Panel3.Size = New System.Drawing.Size(600, 79)
         Me.Panel3.TabIndex = 5
         '
-        'TextBox2
+        'customDirTb
         '
-        Me.TextBox2.Location = New System.Drawing.Point(147, 42)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(256, 20)
-        Me.TextBox2.TabIndex = 26
+        Me.customDirTb.Location = New System.Drawing.Point(147, 42)
+        Me.customDirTb.Name = "customDirTb"
+        Me.customDirTb.Size = New System.Drawing.Size(256, 20)
+        Me.customDirTb.TabIndex = 26
         '
         'Label1
         '
@@ -141,23 +145,24 @@ Partial Class myRepositories
         Me.sdLabel.TabIndex = 24
         Me.sdLabel.Text = "Current Directory"
         '
-        'ComboBox1
+        'presetCb
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(420, 8)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(168, 21)
-        Me.ComboBox1.TabIndex = 23
+        Me.presetCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.presetCb.FormattingEnabled = True
+        Me.presetCb.Items.AddRange(New Object() {"C:/Desktop", "C:/My Documents", "- Use Custom Directory -"})
+        Me.presetCb.Location = New System.Drawing.Point(420, 8)
+        Me.presetCb.Name = "presetCb"
+        Me.presetCb.Size = New System.Drawing.Size(168, 21)
+        Me.presetCb.TabIndex = 23
         '
-        'TextBox1
+        'currDirTb
         '
-        Me.TextBox1.HideSelection = False
-        Me.TextBox1.Location = New System.Drawing.Point(147, 9)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(256, 20)
-        Me.TextBox1.TabIndex = 22
+        Me.currDirTb.HideSelection = False
+        Me.currDirTb.Location = New System.Drawing.Point(147, 9)
+        Me.currDirTb.Name = "currDirTb"
+        Me.currDirTb.ReadOnly = True
+        Me.currDirTb.Size = New System.Drawing.Size(256, 20)
+        Me.currDirTb.TabIndex = 22
         '
         'MRdeleteBtn
         '
@@ -191,21 +196,44 @@ Partial Class myRepositories
         Me.MRcopyBtn.Text = "Copy"
         Me.MRcopyBtn.UseVisualStyleBackColor = True
         '
-        'ListView1
+        'folderListView
         '
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(200, 0)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(588, 263)
-        Me.ListView1.TabIndex = 6
-        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.folderListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.folderListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.NameHeader, Me.SizeHeader, Me.TypeHeader, Me.LastModifiedHeader})
+        Me.folderListView.HideSelection = False
+        Me.folderListView.Location = New System.Drawing.Point(200, 0)
+        Me.folderListView.Name = "folderListView"
+        Me.folderListView.Size = New System.Drawing.Size(588, 263)
+        Me.folderListView.TabIndex = 6
+        Me.folderListView.UseCompatibleStateImageBehavior = False
+        Me.folderListView.View = System.Windows.Forms.View.Details
+        '
+        'NameHeader
+        '
+        Me.NameHeader.Text = "Name"
+        Me.NameHeader.Width = 127
+        '
+        'SizeHeader
+        '
+        Me.SizeHeader.Text = "Size"
+        Me.SizeHeader.Width = 158
+        '
+        'TypeHeader
+        '
+        Me.TypeHeader.Text = "Type"
+        Me.TypeHeader.Width = 140
+        '
+        'LastModifiedHeader
+        '
+        Me.LastModifiedHeader.Text = "Last Modified"
+        Me.LastModifiedHeader.Width = 162
         '
         'myRepositories
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Controls.Add(Me.ListView1)
+        Me.Controls.Add(Me.folderListView)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "myRepositories"
@@ -225,10 +253,14 @@ Partial Class myRepositories
     Friend WithEvents MRcopyBtn As Button
     Friend WithEvents MRuploadBtn As Button
     Friend WithEvents MRsearchBtn As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents customDirTb As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents sdLabel As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents presetCb As ComboBox
+    Friend WithEvents currDirTb As TextBox
+    Friend WithEvents folderListView As ListView
+    Friend WithEvents NameHeader As ColumnHeader
+    Friend WithEvents SizeHeader As ColumnHeader
+    Friend WithEvents TypeHeader As ColumnHeader
+    Friend WithEvents LastModifiedHeader As ColumnHeader
 End Class

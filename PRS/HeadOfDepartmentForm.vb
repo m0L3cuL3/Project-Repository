@@ -5,20 +5,22 @@
 
     Dim isHide As Boolean
 
-    Dim flowPanel As New FlowLayoutPanel
+    Dim approvedPanel, pendingPanel As New FlowLayoutPanel
+
+    'executes code in form load'
+    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'this is for the sliding feature.
+        isHide = False
+        profilePanel.Width = 0
+        LoadApprovedLayoutProject()
+    End Sub
+
     Private Sub profileButton_Click(sender As Object, e As EventArgs) Handles profileButton.Click
         sliderTMR.Start()
     End Sub
 
     Private Sub profilebackBtn_Click(sender As Object, e As EventArgs) Handles profilebackBtn.Click
         sliderTMR.Start()
-    End Sub
-
-    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'this is for the sliding feature.
-        isHide = False
-        profilePanel.Width = 0
-
     End Sub
 
     Private Sub sliderTMR_Tick(sender As Object, e As EventArgs) Handles sliderTMR.Tick
@@ -62,10 +64,6 @@
 
     Private Sub closeBtn_MouseLeave(sender As Object, e As EventArgs) Handles closeBtn.MouseLeave
         closeBtn.Image = My.Resources.closeBtn
-    End Sub
-
-    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
-        Close()
     End Sub
 
     Private Sub minimizeBtn_MouseEnter(sender As Object, e As EventArgs) Handles minimizeBtn.MouseEnter
@@ -139,7 +137,6 @@
         logoutBtn.Image = My.Resources.logoutBtn
     End Sub
 
-
     Private Sub profileButton_MouseEnter(sender As Object, e As EventArgs) Handles profileButton.MouseEnter
         profileButton.Image = My.Resources.generalBtnHover
     End Sub
@@ -156,24 +153,89 @@
         pendingProjectsBtn.BackgroundImage = My.Resources.pendingProjectsBtn
     End Sub
 
-    Private Sub testBtn_Click(sender As Object, e As EventArgs) Handles testBtn.Click
-        createLayoutProject()
-        AddProject()
+    'for testing purposes only'
+    Private Sub testBtn_Click(sender As Object, e As EventArgs) Handles testApproveBtn.Click
+        AddApproveProject()
     End Sub
 
-    Public Sub createLayoutProject()
-        flowPanel.Dock = DockStyle.Fill
+    'for testing purposes only'
+    Private Sub testPendingBtn_Click(sender As Object, e As EventArgs) Handles testPendingBtn.Click
+        AddPendingProject()
+    End Sub
 
-        flowPanel.AutoScroll = True
-        mainPanel.Controls.Add(flowPanel)
+    'home button'
+    Private Sub homeBtn_Click(sender As Object, e As EventArgs) Handles homeBtn.Click
+        mainLabel.Text = "Home"
+        ShowApprovedLayout()
+    End Sub
+
+    'pending projects button'
+    Private Sub pendingProjectsBtn_Click(sender As Object, e As EventArgs) Handles pendingProjectsBtn.Click
+        mainLabel.Text = "Pending Projects"
+        ShowPendingLayout()
+    End Sub
+
+    'closes the form'
+    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
+        Close()
+        LoginForm.Show()
+    End Sub
+
+    'creates flow layout panel for approved projects'
+    Public Sub LoadApprovedLayoutProject()
+        approvedPanel.Dock = DockStyle.Fill
+
+        approvedPanel.AutoScroll = True
+        mainPanel.Controls.Add(approvedPanel)
 
     End Sub
 
-    Public Sub AddProject()
+    'creates flow layout panel for pending projects'
+    Public Sub LoadPendingLayoutProject()
+        pendingPanel.Dock = DockStyle.Fill
+
+        pendingPanel.AutoScroll = True
+        mainPanel.Controls.Add(pendingPanel)
+
+    End Sub
+
+    'adds approved project to approvedPanel (for testing only)'
+    Public Sub AddApproveProject()
+
+
+        LoadApprovedLayoutProject()
+
         Dim pp As New projectPanel
-
-        flowPanel.Controls.Add(pp)
+        pp.PictureBox1.Image = My.Resources.checkMark
+        approvedPanel.Controls.Add(pp)
     End Sub
 
+    'adds approved project to pendingPanel (for testing only)'
+    Public Sub AddPendingProject()
 
+        LoadPendingLayoutProject()
+
+        Dim pp As New projectPanel
+        pp.PictureBox1.Image = My.Resources.pendingMark2
+        pendingPanel.Controls.Add(pp)
+    End Sub
+
+    Public Sub ShowApprovedLayout()
+        'removal of other component when in use'
+        mainPanel.Controls.Remove(pendingPanel)
+
+        LoadApprovedLayoutProject()
+    End Sub
+
+    Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
+        Close()
+        LoginForm.Show()
+    End Sub
+
+    Public Sub ShowPendingLayout()
+        'removal of other component when in use'
+        mainPanel.Controls.Remove(approvedPanel)
+
+        LoadPendingLayoutProject()
+    End Sub
 End Class

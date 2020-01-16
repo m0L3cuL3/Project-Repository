@@ -5,7 +5,16 @@
 
     Dim isHide As Boolean
 
-    Dim flowPanel As New FlowLayoutPanel
+    Dim flowPanel, pendingPanel As New FlowLayoutPanel
+    Dim repo As New myRepositories
+
+    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'this is for the sliding feature.
+        isHide = False
+        profilePanel.Width = 0
+        LoadLayoutProject()
+        approveBtn.Enabled = True
+    End Sub
 
     Private Sub profileButton_Click(sender As Object, e As EventArgs) Handles profileButton.Click
         sliderTMR.Start()
@@ -13,13 +22,6 @@
 
     Private Sub profilebackBtn_Click(sender As Object, e As EventArgs) Handles profilebackBtn.Click
         sliderTMR.Start()
-    End Sub
-
-    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'this is for the sliding feature.
-        isHide = False
-        profilePanel.Width = 0
-
     End Sub
 
     Private Sub sliderTMR_Tick(sender As Object, e As EventArgs) Handles sliderTMR.Tick
@@ -65,9 +67,6 @@
         closeBtn.Image = My.Resources.closeBtn
     End Sub
 
-    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
-        Close()
-    End Sub
 
     Private Sub minimizeBtn_MouseEnter(sender As Object, e As EventArgs) Handles minimizeBtn.MouseEnter
         minimizeBtn.Image = My.Resources.minimizeBtnHover
@@ -156,12 +155,56 @@
         pendingProjectsBtn.BackgroundImage = My.Resources.pendingProjectsBtn
     End Sub
 
-    Private Sub testBtn_Click(sender As Object, e As EventArgs) Handles testBtn.Click
-        createLayoutProject()
+    'closes the form'
+    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
+        Close()
+        LoginForm.Show()
+    End Sub
+
+    'for testing purposes only'
+    Private Sub testBtn_Click(sender As Object, e As EventArgs)
         AddProject()
     End Sub
 
-    Public Sub createLayoutProject()
+    'home button'
+    Private Sub homeBtn_Click(sender As Object, e As EventArgs) Handles homeBtn.Click
+        approveBtn.Enabled = True
+        declineBtn.Enabled = False
+        ShowLayout()
+    End Sub
+
+    'my repositories button'
+    Private Sub myprojectsBtn_Click(sender As Object, e As EventArgs) Handles myprojectsBtn.Click
+        approveBtn.Enabled = False
+        declineBtn.Enabled = False
+        DisplayRepository()
+    End Sub
+
+    'pending projects button'
+    Private Sub pendingProjectsBtn_Click(sender As Object, e As EventArgs) Handles pendingProjectsBtn.Click
+        declineBtn.Enabled = True
+        approveBtn.Enabled = False
+        ShowPendingLayout()
+    End Sub
+
+    'logout button'
+    Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
+        Close()
+        LoginForm.Show()
+    End Sub
+
+    'approve button'
+    Private Sub approveBtn_Click(sender As Object, e As EventArgs) Handles approveBtn.Click
+        AddProject()
+    End Sub
+
+    'decline button'
+    Private Sub declineBtn_Click(sender As Object, e As EventArgs) Handles declineBtn.Click
+        AddPendingProject()
+    End Sub
+
+    'creates flow layout panel for adding components'
+    Public Sub LoadLayoutProject()
         flowPanel.Dock = DockStyle.Fill
 
         flowPanel.AutoScroll = True
@@ -169,10 +212,62 @@
 
     End Sub
 
-    Public Sub AddProject()
-        Dim pp As New projectPanel
+    'creates flow layout panel for pending projects'
+    Public Sub LoadPendingLayoutProject()
+        pendingPanel.Dock = DockStyle.Fill
 
+        pendingPanel.AutoScroll = True
+        mainPanel.Controls.Add(pendingPanel)
+
+    End Sub
+
+    'adds pending project to pendingPanel (for testing only)'
+    Public Sub AddPendingProject()
+
+        LoadPendingLayoutProject()
+
+        Dim pp As New projectPanel
+        pp.PictureBox1.Image = My.Resources.pendingMark2
+        pendingPanel.Controls.Add(pp)
+    End Sub
+
+    'adds pending project to pendingPanel (for testing only)'
+    Public Sub ShowPendingLayout()
+        'removal of other component when in use'
+        mainPanel.Controls.Remove(repo)
+        mainPanel.Controls.Remove(flowPanel)
+
+        LoadPendingLayoutProject()
+    End Sub
+
+    'shows layout panel'
+    Public Sub ShowLayout()
+        'removal of other components when in use'
+        mainPanel.Controls.Remove(repo)
+        mainPanel.Controls.Remove(pendingPanel)
+
+        LoadLayoutProject()
+    End Sub
+
+    'adds project panel to flow layout
+    Public Sub AddProject()
+        'removal of other component when in use'
+        mainPanel.Controls.Remove(repo)
+
+        LoadLayoutProject()
+
+        Dim pp As New projectPanel
+        pp.PictureBox1.Image = My.Resources.checkMark
         flowPanel.Controls.Add(pp)
     End Sub
 
+    Public Sub DisplayRepository()
+        'removal of other components when in use'
+        mainPanel.Controls.Remove(flowPanel)
+        mainPanel.Controls.Remove(pendingPanel)
+
+        repo.Dock = DockStyle.Fill
+
+        mainPanel.Controls.Add(repo)
+    End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class StudentForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,32 +20,32 @@ Partial Class StudentForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.bottomBar = New System.Windows.Forms.Panel()
+        Me.settingsBtn = New System.Windows.Forms.PictureBox()
         Me.profilePanel = New System.Windows.Forms.Panel()
+        Me.logoutBtn = New System.Windows.Forms.Button()
+        Me.myprojectsBtn = New System.Windows.Forms.Panel()
+        Me.homeBtn = New System.Windows.Forms.Panel()
         Me.changePasswordLabel = New System.Windows.Forms.LinkLabel()
         Me.idNumberLabel = New System.Windows.Forms.Label()
         Me.courseLabel = New System.Windows.Forms.Label()
         Me.nameLabel = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.profileLabel = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.sliderTMR = New System.Windows.Forms.Timer(Me.components)
-        Me.mainPanel = New System.Windows.Forms.Panel()
-        Me.logoutBtn = New System.Windows.Forms.Button()
-        Me.myprojectsBtn = New System.Windows.Forms.Panel()
-        Me.homeBtn = New System.Windows.Forms.Panel()
         Me.profilebackBtn = New System.Windows.Forms.PictureBox()
+        Me.profileLabel = New System.Windows.Forms.Label()
         Me.profilePicture = New System.Windows.Forms.PictureBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.testBtn = New System.Windows.Forms.Button()
         Me.profileButton = New System.Windows.Forms.Button()
         Me.downloadBtn = New System.Windows.Forms.Button()
-        Me.settingsBtn = New System.Windows.Forms.PictureBox()
+        Me.sliderTMR = New System.Windows.Forms.Timer(Me.components)
+        Me.mainPanel = New System.Windows.Forms.Panel()
         Me.Dashboard = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.mainLabel = New System.Windows.Forms.Label()
         Me.searchBtn = New System.Windows.Forms.Button()
         Me.searchBarLabel = New System.Windows.Forms.Label()
         Me.minimizeBtn = New System.Windows.Forms.PictureBox()
@@ -57,15 +57,13 @@ Partial Class StudentForm
         Me.dateFilter = New System.Windows.Forms.ComboBox()
         Me.coursefilterLabel = New System.Windows.Forms.Label()
         Me.yearlevelFilter = New System.Windows.Forms.ComboBox()
-        Me.MyRepositories1 = New PRS.myRepositories()
         Me.bottomBar.SuspendLayout()
+        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.profilePanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.mainPanel.SuspendLayout()
         CType(Me.profilebackBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.profilePicture, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         Me.Dashboard.SuspendLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,6 +78,17 @@ Partial Class StudentForm
         Me.bottomBar.Name = "bottomBar"
         Me.bottomBar.Size = New System.Drawing.Size(800, 30)
         Me.bottomBar.TabIndex = 1
+        '
+        'settingsBtn
+        '
+        Me.settingsBtn.BackColor = System.Drawing.Color.Transparent
+        Me.settingsBtn.Image = Global.PRS.My.Resources.Resources.settingsBtn
+        Me.settingsBtn.Location = New System.Drawing.Point(751, 3)
+        Me.settingsBtn.Name = "settingsBtn"
+        Me.settingsBtn.Size = New System.Drawing.Size(46, 24)
+        Me.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.settingsBtn.TabIndex = 0
+        Me.settingsBtn.TabStop = False
         '
         'profilePanel
         '
@@ -96,8 +105,43 @@ Partial Class StudentForm
         Me.profilePanel.Controls.Add(Me.profilePicture)
         Me.profilePanel.Location = New System.Drawing.Point(0, 0)
         Me.profilePanel.Name = "profilePanel"
-        Me.profilePanel.Size = New System.Drawing.Size(0, 600)
+        Me.profilePanel.Size = New System.Drawing.Size(290, 600)
         Me.profilePanel.TabIndex = 2
+        '
+        'logoutBtn
+        '
+        Me.logoutBtn.BackColor = System.Drawing.Color.Transparent
+        Me.logoutBtn.FlatAppearance.BorderSize = 0
+        Me.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.logoutBtn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.logoutBtn.ForeColor = System.Drawing.Color.White
+        Me.logoutBtn.Image = Global.PRS.My.Resources.Resources.logoutBtn
+        Me.logoutBtn.Location = New System.Drawing.Point(0, 560)
+        Me.logoutBtn.Name = "logoutBtn"
+        Me.logoutBtn.Size = New System.Drawing.Size(288, 38)
+        Me.logoutBtn.TabIndex = 8
+        Me.logoutBtn.Text = "LOG OUT"
+        Me.logoutBtn.UseVisualStyleBackColor = False
+        '
+        'myprojectsBtn
+        '
+        Me.myprojectsBtn.BackgroundImage = Global.PRS.My.Resources.Resources.myProjectsBtn
+        Me.myprojectsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.myprojectsBtn.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.myprojectsBtn.Location = New System.Drawing.Point(0, 278)
+        Me.myprojectsBtn.Name = "myprojectsBtn"
+        Me.myprojectsBtn.Size = New System.Drawing.Size(290, 55)
+        Me.myprojectsBtn.TabIndex = 7
+        '
+        'homeBtn
+        '
+        Me.homeBtn.BackgroundImage = Global.PRS.My.Resources.Resources.homeBtn
+        Me.homeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.homeBtn.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.homeBtn.Location = New System.Drawing.Point(0, 223)
+        Me.homeBtn.Name = "homeBtn"
+        Me.homeBtn.Size = New System.Drawing.Size(290, 55)
+        Me.homeBtn.TabIndex = 6
         '
         'changePasswordLabel
         '
@@ -150,8 +194,19 @@ Partial Class StudentForm
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(0, 64)
+        Me.Panel2.Size = New System.Drawing.Size(288, 64)
         Me.Panel2.TabIndex = 1
+        '
+        'profilebackBtn
+        '
+        Me.profilebackBtn.Dock = System.Windows.Forms.DockStyle.Right
+        Me.profilebackBtn.Image = Global.PRS.My.Resources.Resources.backBtn
+        Me.profilebackBtn.Location = New System.Drawing.Point(224, 0)
+        Me.profilebackBtn.Name = "profilebackBtn"
+        Me.profilebackBtn.Size = New System.Drawing.Size(62, 62)
+        Me.profilebackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.profilebackBtn.TabIndex = 1
+        Me.profilebackBtn.TabStop = False
         '
         'profileLabel
         '
@@ -165,6 +220,16 @@ Partial Class StudentForm
         Me.profileLabel.TabIndex = 0
         Me.profileLabel.Text = "Profile"
         '
+        'profilePicture
+        '
+        Me.profilePicture.Image = Global.PRS.My.Resources.Resources.CS1_WHITE_TRNSPRNT
+        Me.profilePicture.Location = New System.Drawing.Point(12, 70)
+        Me.profilePicture.Name = "profilePicture"
+        Me.profilePicture.Size = New System.Drawing.Size(101, 100)
+        Me.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.profilePicture.TabIndex = 0
+        Me.profilePicture.TabStop = False
+        '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ControlLight
@@ -177,75 +242,6 @@ Partial Class StudentForm
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(800, 47)
         Me.Panel4.TabIndex = 6
-        '
-        'sliderTMR
-        '
-        Me.sliderTMR.Interval = 1
-        '
-        'mainPanel
-        '
-        Me.mainPanel.Controls.Add(Me.MyRepositories1)
-        Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mainPanel.Location = New System.Drawing.Point(0, 182)
-        Me.mainPanel.Name = "mainPanel"
-        Me.mainPanel.Size = New System.Drawing.Size(800, 341)
-        Me.mainPanel.TabIndex = 8
-        '
-        'logoutBtn
-        '
-        Me.logoutBtn.BackColor = System.Drawing.Color.Transparent
-        Me.logoutBtn.FlatAppearance.BorderSize = 0
-        Me.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.logoutBtn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.logoutBtn.ForeColor = System.Drawing.Color.White
-        Me.logoutBtn.Image = Global.PRS.My.Resources.Resources.logoutBtn
-        Me.logoutBtn.Location = New System.Drawing.Point(0, 560)
-        Me.logoutBtn.Name = "logoutBtn"
-        Me.logoutBtn.Size = New System.Drawing.Size(288, 38)
-        Me.logoutBtn.TabIndex = 8
-        Me.logoutBtn.Text = "LOG OUT"
-        Me.logoutBtn.UseVisualStyleBackColor = False
-        '
-        'myprojectsBtn
-        '
-        Me.myprojectsBtn.BackgroundImage = Global.PRS.My.Resources.Resources.myProjectsBtn
-        Me.myprojectsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.myprojectsBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.myprojectsBtn.Location = New System.Drawing.Point(0, 278)
-        Me.myprojectsBtn.Name = "myprojectsBtn"
-        Me.myprojectsBtn.Size = New System.Drawing.Size(290, 55)
-        Me.myprojectsBtn.TabIndex = 7
-        '
-        'homeBtn
-        '
-        Me.homeBtn.BackgroundImage = Global.PRS.My.Resources.Resources.homeBtn
-        Me.homeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.homeBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.homeBtn.Location = New System.Drawing.Point(0, 223)
-        Me.homeBtn.Name = "homeBtn"
-        Me.homeBtn.Size = New System.Drawing.Size(290, 55)
-        Me.homeBtn.TabIndex = 6
-        '
-        'profilebackBtn
-        '
-        Me.profilebackBtn.Dock = System.Windows.Forms.DockStyle.Right
-        Me.profilebackBtn.Image = Global.PRS.My.Resources.Resources.backBtn
-        Me.profilebackBtn.Location = New System.Drawing.Point(-62, 0)
-        Me.profilebackBtn.Name = "profilebackBtn"
-        Me.profilebackBtn.Size = New System.Drawing.Size(62, 62)
-        Me.profilebackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.profilebackBtn.TabIndex = 1
-        Me.profilebackBtn.TabStop = False
-        '
-        'profilePicture
-        '
-        Me.profilePicture.Image = Global.PRS.My.Resources.Resources.CS1_WHITE_TRNSPRNT
-        Me.profilePicture.Location = New System.Drawing.Point(12, 70)
-        Me.profilePicture.Name = "profilePicture"
-        Me.profilePicture.Size = New System.Drawing.Size(101, 100)
-        Me.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.profilePicture.TabIndex = 0
-        Me.profilePicture.TabStop = False
         '
         'testBtn
         '
@@ -295,22 +291,23 @@ Partial Class StudentForm
         Me.downloadBtn.Text = "Download"
         Me.downloadBtn.UseVisualStyleBackColor = True
         '
-        'settingsBtn
+        'sliderTMR
         '
-        Me.settingsBtn.BackColor = System.Drawing.Color.Transparent
-        Me.settingsBtn.Image = Global.PRS.My.Resources.Resources.settingsBtn
-        Me.settingsBtn.Location = New System.Drawing.Point(751, 3)
-        Me.settingsBtn.Name = "settingsBtn"
-        Me.settingsBtn.Size = New System.Drawing.Size(46, 24)
-        Me.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.settingsBtn.TabIndex = 0
-        Me.settingsBtn.TabStop = False
+        Me.sliderTMR.Interval = 1
+        '
+        'mainPanel
+        '
+        Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.mainPanel.Location = New System.Drawing.Point(0, 182)
+        Me.mainPanel.Name = "mainPanel"
+        Me.mainPanel.Size = New System.Drawing.Size(800, 341)
+        Me.mainPanel.TabIndex = 8
         '
         'Dashboard
         '
         Me.Dashboard.BackgroundImage = Global.PRS.My.Resources.Resources.Dashboard
         Me.Dashboard.Controls.Add(Me.Label3)
-        Me.Dashboard.Controls.Add(Me.Label2)
+        Me.Dashboard.Controls.Add(Me.mainLabel)
         Me.Dashboard.Controls.Add(Me.searchBtn)
         Me.Dashboard.Controls.Add(Me.searchBarLabel)
         Me.Dashboard.Controls.Add(Me.minimizeBtn)
@@ -339,16 +336,16 @@ Partial Class StudentForm
         Me.Label3.TabIndex = 21
         Me.Label3.Text = "Project Repository System"
         '
-        'Label2
+        'mainLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 48)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 60)
-        Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Home"
+        Me.mainLabel.AutoSize = True
+        Me.mainLabel.BackColor = System.Drawing.Color.Transparent
+        Me.mainLabel.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mainLabel.Location = New System.Drawing.Point(24, 48)
+        Me.mainLabel.Name = "mainLabel"
+        Me.mainLabel.Size = New System.Drawing.Size(139, 60)
+        Me.mainLabel.TabIndex = 20
+        Me.mainLabel.Text = "Home"
         '
         'searchBtn
         '
@@ -421,6 +418,7 @@ Partial Class StudentForm
         '
         Me.courseFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.courseFilter.FormattingEnabled = True
+        Me.courseFilter.Items.AddRange(New Object() {"Computer Science", "Information Technology", "Information Systems"})
         Me.courseFilter.Location = New System.Drawing.Point(317, 149)
         Me.courseFilter.Name = "courseFilter"
         Me.courseFilter.Size = New System.Drawing.Size(153, 21)
@@ -441,6 +439,7 @@ Partial Class StudentForm
         '
         Me.dateFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.dateFilter.FormattingEnabled = True
+        Me.dateFilter.Items.AddRange(New Object() {"2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010"})
         Me.dateFilter.Location = New System.Drawing.Point(635, 149)
         Me.dateFilter.Name = "dateFilter"
         Me.dateFilter.Size = New System.Drawing.Size(153, 21)
@@ -461,18 +460,11 @@ Partial Class StudentForm
         '
         Me.yearlevelFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.yearlevelFilter.FormattingEnabled = True
+        Me.yearlevelFilter.Items.AddRange(New Object() {"1st Year", "2nd Year", "3rd Year", "4th Year"})
         Me.yearlevelFilter.Location = New System.Drawing.Point(476, 149)
         Me.yearlevelFilter.Name = "yearlevelFilter"
         Me.yearlevelFilter.Size = New System.Drawing.Size(153, 21)
         Me.yearlevelFilter.TabIndex = 11
-        '
-        'MyRepositories1
-        '
-        Me.MyRepositories1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MyRepositories1.Location = New System.Drawing.Point(0, 0)
-        Me.MyRepositories1.Name = "MyRepositories1"
-        Me.MyRepositories1.Size = New System.Drawing.Size(800, 341)
-        Me.MyRepositories1.TabIndex = 0
         '
         'StudentForm
         '
@@ -487,17 +479,17 @@ Partial Class StudentForm
         Me.Controls.Add(Me.Dashboard)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StudentForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.bottomBar.ResumeLayout(False)
+        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.profilePanel.ResumeLayout(False)
         Me.profilePanel.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.mainPanel.ResumeLayout(False)
         CType(Me.profilebackBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.profilePicture, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
         Me.Dashboard.ResumeLayout(False)
         Me.Dashboard.PerformLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).EndInit()
@@ -536,9 +528,8 @@ Partial Class StudentForm
     Friend WithEvents Panel4 As Panel
     Friend WithEvents downloadBtn As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents mainLabel As Label
     Friend WithEvents sliderTMR As Timer
     Friend WithEvents mainPanel As Panel
     Friend WithEvents testBtn As Button
-    Friend WithEvents MyRepositories1 As myRepositories
 End Class

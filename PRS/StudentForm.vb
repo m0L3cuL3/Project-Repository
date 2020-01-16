@@ -5,7 +5,18 @@
 
     Dim isHide As Boolean
 
+    'Dynamic Components'
     Dim flowPanel As New FlowLayoutPanel
+    Dim repo As New myRepositories
+
+    'executes code on form load'
+    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'this is for the sliding feature.
+        isHide = False
+        profilePanel.Width = 0
+        LoadLayoutProject()
+
+    End Sub
 
     Private Sub profileButton_Click(sender As Object, e As EventArgs) Handles profileButton.Click
         sliderTMR.Start()
@@ -13,13 +24,6 @@
 
     Private Sub profilebackBtn_Click(sender As Object, e As EventArgs) Handles profilebackBtn.Click
         sliderTMR.Start()
-    End Sub
-
-    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'this is for the sliding feature.
-        isHide = False
-        profilePanel.Width = 0
-
     End Sub
 
     Private Sub sliderTMR_Tick(sender As Object, e As EventArgs) Handles sliderTMR.Tick
@@ -63,10 +67,6 @@
 
     Private Sub closeBtn_MouseLeave(sender As Object, e As EventArgs) Handles closeBtn.MouseLeave
         closeBtn.Image = My.Resources.closeBtn
-    End Sub
-
-    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
-        Close()
     End Sub
 
     Private Sub minimizeBtn_MouseEnter(sender As Object, e As EventArgs) Handles minimizeBtn.MouseEnter
@@ -139,7 +139,6 @@
         logoutBtn.Image = My.Resources.logoutBtn
     End Sub
 
-
     Private Sub profileButton_MouseEnter(sender As Object, e As EventArgs) Handles profileButton.MouseEnter
         profileButton.Image = My.Resources.generalBtnHover
     End Sub
@@ -148,12 +147,31 @@
         profileButton.Image = My.Resources.generalBtn
     End Sub
 
+    'close current form'
+    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
+        Close()
+        LoginForm.Show()
+    End Sub
+
+    'for testing purposes only'
     Private Sub testBtn_Click(sender As Object, e As EventArgs) Handles testBtn.Click
-        createLayoutProject()
         AddProject()
     End Sub
 
-    Public Sub createLayoutProject()
+    'home button'
+    Private Sub homeBtn_Click(sender As Object, e As EventArgs) Handles homeBtn.Click
+        mainLabel.Text = "Home"
+        ShowLayout()
+    End Sub
+
+    'my repositories button'
+    Private Sub myprojectsBtn_Click(sender As Object, e As EventArgs) Handles myprojectsBtn.Click
+        mainLabel.Text = "My Repositories"
+        DisplayRepository()
+    End Sub
+
+    'creates flow layout panel for adding components'
+    Public Sub LoadLayoutProject()
         flowPanel.Dock = DockStyle.Fill
 
         flowPanel.AutoScroll = True
@@ -161,9 +179,37 @@
 
     End Sub
 
-    Public Sub AddProject()
-        Dim pp As New projectPanel
+    'shows layout panel'
+    Public Sub ShowLayout()
+        'removal of other components when in use'
+        mainPanel.Controls.Remove(repo)
 
+        LoadLayoutProject()
+    End Sub
+
+    'adds project panel to flow layout
+    Public Sub AddProject()
+        'removal of other component when in use'
+        mainPanel.Controls.Remove(repo)
+
+        LoadLayoutProject()
+
+        Dim pp As New projectPanel
+        pp.PictureBox1.Image = My.Resources.checkMark
         flowPanel.Controls.Add(pp)
+    End Sub
+
+    Public Sub DisplayRepository()
+        'removal of other components when in use'
+        mainPanel.Controls.Remove(flowPanel)
+
+        repo.Dock = DockStyle.Fill
+
+        mainPanel.Controls.Add(repo)
+    End Sub
+
+    Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
+        Close()
+        LoginForm.Show()
     End Sub
 End Class

@@ -26,26 +26,28 @@ Partial Class HeadOfDepartmentForm
         Me.sliderTMR = New System.Windows.Forms.Timer(Me.components)
         Me.mainPanel = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.testPendingBtn = New System.Windows.Forms.Button()
+        Me.declineBtn = New System.Windows.Forms.Button()
+        Me.testApproveBtn = New System.Windows.Forms.Button()
+        Me.profileButton = New System.Windows.Forms.Button()
+        Me.approveBtn = New System.Windows.Forms.Button()
         Me.profileLabel = New System.Windows.Forms.Label()
         Me.changePasswordLabel = New System.Windows.Forms.LinkLabel()
         Me.idNumberLabel = New System.Windows.Forms.Label()
         Me.courseLabel = New System.Windows.Forms.Label()
         Me.nameLabel = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.profilebackBtn = New System.Windows.Forms.PictureBox()
         Me.profilePanel = New System.Windows.Forms.Panel()
-        Me.bottomBar = New System.Windows.Forms.Panel()
         Me.logoutBtn = New System.Windows.Forms.Button()
         Me.pendingProjectsBtn = New System.Windows.Forms.Panel()
         Me.homeBtn = New System.Windows.Forms.Panel()
-        Me.profilebackBtn = New System.Windows.Forms.PictureBox()
         Me.profilePicture = New System.Windows.Forms.PictureBox()
-        Me.declineBtn = New System.Windows.Forms.Button()
-        Me.testBtn = New System.Windows.Forms.Button()
-        Me.profileButton = New System.Windows.Forms.Button()
-        Me.approveBtn = New System.Windows.Forms.Button()
+        Me.bottomBar = New System.Windows.Forms.Panel()
+        Me.settingsBtn = New System.Windows.Forms.PictureBox()
         Me.Dashboard = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.mainLabel = New System.Windows.Forms.Label()
         Me.searchBtn = New System.Windows.Forms.Button()
         Me.searchBarLabel = New System.Windows.Forms.Label()
         Me.minimizeBtn = New System.Windows.Forms.PictureBox()
@@ -57,18 +59,17 @@ Partial Class HeadOfDepartmentForm
         Me.dateFilter = New System.Windows.Forms.ComboBox()
         Me.coursefilterLabel = New System.Windows.Forms.Label()
         Me.yearlevelFilter = New System.Windows.Forms.ComboBox()
-        Me.settingsBtn = New System.Windows.Forms.PictureBox()
         Me.mainPanel.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.profilePanel.SuspendLayout()
-        Me.bottomBar.SuspendLayout()
         CType(Me.profilebackBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.profilePanel.SuspendLayout()
         CType(Me.profilePicture, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.bottomBar.SuspendLayout()
+        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Dashboard.SuspendLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'sliderTMR
@@ -88,8 +89,9 @@ Partial Class HeadOfDepartmentForm
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.testPendingBtn)
         Me.Panel4.Controls.Add(Me.declineBtn)
-        Me.Panel4.Controls.Add(Me.testBtn)
+        Me.Panel4.Controls.Add(Me.testApproveBtn)
         Me.Panel4.Controls.Add(Me.profileButton)
         Me.Panel4.Controls.Add(Me.approveBtn)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -97,6 +99,87 @@ Partial Class HeadOfDepartmentForm
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(800, 47)
         Me.Panel4.TabIndex = 6
+        '
+        'testPendingBtn
+        '
+        Me.testPendingBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.testPendingBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.testPendingBtn.FlatAppearance.BorderSize = 0
+        Me.testPendingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.testPendingBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.testPendingBtn.ForeColor = System.Drawing.Color.Black
+        Me.testPendingBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
+        Me.testPendingBtn.Location = New System.Drawing.Point(363, 4)
+        Me.testPendingBtn.Name = "testPendingBtn"
+        Me.testPendingBtn.Size = New System.Drawing.Size(106, 27)
+        Me.testPendingBtn.TabIndex = 23
+        Me.testPendingBtn.Text = "Test Pending"
+        Me.testPendingBtn.UseVisualStyleBackColor = True
+        '
+        'declineBtn
+        '
+        Me.declineBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.declineBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.declineBtn.Enabled = False
+        Me.declineBtn.FlatAppearance.BorderSize = 0
+        Me.declineBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.declineBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.declineBtn.ForeColor = System.Drawing.Color.Black
+        Me.declineBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
+        Me.declineBtn.Location = New System.Drawing.Point(634, 3)
+        Me.declineBtn.Name = "declineBtn"
+        Me.declineBtn.Size = New System.Drawing.Size(153, 38)
+        Me.declineBtn.TabIndex = 22
+        Me.declineBtn.Text = "Decline"
+        Me.declineBtn.UseVisualStyleBackColor = True
+        '
+        'testApproveBtn
+        '
+        Me.testApproveBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.testApproveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.testApproveBtn.FlatAppearance.BorderSize = 0
+        Me.testApproveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.testApproveBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.testApproveBtn.ForeColor = System.Drawing.Color.Black
+        Me.testApproveBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
+        Me.testApproveBtn.Location = New System.Drawing.Point(206, 3)
+        Me.testApproveBtn.Name = "testApproveBtn"
+        Me.testApproveBtn.Size = New System.Drawing.Size(106, 28)
+        Me.testApproveBtn.TabIndex = 21
+        Me.testApproveBtn.Text = "Test Approve"
+        Me.testApproveBtn.UseVisualStyleBackColor = True
+        '
+        'profileButton
+        '
+        Me.profileButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.profileButton.FlatAppearance.BorderSize = 0
+        Me.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.profileButton.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.profileButton.ForeColor = System.Drawing.Color.White
+        Me.profileButton.Image = Global.PRS.My.Resources.Resources.generalBtn
+        Me.profileButton.Location = New System.Drawing.Point(0, 0)
+        Me.profileButton.Name = "profileButton"
+        Me.profileButton.Size = New System.Drawing.Size(200, 45)
+        Me.profileButton.TabIndex = 1
+        Me.profileButton.Text = "My Profile"
+        Me.profileButton.UseVisualStyleBackColor = True
+        '
+        'approveBtn
+        '
+        Me.approveBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.approveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.approveBtn.Enabled = False
+        Me.approveBtn.FlatAppearance.BorderSize = 0
+        Me.approveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.approveBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.approveBtn.ForeColor = System.Drawing.Color.Black
+        Me.approveBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
+        Me.approveBtn.Location = New System.Drawing.Point(475, 3)
+        Me.approveBtn.Name = "approveBtn"
+        Me.approveBtn.Size = New System.Drawing.Size(153, 38)
+        Me.approveBtn.TabIndex = 20
+        Me.approveBtn.Text = "Approve"
+        Me.approveBtn.UseVisualStyleBackColor = True
         '
         'profileLabel
         '
@@ -161,8 +244,19 @@ Partial Class HeadOfDepartmentForm
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(0, 64)
+        Me.Panel2.Size = New System.Drawing.Size(288, 64)
         Me.Panel2.TabIndex = 1
+        '
+        'profilebackBtn
+        '
+        Me.profilebackBtn.Dock = System.Windows.Forms.DockStyle.Right
+        Me.profilebackBtn.Image = Global.PRS.My.Resources.Resources.backBtn
+        Me.profilebackBtn.Location = New System.Drawing.Point(224, 0)
+        Me.profilebackBtn.Name = "profilebackBtn"
+        Me.profilebackBtn.Size = New System.Drawing.Size(62, 62)
+        Me.profilebackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.profilebackBtn.TabIndex = 1
+        Me.profilebackBtn.TabStop = False
         '
         'profilePanel
         '
@@ -179,18 +273,8 @@ Partial Class HeadOfDepartmentForm
         Me.profilePanel.Controls.Add(Me.profilePicture)
         Me.profilePanel.Location = New System.Drawing.Point(0, 0)
         Me.profilePanel.Name = "profilePanel"
-        Me.profilePanel.Size = New System.Drawing.Size(0, 600)
+        Me.profilePanel.Size = New System.Drawing.Size(290, 600)
         Me.profilePanel.TabIndex = 11
-        '
-        'bottomBar
-        '
-        Me.bottomBar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.bottomBar.Controls.Add(Me.settingsBtn)
-        Me.bottomBar.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.bottomBar.Location = New System.Drawing.Point(0, 570)
-        Me.bottomBar.Name = "bottomBar"
-        Me.bottomBar.Size = New System.Drawing.Size(800, 30)
-        Me.bottomBar.TabIndex = 10
         '
         'logoutBtn
         '
@@ -227,17 +311,6 @@ Partial Class HeadOfDepartmentForm
         Me.homeBtn.Size = New System.Drawing.Size(290, 55)
         Me.homeBtn.TabIndex = 6
         '
-        'profilebackBtn
-        '
-        Me.profilebackBtn.Dock = System.Windows.Forms.DockStyle.Right
-        Me.profilebackBtn.Image = Global.PRS.My.Resources.Resources.backBtn
-        Me.profilebackBtn.Location = New System.Drawing.Point(-62, 0)
-        Me.profilebackBtn.Name = "profilebackBtn"
-        Me.profilebackBtn.Size = New System.Drawing.Size(62, 62)
-        Me.profilebackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.profilebackBtn.TabIndex = 1
-        Me.profilebackBtn.TabStop = False
-        '
         'profilePicture
         '
         Me.profilePicture.Image = Global.PRS.My.Resources.Resources.Logo_IT
@@ -248,76 +321,32 @@ Partial Class HeadOfDepartmentForm
         Me.profilePicture.TabIndex = 0
         Me.profilePicture.TabStop = False
         '
-        'declineBtn
+        'bottomBar
         '
-        Me.declineBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.declineBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.declineBtn.Enabled = False
-        Me.declineBtn.FlatAppearance.BorderSize = 0
-        Me.declineBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.declineBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.declineBtn.ForeColor = System.Drawing.Color.Black
-        Me.declineBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
-        Me.declineBtn.Location = New System.Drawing.Point(634, 3)
-        Me.declineBtn.Name = "declineBtn"
-        Me.declineBtn.Size = New System.Drawing.Size(153, 38)
-        Me.declineBtn.TabIndex = 22
-        Me.declineBtn.Text = "Decline"
-        Me.declineBtn.UseVisualStyleBackColor = True
+        Me.bottomBar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.bottomBar.Controls.Add(Me.settingsBtn)
+        Me.bottomBar.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.bottomBar.Location = New System.Drawing.Point(0, 570)
+        Me.bottomBar.Name = "bottomBar"
+        Me.bottomBar.Size = New System.Drawing.Size(800, 30)
+        Me.bottomBar.TabIndex = 10
         '
-        'testBtn
+        'settingsBtn
         '
-        Me.testBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.testBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.testBtn.FlatAppearance.BorderSize = 0
-        Me.testBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.testBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.testBtn.ForeColor = System.Drawing.Color.Black
-        Me.testBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
-        Me.testBtn.Location = New System.Drawing.Point(291, 3)
-        Me.testBtn.Name = "testBtn"
-        Me.testBtn.Size = New System.Drawing.Size(133, 38)
-        Me.testBtn.TabIndex = 21
-        Me.testBtn.Text = "Test"
-        Me.testBtn.UseVisualStyleBackColor = True
-        '
-        'profileButton
-        '
-        Me.profileButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.profileButton.FlatAppearance.BorderSize = 0
-        Me.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.profileButton.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.profileButton.ForeColor = System.Drawing.Color.White
-        Me.profileButton.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.profileButton.Location = New System.Drawing.Point(0, 0)
-        Me.profileButton.Name = "profileButton"
-        Me.profileButton.Size = New System.Drawing.Size(200, 45)
-        Me.profileButton.TabIndex = 1
-        Me.profileButton.Text = "My Profile"
-        Me.profileButton.UseVisualStyleBackColor = True
-        '
-        'approveBtn
-        '
-        Me.approveBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.approveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.approveBtn.Enabled = False
-        Me.approveBtn.FlatAppearance.BorderSize = 0
-        Me.approveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.approveBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.approveBtn.ForeColor = System.Drawing.Color.Black
-        Me.approveBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
-        Me.approveBtn.Location = New System.Drawing.Point(475, 3)
-        Me.approveBtn.Name = "approveBtn"
-        Me.approveBtn.Size = New System.Drawing.Size(153, 38)
-        Me.approveBtn.TabIndex = 20
-        Me.approveBtn.Text = "Approve"
-        Me.approveBtn.UseVisualStyleBackColor = True
+        Me.settingsBtn.BackColor = System.Drawing.Color.Transparent
+        Me.settingsBtn.Image = Global.PRS.My.Resources.Resources.settingsBtn
+        Me.settingsBtn.Location = New System.Drawing.Point(751, 3)
+        Me.settingsBtn.Name = "settingsBtn"
+        Me.settingsBtn.Size = New System.Drawing.Size(46, 24)
+        Me.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.settingsBtn.TabIndex = 0
+        Me.settingsBtn.TabStop = False
         '
         'Dashboard
         '
         Me.Dashboard.BackgroundImage = Global.PRS.My.Resources.Resources.Dashboard
         Me.Dashboard.Controls.Add(Me.Label3)
-        Me.Dashboard.Controls.Add(Me.Label2)
+        Me.Dashboard.Controls.Add(Me.mainLabel)
         Me.Dashboard.Controls.Add(Me.searchBtn)
         Me.Dashboard.Controls.Add(Me.searchBarLabel)
         Me.Dashboard.Controls.Add(Me.minimizeBtn)
@@ -346,16 +375,16 @@ Partial Class HeadOfDepartmentForm
         Me.Label3.TabIndex = 21
         Me.Label3.Text = "Project Repository System"
         '
-        'Label2
+        'mainLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 48)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 60)
-        Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Home"
+        Me.mainLabel.AutoSize = True
+        Me.mainLabel.BackColor = System.Drawing.Color.Transparent
+        Me.mainLabel.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mainLabel.Location = New System.Drawing.Point(24, 48)
+        Me.mainLabel.Name = "mainLabel"
+        Me.mainLabel.Size = New System.Drawing.Size(139, 60)
+        Me.mainLabel.TabIndex = 20
+        Me.mainLabel.Text = "Home"
         '
         'searchBtn
         '
@@ -428,6 +457,7 @@ Partial Class HeadOfDepartmentForm
         '
         Me.courseFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.courseFilter.FormattingEnabled = True
+        Me.courseFilter.Items.AddRange(New Object() {"Computer Science", "Information Technology", "Information Systems"})
         Me.courseFilter.Location = New System.Drawing.Point(317, 149)
         Me.courseFilter.Name = "courseFilter"
         Me.courseFilter.Size = New System.Drawing.Size(153, 21)
@@ -448,6 +478,7 @@ Partial Class HeadOfDepartmentForm
         '
         Me.dateFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.dateFilter.FormattingEnabled = True
+        Me.dateFilter.Items.AddRange(New Object() {"2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010"})
         Me.dateFilter.Location = New System.Drawing.Point(635, 149)
         Me.dateFilter.Name = "dateFilter"
         Me.dateFilter.Size = New System.Drawing.Size(153, 21)
@@ -468,21 +499,11 @@ Partial Class HeadOfDepartmentForm
         '
         Me.yearlevelFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.yearlevelFilter.FormattingEnabled = True
+        Me.yearlevelFilter.Items.AddRange(New Object() {"1st Year", "2nd Year", "3rd Year", "4th Year"})
         Me.yearlevelFilter.Location = New System.Drawing.Point(476, 149)
         Me.yearlevelFilter.Name = "yearlevelFilter"
         Me.yearlevelFilter.Size = New System.Drawing.Size(153, 21)
         Me.yearlevelFilter.TabIndex = 11
-        '
-        'settingsBtn
-        '
-        Me.settingsBtn.BackColor = System.Drawing.Color.Transparent
-        Me.settingsBtn.Image = Global.PRS.My.Resources.Resources.settingsBtn
-        Me.settingsBtn.Location = New System.Drawing.Point(751, 3)
-        Me.settingsBtn.Name = "settingsBtn"
-        Me.settingsBtn.Size = New System.Drawing.Size(46, 24)
-        Me.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.settingsBtn.TabIndex = 0
-        Me.settingsBtn.TabStop = False
         '
         'HeadOfDepartmentForm
         '
@@ -495,34 +516,35 @@ Partial Class HeadOfDepartmentForm
         Me.Controls.Add(Me.bottomBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "HeadOfDepartmentForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "HeadOfDepartmentForm"
         Me.mainPanel.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.profilebackBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.profilePanel.ResumeLayout(False)
         Me.profilePanel.PerformLayout()
-        Me.bottomBar.ResumeLayout(False)
-        CType(Me.profilebackBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.profilePicture, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.bottomBar.ResumeLayout(False)
+        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Dashboard.ResumeLayout(False)
         Me.Dashboard.PerformLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents sliderTMR As Timer
-    Friend WithEvents testBtn As Button
+    Friend WithEvents testApproveBtn As Button
     Friend WithEvents mainPanel As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents profileButton As Button
     Friend WithEvents approveBtn As Button
     Friend WithEvents Dashboard As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents mainLabel As Label
     Friend WithEvents searchBtn As Button
     Friend WithEvents searchBarLabel As Label
     Friend WithEvents minimizeBtn As PictureBox
@@ -549,4 +571,5 @@ Partial Class HeadOfDepartmentForm
     Friend WithEvents settingsBtn As PictureBox
     Friend WithEvents bottomBar As Panel
     Friend WithEvents declineBtn As Button
+    Friend WithEvents testPendingBtn As Button
 End Class

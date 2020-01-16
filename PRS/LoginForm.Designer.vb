@@ -23,21 +23,21 @@ Partial Class LoginForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.headBoardPanel = New System.Windows.Forms.Panel()
+        Me.logoPB = New System.Windows.Forms.PictureBox()
         Me.closeBtn = New System.Windows.Forms.PictureBox()
         Me.minimizeBtn = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.draggablePanel = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.userLabel = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.userTb = New System.Windows.Forms.TextBox()
+        Me.passTb = New System.Windows.Forms.TextBox()
         Me.passLabel = New System.Windows.Forms.Label()
         Me.loginBtn = New System.Windows.Forms.Button()
-        Me.logoPB = New System.Windows.Forms.PictureBox()
         Me.headBoardPanel.SuspendLayout()
+        CType(Me.logoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        CType(Me.logoPB, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.draggablePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'headBoardPanel
@@ -49,6 +49,17 @@ Partial Class LoginForm
         Me.headBoardPanel.Name = "headBoardPanel"
         Me.headBoardPanel.Size = New System.Drawing.Size(300, 175)
         Me.headBoardPanel.TabIndex = 0
+        '
+        'logoPB
+        '
+        Me.logoPB.BackColor = System.Drawing.Color.Transparent
+        Me.logoPB.Image = Global.PRS.My.Resources.Resources.logo
+        Me.logoPB.Location = New System.Drawing.Point(0, 0)
+        Me.logoPB.Name = "logoPB"
+        Me.logoPB.Size = New System.Drawing.Size(300, 175)
+        Me.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.logoPB.TabIndex = 4
+        Me.logoPB.TabStop = False
         '
         'closeBtn
         '
@@ -72,16 +83,16 @@ Partial Class LoginForm
         Me.minimizeBtn.TabIndex = 3
         Me.minimizeBtn.TabStop = False
         '
-        'Panel1
+        'draggablePanel
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel1.Controls.Add(Me.closeBtn)
-        Me.Panel1.Controls.Add(Me.minimizeBtn)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(300, 30)
-        Me.Panel1.TabIndex = 4
+        Me.draggablePanel.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.draggablePanel.Controls.Add(Me.closeBtn)
+        Me.draggablePanel.Controls.Add(Me.minimizeBtn)
+        Me.draggablePanel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.draggablePanel.Location = New System.Drawing.Point(0, 0)
+        Me.draggablePanel.Name = "draggablePanel"
+        Me.draggablePanel.Size = New System.Drawing.Size(300, 30)
+        Me.draggablePanel.TabIndex = 4
         '
         'Panel2
         '
@@ -102,19 +113,20 @@ Partial Class LoginForm
         Me.userLabel.TabIndex = 6
         Me.userLabel.Text = "Username"
         '
-        'TextBox1
+        'userTb
         '
-        Me.TextBox1.Location = New System.Drawing.Point(50, 243)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(200, 20)
-        Me.TextBox1.TabIndex = 7
+        Me.userTb.Location = New System.Drawing.Point(50, 243)
+        Me.userTb.Name = "userTb"
+        Me.userTb.Size = New System.Drawing.Size(200, 20)
+        Me.userTb.TabIndex = 7
         '
-        'TextBox2
+        'passTb
         '
-        Me.TextBox2.Location = New System.Drawing.Point(50, 298)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(200, 20)
-        Me.TextBox2.TabIndex = 8
+        Me.passTb.Location = New System.Drawing.Point(50, 298)
+        Me.passTb.Name = "passTb"
+        Me.passTb.Size = New System.Drawing.Size(200, 20)
+        Me.passTb.TabIndex = 8
+        Me.passTb.UseSystemPasswordChar = True
         '
         'passLabel
         '
@@ -139,17 +151,6 @@ Partial Class LoginForm
         Me.loginBtn.Text = "Log In"
         Me.loginBtn.UseVisualStyleBackColor = True
         '
-        'logoPB
-        '
-        Me.logoPB.BackColor = System.Drawing.Color.Transparent
-        Me.logoPB.Image = Global.PRS.My.Resources.Resources.logo
-        Me.logoPB.Location = New System.Drawing.Point(0, 0)
-        Me.logoPB.Name = "logoPB"
-        Me.logoPB.Size = New System.Drawing.Size(300, 175)
-        Me.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.logoPB.TabIndex = 4
-        Me.logoPB.TabStop = False
-        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -158,20 +159,21 @@ Partial Class LoginForm
         Me.ClientSize = New System.Drawing.Size(300, 450)
         Me.Controls.Add(Me.loginBtn)
         Me.Controls.Add(Me.passLabel)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.passTb)
+        Me.Controls.Add(Me.userTb)
         Me.Controls.Add(Me.userLabel)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.headBoardPanel)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.draggablePanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "LoginForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginForm"
         Me.headBoardPanel.ResumeLayout(False)
+        CType(Me.logoPB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.logoPB, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.draggablePanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -180,11 +182,11 @@ Partial Class LoginForm
     Friend WithEvents headBoardPanel As Panel
     Friend WithEvents closeBtn As PictureBox
     Friend WithEvents minimizeBtn As PictureBox
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents draggablePanel As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents userLabel As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents userTb As TextBox
+    Friend WithEvents passTb As TextBox
     Friend WithEvents passLabel As Label
     Friend WithEvents loginBtn As Button
     Friend WithEvents logoPB As PictureBox
