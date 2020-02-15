@@ -73,7 +73,7 @@ Partial Class InstructorForm
         '
         'sliderTMR
         '
-        Me.sliderTMR.Interval = 50
+        Me.sliderTMR.Interval = 1
         '
         'mainPanel
         '
@@ -327,7 +327,7 @@ Partial Class InstructorForm
         '
         'profilePicture
         '
-        Me.profilePicture.Image = Global.PRS.My.Resources.Resources.Solid_BG_PNG_2
+        Me.profilePicture.Image = Global.PRS.My.Resources.Resources.instructorPP
         Me.profilePicture.Location = New System.Drawing.Point(12, 70)
         Me.profilePicture.Name = "profilePicture"
         Me.profilePicture.Size = New System.Drawing.Size(101, 100)

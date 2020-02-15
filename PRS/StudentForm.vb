@@ -28,14 +28,14 @@
 
     Private Sub sliderTMR_Tick(sender As Object, e As EventArgs) Handles sliderTMR.Tick
         If isHide Then
-            profilePanel.Width = profilePanel.Width + 15
+            profilePanel.Width = profilePanel.Width + 10
             If profilePanel.Width >= 280 Then
                 sliderTMR.Stop()
                 isHide = False
                 Refresh()
             End If
         Else
-            profilePanel.Width = profilePanel.Width - 20
+            profilePanel.Width = profilePanel.Width - 25
             If profilePanel.Width <= 0 Then
                 sliderTMR.Stop()
                 isHide = True

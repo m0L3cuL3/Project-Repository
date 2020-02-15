@@ -95,4 +95,15 @@
         End If
     End Sub
 
+    Private Sub passTb_KeyDown(sender As Object, e As KeyEventArgs) Handles passTb.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            loginBtn.PerformClick()
+        End If
+    End Sub
+
+    Private Sub userTb_KeyDown(sender As Object, e As KeyEventArgs) Handles userTb.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            loginBtn.PerformClick()
+        End If
+    End Sub
 End Class

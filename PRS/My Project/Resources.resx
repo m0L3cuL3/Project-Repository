@@ -121,11 +121,11 @@
   <data name="homeBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\homeBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\backBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\logoutBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="studentPP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\studentPP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="myProjectsBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\myProjectsBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,17 +136,29 @@
   <data name="minimizeBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\minimizeBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="studentsBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\studentsBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Wizard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wizard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo-IT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo-IT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CS1-WHITE-TRNSPRNT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CS1-WHITE-TRNSPRNT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeAdminBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\closeAdminBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="generalBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\generalBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="myProjectsBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\myProjectsBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="restoreBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\restoreBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="homeBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\homeBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,23 +169,32 @@
   <data name="closeBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\closeBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="neutralBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\neutralBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="settingsBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\settingsBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pendingProjectsBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pendingProjectsBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoutBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\logoutBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="instructorPP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\instructorPP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downloadBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\downloadBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loginHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\loginHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="archiveBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\archiveBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Solid-BG-PNG-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Solid-BG-PNG-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="downloadBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\downloadBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="studentsBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\studentsBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoutBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\logoutBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,23 +202,26 @@
   <data name="minimizeBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\minimizeBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="neutralBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\neutralBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\backBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pendingProjectsBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\pendingProjectsBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HoDPP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\HoDPP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="downloadBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\downloadBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CS1-WHITE-TRNSPRNT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CS1-WHITE-TRNSPRNT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settingsBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\settingsBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minimizeAdminBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\minimizeAdminBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="archiveBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\archiveBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="closeBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\closeBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +232,8 @@
   <data name="neutralBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\neutralBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="closeAdminBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\closeAdminBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="restoreBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\restoreBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\logoGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,19 +247,40 @@
   <data name="backBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\backBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Logo-IT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo-IT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="generalBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\generalBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="archiveBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\archiveBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="archivedFilesBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\archivedFilesBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="archiveBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\archiveBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="archivedFilesBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\archivedFilesBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="restoreBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\restoreBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hodBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\hodBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="restoreBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\restoreBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hodBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\hodBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="instructorsBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\instructorsBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="instructorsBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\instructorsBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="studentsBtn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\studentsBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="studentsBtnHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\studentsBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uploadedFilesBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\uploadedFilesBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uploadedFilesBtnHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\uploadedFilesBtnHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

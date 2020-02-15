@@ -92,12 +92,22 @@ PRS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PRS.My.Resources.Resources.HoDPP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PRS.My.Resources.Resources.homeBtn">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:PRS.My.Resources.Resources.homeBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.instructorPP">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -213,6 +223,21 @@ PRS
 </summary>
 </member>
 <member name="P:PRS.My.Resources.Resources.Solid_BG_PNG_2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.studentPP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.studentsBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.studentsBtnHover">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

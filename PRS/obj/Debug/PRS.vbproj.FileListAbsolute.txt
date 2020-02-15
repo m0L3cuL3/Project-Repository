@@ -33,3 +33,39 @@ C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe.config
 C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe
 C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.pdb
 C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.xml
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe.config
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\PRS.pdb
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\PRS.xml
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.vbprojAssemblyReference.cache
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.AdminForm.resources
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.HeadOfDepartmentForm.resources
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.InstructorForm.resources
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.LoginForm.resources
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.myRepositories.resources
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.projectPanel.resources
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.StudentForm.resources
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.Resources.resources
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.vbproj.GenerateResource.cache
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.exe
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.xml
+C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\obj\Debug\PRS.pdb
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\bin\Debug\PRS.exe.config
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\bin\Debug\PRS.exe
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\bin\Debug\PRS.pdb
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\bin\Debug\PRS.xml
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.vbprojAssemblyReference.cache
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.AdminForm.resources
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.HeadOfDepartmentForm.resources
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.InstructorForm.resources
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.LoginForm.resources
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.myRepositories.resources
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.projectPanel.resources
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.StudentForm.resources
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.Resources.resources
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.vbproj.GenerateResource.cache
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.exe
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.xml
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.pdb
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\bin\Debug\repoDB.mdf
+C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\bin\Debug\repoDB_log.ldf
