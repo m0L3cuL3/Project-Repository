@@ -11,7 +11,7 @@ The features of this program are the following:
 - [X] File System
 - [ ] Project Approval System
 - [ ] MySQL Database
-- [ ] Memory Management for Database ***(Admin access only)***
+- [X] Memory Management for Database ***(Admin access only)***
 - [ ] Event Logging
 
 ## Written in
