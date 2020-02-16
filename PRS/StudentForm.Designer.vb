@@ -24,26 +24,26 @@ Partial Class StudentForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.bottomBar = New System.Windows.Forms.Panel()
+        Me.settingsBtn = New System.Windows.Forms.PictureBox()
         Me.profilePanel = New System.Windows.Forms.Panel()
+        Me.logoutBtn = New System.Windows.Forms.Button()
+        Me.myprojectsBtn = New System.Windows.Forms.Panel()
+        Me.homeBtn = New System.Windows.Forms.Panel()
         Me.changePasswordLabel = New System.Windows.Forms.LinkLabel()
         Me.idNumberLabel = New System.Windows.Forms.Label()
         Me.courseLabel = New System.Windows.Forms.Label()
         Me.nameLabel = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.profilebackBtn = New System.Windows.Forms.PictureBox()
         Me.profileLabel = New System.Windows.Forms.Label()
+        Me.profilePicture = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.profileButton = New System.Windows.Forms.Button()
         Me.sliderTMR = New System.Windows.Forms.Timer(Me.components)
         Me.mainPanel = New System.Windows.Forms.Panel()
-        Me.logoutBtn = New System.Windows.Forms.Button()
-        Me.myprojectsBtn = New System.Windows.Forms.Panel()
-        Me.homeBtn = New System.Windows.Forms.Panel()
-        Me.profilebackBtn = New System.Windows.Forms.PictureBox()
-        Me.profilePicture = New System.Windows.Forms.PictureBox()
-        Me.testBtn = New System.Windows.Forms.Button()
-        Me.profileButton = New System.Windows.Forms.Button()
-        Me.downloadBtn = New System.Windows.Forms.Button()
-        Me.settingsBtn = New System.Windows.Forms.PictureBox()
         Me.Dashboard = New System.Windows.Forms.Panel()
+        Me.FilterBtn = New System.Windows.Forms.Button()
+        Me.DateFilterCb = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.mainLabel = New System.Windows.Forms.Label()
         Me.searchBtn = New System.Windows.Forms.Button()
@@ -54,19 +54,22 @@ Partial Class StudentForm
         Me.datefilterLabel = New System.Windows.Forms.Label()
         Me.courseFilter = New System.Windows.Forms.ComboBox()
         Me.yearlevelfilterLabel = New System.Windows.Forms.Label()
-        Me.dateFilter = New System.Windows.Forms.ComboBox()
         Me.coursefilterLabel = New System.Windows.Forms.Label()
         Me.yearlevelFilter = New System.Windows.Forms.ComboBox()
+        Me.FileDataTableAdapter = New PRS.repoDBDataSetTableAdapters.FileDataTableAdapter()
+        Me.TableAdapterManager = New PRS.repoDBDataSetTableAdapters.TableAdapterManager()
+        Me.RepoDBDataSet = New PRS.repoDBDataSet()
         Me.bottomBar.SuspendLayout()
+        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.profilePanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         CType(Me.profilebackBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.profilePicture, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         Me.Dashboard.SuspendLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepoDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'bottomBar
@@ -78,6 +81,17 @@ Partial Class StudentForm
         Me.bottomBar.Name = "bottomBar"
         Me.bottomBar.Size = New System.Drawing.Size(800, 30)
         Me.bottomBar.TabIndex = 1
+        '
+        'settingsBtn
+        '
+        Me.settingsBtn.BackColor = System.Drawing.Color.Transparent
+        Me.settingsBtn.Image = Global.PRS.My.Resources.Resources.settingsBtn
+        Me.settingsBtn.Location = New System.Drawing.Point(751, 3)
+        Me.settingsBtn.Name = "settingsBtn"
+        Me.settingsBtn.Size = New System.Drawing.Size(46, 24)
+        Me.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.settingsBtn.TabIndex = 0
+        Me.settingsBtn.TabStop = False
         '
         'profilePanel
         '
@@ -94,99 +108,8 @@ Partial Class StudentForm
         Me.profilePanel.Controls.Add(Me.profilePicture)
         Me.profilePanel.Location = New System.Drawing.Point(0, 0)
         Me.profilePanel.Name = "profilePanel"
-        Me.profilePanel.Size = New System.Drawing.Size(290, 600)
+        Me.profilePanel.Size = New System.Drawing.Size(0, 600)
         Me.profilePanel.TabIndex = 2
-        '
-        'changePasswordLabel
-        '
-        Me.changePasswordLabel.AutoSize = True
-        Me.changePasswordLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.changePasswordLabel.LinkColor = System.Drawing.Color.SteelBlue
-        Me.changePasswordLabel.Location = New System.Drawing.Point(119, 143)
-        Me.changePasswordLabel.Name = "changePasswordLabel"
-        Me.changePasswordLabel.Size = New System.Drawing.Size(113, 17)
-        Me.changePasswordLabel.TabIndex = 5
-        Me.changePasswordLabel.TabStop = True
-        Me.changePasswordLabel.Text = "Change Password"
-        '
-        'idNumberLabel
-        '
-        Me.idNumberLabel.AutoSize = True
-        Me.idNumberLabel.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.idNumberLabel.Location = New System.Drawing.Point(119, 78)
-        Me.idNumberLabel.Name = "idNumberLabel"
-        Me.idNumberLabel.Size = New System.Drawing.Size(131, 23)
-        Me.idNumberLabel.TabIndex = 4
-        Me.idNumberLabel.Text = "20180014272"
-        '
-        'courseLabel
-        '
-        Me.courseLabel.AutoSize = True
-        Me.courseLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.courseLabel.Location = New System.Drawing.Point(119, 118)
-        Me.courseLabel.Name = "courseLabel"
-        Me.courseLabel.Size = New System.Drawing.Size(43, 16)
-        Me.courseLabel.TabIndex = 3
-        Me.courseLabel.Text = "BSIT-2"
-        '
-        'nameLabel
-        '
-        Me.nameLabel.AutoSize = True
-        Me.nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nameLabel.Location = New System.Drawing.Point(119, 102)
-        Me.nameLabel.Name = "nameLabel"
-        Me.nameLabel.Size = New System.Drawing.Size(155, 16)
-        Me.nameLabel.TabIndex = 2
-        Me.nameLabel.Text = "Gecel Bonn G. Rodriguez"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.profilebackBtn)
-        Me.Panel2.Controls.Add(Me.profileLabel)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(288, 64)
-        Me.Panel2.TabIndex = 1
-        '
-        'profileLabel
-        '
-        Me.profileLabel.AutoSize = True
-        Me.profileLabel.BackColor = System.Drawing.Color.Transparent
-        Me.profileLabel.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.profileLabel.ForeColor = System.Drawing.Color.White
-        Me.profileLabel.Location = New System.Drawing.Point(10, 18)
-        Me.profileLabel.Name = "profileLabel"
-        Me.profileLabel.Size = New System.Drawing.Size(68, 23)
-        Me.profileLabel.TabIndex = 0
-        Me.profileLabel.Text = "Profile"
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.testBtn)
-        Me.Panel4.Controls.Add(Me.profileButton)
-        Me.Panel4.Controls.Add(Me.downloadBtn)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(0, 523)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(800, 47)
-        Me.Panel4.TabIndex = 6
-        '
-        'sliderTMR
-        '
-        Me.sliderTMR.Interval = 1
-        '
-        'mainPanel
-        '
-        Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mainPanel.Location = New System.Drawing.Point(0, 182)
-        Me.mainPanel.Name = "mainPanel"
-        Me.mainPanel.Size = New System.Drawing.Size(800, 341)
-        Me.mainPanel.TabIndex = 8
         '
         'logoutBtn
         '
@@ -223,16 +146,82 @@ Partial Class StudentForm
         Me.homeBtn.Size = New System.Drawing.Size(290, 55)
         Me.homeBtn.TabIndex = 6
         '
+        'changePasswordLabel
+        '
+        Me.changePasswordLabel.AutoSize = True
+        Me.changePasswordLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.changePasswordLabel.LinkColor = System.Drawing.Color.SteelBlue
+        Me.changePasswordLabel.Location = New System.Drawing.Point(119, 143)
+        Me.changePasswordLabel.Name = "changePasswordLabel"
+        Me.changePasswordLabel.Size = New System.Drawing.Size(113, 17)
+        Me.changePasswordLabel.TabIndex = 5
+        Me.changePasswordLabel.TabStop = True
+        Me.changePasswordLabel.Text = "Change Password"
+        '
+        'idNumberLabel
+        '
+        Me.idNumberLabel.AutoSize = True
+        Me.idNumberLabel.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.idNumberLabel.Location = New System.Drawing.Point(119, 78)
+        Me.idNumberLabel.Name = "idNumberLabel"
+        Me.idNumberLabel.Size = New System.Drawing.Size(65, 23)
+        Me.idNumberLabel.TabIndex = 4
+        Me.idNumberLabel.Text = "userid"
+        '
+        'courseLabel
+        '
+        Me.courseLabel.AutoSize = True
+        Me.courseLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.courseLabel.Location = New System.Drawing.Point(119, 118)
+        Me.courseLabel.Name = "courseLabel"
+        Me.courseLabel.Size = New System.Drawing.Size(81, 16)
+        Me.courseLabel.TabIndex = 3
+        Me.courseLabel.Text = "course/year"
+        '
+        'nameLabel
+        '
+        Me.nameLabel.AutoSize = True
+        Me.nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nameLabel.Location = New System.Drawing.Point(119, 102)
+        Me.nameLabel.Name = "nameLabel"
+        Me.nameLabel.Size = New System.Drawing.Size(66, 16)
+        Me.nameLabel.TabIndex = 2
+        Me.nameLabel.Text = "username"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.profilebackBtn)
+        Me.Panel2.Controls.Add(Me.profileLabel)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(0, 64)
+        Me.Panel2.TabIndex = 1
+        '
         'profilebackBtn
         '
         Me.profilebackBtn.Dock = System.Windows.Forms.DockStyle.Right
         Me.profilebackBtn.Image = Global.PRS.My.Resources.Resources.backBtn
-        Me.profilebackBtn.Location = New System.Drawing.Point(224, 0)
+        Me.profilebackBtn.Location = New System.Drawing.Point(-62, 0)
         Me.profilebackBtn.Name = "profilebackBtn"
         Me.profilebackBtn.Size = New System.Drawing.Size(62, 62)
         Me.profilebackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.profilebackBtn.TabIndex = 1
         Me.profilebackBtn.TabStop = False
+        '
+        'profileLabel
+        '
+        Me.profileLabel.AutoSize = True
+        Me.profileLabel.BackColor = System.Drawing.Color.Transparent
+        Me.profileLabel.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.profileLabel.ForeColor = System.Drawing.Color.White
+        Me.profileLabel.Location = New System.Drawing.Point(10, 18)
+        Me.profileLabel.Name = "profileLabel"
+        Me.profileLabel.Size = New System.Drawing.Size(68, 23)
+        Me.profileLabel.TabIndex = 0
+        Me.profileLabel.Text = "Profile"
         '
         'profilePicture
         '
@@ -244,24 +233,20 @@ Partial Class StudentForm
         Me.profilePicture.TabIndex = 0
         Me.profilePicture.TabStop = False
         '
-        'testBtn
+        'Panel4
         '
-        Me.testBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.testBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.testBtn.FlatAppearance.BorderSize = 0
-        Me.testBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.testBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.testBtn.ForeColor = System.Drawing.Color.Black
-        Me.testBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
-        Me.testBtn.Location = New System.Drawing.Point(291, 3)
-        Me.testBtn.Name = "testBtn"
-        Me.testBtn.Size = New System.Drawing.Size(217, 38)
-        Me.testBtn.TabIndex = 21
-        Me.testBtn.Text = "Test"
-        Me.testBtn.UseVisualStyleBackColor = True
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.profileButton)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(0, 523)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(800, 47)
+        Me.Panel4.TabIndex = 6
         '
         'profileButton
         '
+        Me.profileButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.profileButton.Dock = System.Windows.Forms.DockStyle.Left
         Me.profileButton.FlatAppearance.BorderSize = 0
         Me.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -275,37 +260,23 @@ Partial Class StudentForm
         Me.profileButton.Text = "My Profile"
         Me.profileButton.UseVisualStyleBackColor = True
         '
-        'downloadBtn
+        'sliderTMR
         '
-        Me.downloadBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.downloadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.downloadBtn.Enabled = False
-        Me.downloadBtn.FlatAppearance.BorderSize = 0
-        Me.downloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.downloadBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.downloadBtn.ForeColor = System.Drawing.Color.Black
-        Me.downloadBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
-        Me.downloadBtn.Location = New System.Drawing.Point(615, 4)
-        Me.downloadBtn.Name = "downloadBtn"
-        Me.downloadBtn.Size = New System.Drawing.Size(173, 38)
-        Me.downloadBtn.TabIndex = 20
-        Me.downloadBtn.Text = "Download"
-        Me.downloadBtn.UseVisualStyleBackColor = True
+        Me.sliderTMR.Interval = 1
         '
-        'settingsBtn
+        'mainPanel
         '
-        Me.settingsBtn.BackColor = System.Drawing.Color.Transparent
-        Me.settingsBtn.Image = Global.PRS.My.Resources.Resources.settingsBtn
-        Me.settingsBtn.Location = New System.Drawing.Point(751, 3)
-        Me.settingsBtn.Name = "settingsBtn"
-        Me.settingsBtn.Size = New System.Drawing.Size(46, 24)
-        Me.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.settingsBtn.TabIndex = 0
-        Me.settingsBtn.TabStop = False
+        Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.mainPanel.Location = New System.Drawing.Point(0, 182)
+        Me.mainPanel.Name = "mainPanel"
+        Me.mainPanel.Size = New System.Drawing.Size(800, 341)
+        Me.mainPanel.TabIndex = 8
         '
         'Dashboard
         '
         Me.Dashboard.BackgroundImage = Global.PRS.My.Resources.Resources.Dashboard
+        Me.Dashboard.Controls.Add(Me.FilterBtn)
+        Me.Dashboard.Controls.Add(Me.DateFilterCb)
         Me.Dashboard.Controls.Add(Me.Label3)
         Me.Dashboard.Controls.Add(Me.mainLabel)
         Me.Dashboard.Controls.Add(Me.searchBtn)
@@ -316,7 +287,6 @@ Partial Class StudentForm
         Me.Dashboard.Controls.Add(Me.datefilterLabel)
         Me.Dashboard.Controls.Add(Me.courseFilter)
         Me.Dashboard.Controls.Add(Me.yearlevelfilterLabel)
-        Me.Dashboard.Controls.Add(Me.dateFilter)
         Me.Dashboard.Controls.Add(Me.coursefilterLabel)
         Me.Dashboard.Controls.Add(Me.yearlevelFilter)
         Me.Dashboard.Dock = System.Windows.Forms.DockStyle.Top
@@ -324,6 +294,37 @@ Partial Class StudentForm
         Me.Dashboard.Name = "Dashboard"
         Me.Dashboard.Size = New System.Drawing.Size(800, 182)
         Me.Dashboard.TabIndex = 0
+        '
+        'FilterBtn
+        '
+        Me.FilterBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.FilterBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.FilterBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FilterBtn.FlatAppearance.BorderSize = 0
+        Me.FilterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.FilterBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FilterBtn.ForeColor = System.Drawing.Color.White
+        Me.FilterBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
+        Me.FilterBtn.Location = New System.Drawing.Point(274, 148)
+        Me.FilterBtn.Name = "FilterBtn"
+        Me.FilterBtn.Size = New System.Drawing.Size(520, 24)
+        Me.FilterBtn.TabIndex = 23
+        Me.FilterBtn.Text = "Filter"
+        Me.FilterBtn.UseVisualStyleBackColor = True
+        '
+        'DateFilterCb
+        '
+        Me.DateFilterCb.CalendarFont = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateFilterCb.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DateFilterCb.CustomFormat = "MM/dd/yyyy"
+        Me.DateFilterCb.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DateFilterCb.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.DateFilterCb.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateFilterCb.Location = New System.Drawing.Point(592, 122)
+        Me.DateFilterCb.Name = "DateFilterCb"
+        Me.DateFilterCb.Size = New System.Drawing.Size(202, 23)
+        Me.DateFilterCb.TabIndex = 22
+        Me.DateFilterCb.Value = New Date(2020, 2, 16, 0, 0, 0, 0)
         '
         'Label3
         '
@@ -341,6 +342,7 @@ Partial Class StudentForm
         Me.mainLabel.AutoSize = True
         Me.mainLabel.BackColor = System.Drawing.Color.Transparent
         Me.mainLabel.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mainLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.mainLabel.Location = New System.Drawing.Point(24, 48)
         Me.mainLabel.Name = "mainLabel"
         Me.mainLabel.Size = New System.Drawing.Size(139, 60)
@@ -351,6 +353,7 @@ Partial Class StudentForm
         '
         Me.searchBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
         Me.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.searchBtn.FlatAppearance.BorderSize = 0
         Me.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.searchBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -370,9 +373,9 @@ Partial Class StudentForm
         Me.searchBarLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchBarLabel.Location = New System.Drawing.Point(12, 130)
         Me.searchBarLabel.Name = "searchBarLabel"
-        Me.searchBarLabel.Size = New System.Drawing.Size(51, 17)
+        Me.searchBarLabel.Size = New System.Drawing.Size(246, 17)
         Me.searchBarLabel.TabIndex = 17
-        Me.searchBarLabel.Text = "Search"
+        Me.searchBarLabel.Text = "Search (For Student Repositories only)"
         '
         'minimizeBtn
         '
@@ -408,7 +411,7 @@ Partial Class StudentForm
         Me.datefilterLabel.AutoSize = True
         Me.datefilterLabel.BackColor = System.Drawing.Color.Transparent
         Me.datefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datefilterLabel.Location = New System.Drawing.Point(632, 130)
+        Me.datefilterLabel.Location = New System.Drawing.Point(589, 104)
         Me.datefilterLabel.Name = "datefilterLabel"
         Me.datefilterLabel.Size = New System.Drawing.Size(40, 17)
         Me.datefilterLabel.TabIndex = 15
@@ -416,10 +419,11 @@ Partial Class StudentForm
         '
         'courseFilter
         '
+        Me.courseFilter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.courseFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.courseFilter.FormattingEnabled = True
-        Me.courseFilter.Items.AddRange(New Object() {"Computer Science", "Information Technology", "Information Systems"})
-        Me.courseFilter.Location = New System.Drawing.Point(317, 149)
+        Me.courseFilter.Items.AddRange(New Object() {"BSCS", "BSIT", "BSIS", "Instructor"})
+        Me.courseFilter.Location = New System.Drawing.Point(274, 123)
         Me.courseFilter.Name = "courseFilter"
         Me.courseFilter.Size = New System.Drawing.Size(153, 21)
         Me.courseFilter.TabIndex = 12
@@ -429,42 +433,51 @@ Partial Class StudentForm
         Me.yearlevelfilterLabel.AutoSize = True
         Me.yearlevelfilterLabel.BackColor = System.Drawing.Color.Transparent
         Me.yearlevelfilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.yearlevelfilterLabel.Location = New System.Drawing.Point(473, 129)
+        Me.yearlevelfilterLabel.Location = New System.Drawing.Point(430, 103)
         Me.yearlevelfilterLabel.Name = "yearlevelfilterLabel"
         Me.yearlevelfilterLabel.Size = New System.Drawing.Size(73, 17)
         Me.yearlevelfilterLabel.TabIndex = 14
         Me.yearlevelfilterLabel.Text = "Year Level"
-        '
-        'dateFilter
-        '
-        Me.dateFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dateFilter.FormattingEnabled = True
-        Me.dateFilter.Items.AddRange(New Object() {"2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010"})
-        Me.dateFilter.Location = New System.Drawing.Point(635, 149)
-        Me.dateFilter.Name = "dateFilter"
-        Me.dateFilter.Size = New System.Drawing.Size(153, 21)
-        Me.dateFilter.TabIndex = 10
         '
         'coursefilterLabel
         '
         Me.coursefilterLabel.AutoSize = True
         Me.coursefilterLabel.BackColor = System.Drawing.Color.Transparent
         Me.coursefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.coursefilterLabel.Location = New System.Drawing.Point(317, 130)
+        Me.coursefilterLabel.Location = New System.Drawing.Point(274, 104)
         Me.coursefilterLabel.Name = "coursefilterLabel"
-        Me.coursefilterLabel.Size = New System.Drawing.Size(53, 17)
+        Me.coursefilterLabel.Size = New System.Drawing.Size(83, 17)
         Me.coursefilterLabel.TabIndex = 13
-        Me.coursefilterLabel.Text = "Course"
+        Me.coursefilterLabel.Text = "Course/Title"
         '
         'yearlevelFilter
         '
+        Me.yearlevelFilter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.yearlevelFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.yearlevelFilter.FormattingEnabled = True
-        Me.yearlevelFilter.Items.AddRange(New Object() {"1st Year", "2nd Year", "3rd Year", "4th Year"})
-        Me.yearlevelFilter.Location = New System.Drawing.Point(476, 149)
+        Me.yearlevelFilter.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.yearlevelFilter.Location = New System.Drawing.Point(433, 123)
         Me.yearlevelFilter.Name = "yearlevelFilter"
         Me.yearlevelFilter.Size = New System.Drawing.Size(153, 21)
         Me.yearlevelFilter.TabIndex = 11
+        '
+        'FileDataTableAdapter
+        '
+        Me.FileDataTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.FileDataTableAdapter = Me.FileDataTableAdapter
+        Me.TableAdapterManager.HeadDataTableAdapter = Nothing
+        Me.TableAdapterManager.InstructorDataTableAdapter = Nothing
+        Me.TableAdapterManager.StudentDataTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = PRS.repoDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'RepoDBDataSet
+        '
+        Me.RepoDBDataSet.DataSetName = "repoDBDataSet"
+        Me.RepoDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'StudentForm
         '
@@ -482,18 +495,19 @@ Partial Class StudentForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.bottomBar.ResumeLayout(False)
+        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.profilePanel.ResumeLayout(False)
         Me.profilePanel.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
         CType(Me.profilebackBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.profilePicture, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
         Me.Dashboard.ResumeLayout(False)
         Me.Dashboard.PerformLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepoDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -507,7 +521,6 @@ Partial Class StudentForm
     Friend WithEvents datefilterLabel As Label
     Friend WithEvents courseFilter As ComboBox
     Friend WithEvents yearlevelfilterLabel As Label
-    Friend WithEvents dateFilter As ComboBox
     Friend WithEvents coursefilterLabel As Label
     Friend WithEvents yearlevelFilter As ComboBox
     Friend WithEvents settingsBtn As PictureBox
@@ -526,10 +539,13 @@ Partial Class StudentForm
     Friend WithEvents logoutBtn As Button
     Friend WithEvents profileButton As Button
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents downloadBtn As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents mainLabel As Label
     Friend WithEvents sliderTMR As Timer
     Friend WithEvents mainPanel As Panel
-    Friend WithEvents testBtn As Button
+    Friend WithEvents FileDataTableAdapter As repoDBDataSetTableAdapters.FileDataTableAdapter
+    Friend WithEvents TableAdapterManager As repoDBDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents RepoDBDataSet As repoDBDataSet
+    Friend WithEvents DateFilterCb As DateTimePicker
+    Friend WithEvents FilterBtn As Button
 End Class

@@ -72,6 +72,8 @@
     'show form on login'
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
 
+
+
         If userTb.Text = "" And passTb.Text = "" Then
             MessageBox.Show("Please enter Username and Password.")
         ElseIf userTb.Text = "" Then
@@ -81,10 +83,18 @@
         ElseIf userTb.Text = admin And passTb.Text = adminPass Then
             AdminForm.Show()
             Me.Hide()
-        ElseIf userTb.Text = student And passTb.Text = studentPass Then
+        ElseIf Me.StudentDataTableAdapter.CheckStudent(userTb.Text, passTb.Text) = 1 Then
+
+            'for user verification
+            SetUserID(Me.StudentDataTableAdapter.SelectStudentID(userTb.Text, passTb.Text)) 'sets user id
+            SetUsername(Me.StudentDataTableAdapter.SelectStudentName(userTb.Text, passTb.Text)) 'sets user name
+            SetStudentProgram(Me.StudentDataTableAdapter.SelectStudentCourse(userTb.Text, passTb.Text), Me.StudentDataTableAdapter.SelectStudentLevel(userTb.Text, passTb.Text)) 'sets course and year
             StudentForm.Show()
             Me.Hide()
-        ElseIf userTb.Text = instructor And passTb.Text = instructorPass Then
+        ElseIf Me.InstructorDataTableAdapter.CheckInstructor(userTb.Text, passTb.Text) Then
+            SetUserID(Me.InstructorDataTableAdapter.SelectInstructorID(userTb.Text, passTb.Text)) 'sets user id
+            SetUsername(Me.InstructorDataTableAdapter.SelectInstructorName(userTb.Text, passTb.Text)) 'sets user name
+            SetTitle(Me.InstructorDataTableAdapter.SelectInstructorTitle(userTb.Text, passTb.Text)) 'sets title
             InstructorForm.Show()
             Me.Hide()
         ElseIf userTb.Text = headOfDepartment And passTb.Text = headOfDepartmentPass Then
@@ -105,5 +115,10 @@
         If e.KeyCode = Keys.Enter Then
             loginBtn.PerformClick()
         End If
+    End Sub
+
+    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'RepoDBDataSet.StudentData' table. You can move, or remove it, as needed.
+        'Me.StudentDataTableAdapter.Fill(Me.RepoDBDataSet.StudentData)
     End Sub
 End Class

@@ -1,4 +1,6 @@
-﻿Public Class StudentForm
+﻿Imports System.Data.SqlClient
+
+Public Class StudentForm
     Dim draggable As Boolean
     Dim mouseX As Integer
     Dim mouseY As Integer
@@ -8,6 +10,7 @@
     'Dynamic Components'
     Dim flowPanel As New FlowLayoutPanel
     Dim repo As New myRepositories
+    'Dim list As New LinkedList(Of Control)
 
     'executes code on form load'
     Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -15,6 +18,11 @@
         isHide = False
         profilePanel.Width = 0
         LoadLayoutProject()
+        ListUserProject()
+
+        idNumberLabel.Text = GetUserID()
+        nameLabel.Text = GetUsername()
+        courseLabel.Text = GetStudentProgram()
 
     End Sub
 
@@ -98,15 +106,6 @@
         searchBtn.Image = My.Resources.neutralBtn
     End Sub
 
-    Private Sub downloadBtn_MouseEnter(sender As Object, e As EventArgs) Handles downloadBtn.MouseEnter
-        downloadBtn.Image = My.Resources.generalBtnHover
-        downloadBtn.ForeColor = Color.White
-    End Sub
-
-    Private Sub downloadBtn_MouseLeave(sender As Object, e As EventArgs) Handles downloadBtn.MouseLeave
-        downloadBtn.Image = My.Resources.neutralBtn
-    End Sub
-
     Private Sub homeBtn_MouseEnter(sender As Object, e As EventArgs) Handles homeBtn.MouseEnter
         homeBtn.BackgroundImage = My.Resources.homeBtnHover
     End Sub
@@ -153,14 +152,10 @@
         LoginForm.Show()
     End Sub
 
-    'for testing purposes only'
-    Private Sub testBtn_Click(sender As Object, e As EventArgs) Handles testBtn.Click
-        AddProject()
-    End Sub
-
     'home button'
     Private Sub homeBtn_Click(sender As Object, e As EventArgs) Handles homeBtn.Click
         mainLabel.Text = "Home"
+        ListUserProject()
         ShowLayout()
     End Sub
 
@@ -168,6 +163,25 @@
     Private Sub myprojectsBtn_Click(sender As Object, e As EventArgs) Handles myprojectsBtn.Click
         mainLabel.Text = "My Repositories"
         DisplayRepository()
+    End Sub
+
+    'logout button'
+    Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
+        Close()
+        LoginForm.Show()
+    End Sub
+
+    'filter button
+    Private Sub FilterBtn_Click_1(sender As Object, e As EventArgs) Handles FilterBtn.Click
+        Filter()
+    End Sub
+
+    'search button
+    Private Sub searchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
+        If searchBar.Text = "" Then
+            MsgBox("Please enter repository name")
+        End If
+        SearchRepository(searchBar.Text)
     End Sub
 
     'creates flow layout panel for adding components'
@@ -188,15 +202,37 @@
     End Sub
 
     'adds project panel to flow layout
-    Public Sub AddProject()
+    Public Sub ListUserProject()
+
+        flowPanel.Controls.Clear()
+
+        Dim conn As New SqlConnection
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+        conn.Open()
+
+        Dim cmd As New SqlCommand
+        cmd.Connection = conn
+        cmd.CommandText = "SELECT * FROM [Table] WHERE isApproved = 'approved'"
+
+        Dim dr As SqlDataReader
+        dr = cmd.ExecuteReader
+
         'removal of other component when in use'
         mainPanel.Controls.Remove(repo)
 
         LoadLayoutProject()
 
-        Dim pp As New projectPanel
-        pp.PictureBox1.Image = My.Resources.checkMark
-        flowPanel.Controls.Add(pp)
+        While dr.Read()
+            Dim pp As New projectPanel
+            pp.cloneBtn.Enabled = True
+            pp.cloneBtn.Visible = True
+            pp.PictureBox1.Image = My.Resources.checkMark
+            pp.guidLabel.Text = dr.Item("file_id").ToString
+            pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+            pp.projectTitle.Text = dr.Item("file_name")
+            flowPanel.Controls.Add(pp)
+        End While
+
     End Sub
 
     Public Sub DisplayRepository()
@@ -208,8 +244,113 @@
         mainPanel.Controls.Add(repo)
     End Sub
 
-    Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
-        Close()
-        LoginForm.Show()
+    'filter system
+    Public Sub Filter()
+        Dim dateFilter As DateTime = DateFilterCb.Value
+
+        flowPanel.Controls.Clear()
+        If courseFilter.SelectedItem = "Instructor" Then
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table] INNER JOIN dbo.[InstructorData] ON dbo.[Table].file_uploader = dbo.[InstructorData].instructor_id WHERE file_update = @date AND isApproved = 'approved'"
+                cmd.Parameters.AddWithValue("@date", DateFilterCb.Value)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                'removal of other component when in use'
+                mainPanel.Controls.Remove(repo)
+
+                LoadLayoutProject()
+
+                While dr.Read()
+                    Dim pp As New projectPanel
+                    pp.cloneBtn.Enabled = True
+                    pp.cloneBtn.Visible = True
+                    pp.PictureBox1.Image = My.Resources.checkMark
+                    pp.guidLabel.Text = dr.Item("file_id").ToString
+                    pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+                    pp.projectTitle.Text = dr.Item("file_name")
+                    flowPanel.Controls.Add(pp)
+                End While
+            Catch ex As Exception
+                MsgBox("Something went wrong.")
+            End Try
+        Else
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table] INNER JOIN dbo.[StudentData] ON dbo.[Table].file_uploader = dbo.[StudentData].student_id WHERE student_level = @year AND student_course = @course AND file_update = @date AND isApproved = 'approved'"
+                cmd.Parameters.AddWithValue("@year", yearlevelFilter.SelectedItem)
+                cmd.Parameters.AddWithValue("@course", courseFilter.SelectedItem)
+                cmd.Parameters.AddWithValue("@date", DateFilterCb.Value)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                'removal of other component when in use'
+                mainPanel.Controls.Remove(repo)
+
+                LoadLayoutProject()
+
+                While dr.Read()
+                    Dim pp As New projectPanel
+                    pp.cloneBtn.Enabled = True
+                    pp.cloneBtn.Visible = True
+                    pp.PictureBox1.Image = My.Resources.checkMark
+                    pp.guidLabel.Text = dr.Item("file_id").ToString
+                    pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+                    pp.projectTitle.Text = dr.Item("file_name")
+                    flowPanel.Controls.Add(pp)
+                End While
+            Catch ex As Exception
+                MsgBox("Something went wrong.")
+            End Try
+        End If
+    End Sub
+
+    Public Sub SearchRepository(repoName As String)
+        flowPanel.Controls.Clear()
+
+        Try
+            Dim conn As New SqlConnection
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.Open()
+
+            Dim cmd As New SqlCommand
+            cmd.Connection = conn
+            cmd.CommandText = "SELECT * FROM [Table] INNER JOIN dbo.[StudentData] ON dbo.[Table].file_uploader = dbo.[StudentData].student_id WHERE file_name = @filename AND isApproved = 'approved'"
+            cmd.Parameters.AddWithValue("@filename", repoName)
+
+            Dim dr As SqlDataReader
+            dr = cmd.ExecuteReader
+
+            'removal of other component when in use'
+            mainPanel.Controls.Remove(repo)
+
+            LoadLayoutProject()
+
+            While dr.Read()
+                Dim pp As New projectPanel
+                pp.cloneBtn.Enabled = True
+                pp.cloneBtn.Visible = True
+                pp.PictureBox1.Image = My.Resources.checkMark
+                pp.guidLabel.Text = dr.Item("file_id").ToString
+                pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+                pp.projectTitle.Text = dr.Item("file_name")
+                flowPanel.Controls.Add(pp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
     End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LoginForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class LoginForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.headBoardPanel = New System.Windows.Forms.Panel()
         Me.logoPB = New System.Windows.Forms.PictureBox()
         Me.closeBtn = New System.Windows.Forms.PictureBox()
@@ -33,11 +34,19 @@ Partial Class LoginForm
         Me.passTb = New System.Windows.Forms.TextBox()
         Me.passLabel = New System.Windows.Forms.Label()
         Me.loginBtn = New System.Windows.Forms.Button()
+        Me.RepoDBDataSet = New PRS.repoDBDataSet()
+        Me.StudentDataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StudentDataTableAdapter = New PRS.repoDBDataSetTableAdapters.StudentDataTableAdapter()
+        Me.TableAdapterManager = New PRS.repoDBDataSetTableAdapters.TableAdapterManager()
+        Me.FileDataTableAdapter = New PRS.repoDBDataSetTableAdapters.FileDataTableAdapter()
+        Me.InstructorDataTableAdapter = New PRS.repoDBDataSetTableAdapters.InstructorDataTableAdapter()
         Me.headBoardPanel.SuspendLayout()
         CType(Me.logoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.draggablePanel.SuspendLayout()
+        CType(Me.RepoDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StudentDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'headBoardPanel
@@ -47,7 +56,7 @@ Partial Class LoginForm
         Me.headBoardPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.headBoardPanel.Location = New System.Drawing.Point(0, 30)
         Me.headBoardPanel.Name = "headBoardPanel"
-        Me.headBoardPanel.Size = New System.Drawing.Size(300, 175)
+        Me.headBoardPanel.Size = New System.Drawing.Size(301, 175)
         Me.headBoardPanel.TabIndex = 0
         '
         'logoPB
@@ -91,16 +100,16 @@ Partial Class LoginForm
         Me.draggablePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.draggablePanel.Location = New System.Drawing.Point(0, 0)
         Me.draggablePanel.Name = "draggablePanel"
-        Me.draggablePanel.Size = New System.Drawing.Size(300, 30)
+        Me.draggablePanel.Size = New System.Drawing.Size(301, 30)
         Me.draggablePanel.TabIndex = 4
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 419)
+        Me.Panel2.Location = New System.Drawing.Point(0, 466)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(300, 31)
+        Me.Panel2.Size = New System.Drawing.Size(301, 31)
         Me.Panel2.TabIndex = 5
         '
         'userLabel
@@ -151,12 +160,43 @@ Partial Class LoginForm
         Me.loginBtn.Text = "Log In"
         Me.loginBtn.UseVisualStyleBackColor = True
         '
+        'RepoDBDataSet
+        '
+        Me.RepoDBDataSet.DataSetName = "repoDBDataSet"
+        Me.RepoDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'StudentDataBindingSource
+        '
+        Me.StudentDataBindingSource.DataMember = "StudentData"
+        Me.StudentDataBindingSource.DataSource = Me.RepoDBDataSet
+        '
+        'StudentDataTableAdapter
+        '
+        Me.StudentDataTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.FileDataTableAdapter = Nothing
+        Me.TableAdapterManager.HeadDataTableAdapter = Nothing
+        Me.TableAdapterManager.InstructorDataTableAdapter = Nothing
+        Me.TableAdapterManager.StudentDataTableAdapter = Me.StudentDataTableAdapter
+        Me.TableAdapterManager.UpdateOrder = PRS.repoDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'FileDataTableAdapter
+        '
+        Me.FileDataTableAdapter.ClearBeforeFill = True
+        '
+        'InstructorDataTableAdapter
+        '
+        Me.InstructorDataTableAdapter.ClearBeforeFill = True
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(300, 450)
+        Me.ClientSize = New System.Drawing.Size(301, 497)
         Me.Controls.Add(Me.loginBtn)
         Me.Controls.Add(Me.passLabel)
         Me.Controls.Add(Me.passTb)
@@ -174,6 +214,8 @@ Partial Class LoginForm
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.draggablePanel.ResumeLayout(False)
+        CType(Me.RepoDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StudentDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -190,4 +232,10 @@ Partial Class LoginForm
     Friend WithEvents passLabel As Label
     Friend WithEvents loginBtn As Button
     Friend WithEvents logoPB As PictureBox
+    Friend WithEvents RepoDBDataSet As repoDBDataSet
+    Friend WithEvents StudentDataBindingSource As BindingSource
+    Friend WithEvents StudentDataTableAdapter As repoDBDataSetTableAdapters.StudentDataTableAdapter
+    Friend WithEvents TableAdapterManager As repoDBDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents FileDataTableAdapter As repoDBDataSetTableAdapters.FileDataTableAdapter
+    Friend WithEvents InstructorDataTableAdapter As repoDBDataSetTableAdapters.InstructorDataTableAdapter
 End Class

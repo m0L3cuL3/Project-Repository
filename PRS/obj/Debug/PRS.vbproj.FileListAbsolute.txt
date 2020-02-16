@@ -69,3 +69,5 @@ C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-
 C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\obj\Debug\PRS.pdb
 C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\bin\Debug\repoDB.mdf
 C:\Users\Ceon Rodriguez\Desktop\SCHOOL STUFF\2Y\2ND SEM\CC15 D\Midterms\Project-Repository\PRS\bin\Debug\repoDB_log.ldf
+C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\repoDB.mdf
+C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\repoDB_log.ldf

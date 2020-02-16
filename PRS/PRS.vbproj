@@ -96,6 +96,7 @@
     <Compile Include="AdminForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DataHandler.vb" />
     <Compile Include="HeadOfDepartmentForm.Designer.vb">
       <DependentUpon>HeadOfDepartmentForm.vb</DependentUpon>
     </Compile>
@@ -125,6 +126,11 @@
     </Compile>
     <Compile Include="projectPanel.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="repoDBDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>repoDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="StudentForm.vb">
       <SubType>Form</SubType>
@@ -188,7 +194,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\closeBtn.png" />
@@ -215,6 +223,17 @@
     <None Include="Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="repoDBDataSet.xsc">
+      <DependentUpon>repoDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="repoDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>repoDBDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="repoDBDataSet.xss">
+      <DependentUpon>repoDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Wizard.png" />
   </ItemGroup>
   <ItemGroup>

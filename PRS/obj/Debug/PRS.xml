@@ -32,6 +32,16 @@ PRS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PRS.My.Resources.Resources.archivedFilesBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.archivedFilesBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PRS.My.Resources.Resources.backBtn">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -92,6 +102,16 @@ PRS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PRS.My.Resources.Resources.hodBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.hodBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PRS.My.Resources.Resources.HoDPP">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -108,6 +128,16 @@ PRS
 </summary>
 </member>
 <member name="P:PRS.My.Resources.Resources.instructorPP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.instructorsBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.instructorsBtnHover">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -237,7 +267,27 @@ PRS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PRS.My.Resources.Resources.studentsBtn1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PRS.My.Resources.Resources.studentsBtnHover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.studentsBtnHover1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.uploadedFilesBtn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PRS.My.Resources.Resources.uploadedFilesBtnHover">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -245,6 +295,131 @@ PRS
 <member name="P:PRS.My.Resources.Resources.Wizard">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.HeadDataDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.InstructorDataDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.StudentDataDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.FileDataDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.HeadDataRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.InstructorDataRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.StudentDataRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.FileDataRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.HeadDataRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.InstructorDataRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.StudentDataRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSet.FileDataRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSetTableAdapters.HeadDataTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSetTableAdapters.InstructorDataTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSetTableAdapters.StudentDataTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSetTableAdapters.FileDataTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:PRS.repoDBDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(PRS.repoDBDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:PRS.repoDBDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(PRS.repoDBDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:PRS.repoDBDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(PRS.repoDBDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:PRS.repoDBDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:PRS.repoDBDataSetTableAdapters.TableAdapterManager.UpdateAll(PRS.repoDBDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:PRS.repoDBDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
 </summary>
 </member>
 </members>
