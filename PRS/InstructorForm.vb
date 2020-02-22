@@ -159,16 +159,19 @@ Public Class InstructorForm
     'home button'
     Private Sub homeBtn_Click(sender As Object, e As EventArgs) Handles homeBtn.Click
         LoadApprovedProject()
+        ShowFilterComponent()
     End Sub
 
     'my repositories button'
     Private Sub myprojectsBtn_Click(sender As Object, e As EventArgs) Handles myprojectsBtn.Click
         DisplayRepository()
+        HideFilterComponent()
     End Sub
 
     'pending projects button'
     Private Sub pendingProjectsBtn_Click(sender As Object, e As EventArgs) Handles pendingProjectsBtn.Click
         LoadPendingProject()
+        HideFilterComponent()
     End Sub
 
     'logout button'
@@ -396,5 +399,27 @@ Public Class InstructorForm
         Catch ex As Exception
             MsgBox(ex)
         End Try
+    End Sub
+
+    'hides the global filter components
+    Private Sub HideFilterComponent()
+        coursefilterLabel.Visible = False
+        yearlevelfilterLabel.Visible = False
+        datefilterLabel.Visible = False
+        DateFilterCb.Visible = False
+        yearlevelFilter.Visible = False
+        courseFilter.Visible = False
+        FilterBtn.Visible = False
+    End Sub
+
+    'shows the global filter components
+    Private Sub ShowFilterComponent()
+        coursefilterLabel.Visible = True
+        yearlevelfilterLabel.Visible = True
+        datefilterLabel.Visible = True
+        DateFilterCb.Visible = True
+        yearlevelFilter.Visible = True
+        courseFilter.Visible = True
+        FilterBtn.Visible = True
     End Sub
 End Class

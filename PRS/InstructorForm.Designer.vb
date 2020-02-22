@@ -331,7 +331,7 @@ Partial Class InstructorForm
         Me.DateFilterCb.Name = "DateFilterCb"
         Me.DateFilterCb.Size = New System.Drawing.Size(202, 23)
         Me.DateFilterCb.TabIndex = 29
-        Me.DateFilterCb.Value = New Date(2020, 2, 16, 0, 0, 0, 0)
+        Me.DateFilterCb.Value = New Date(2020, 2, 22, 0, 0, 0, 0)
         '
         'datefilterLabel
         '
