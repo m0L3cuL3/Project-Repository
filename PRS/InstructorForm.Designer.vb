@@ -433,9 +433,9 @@ Partial Class InstructorForm
         Me.searchBarLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchBarLabel.Location = New System.Drawing.Point(9, 130)
         Me.searchBarLabel.Name = "searchBarLabel"
-        Me.searchBarLabel.Size = New System.Drawing.Size(246, 17)
+        Me.searchBarLabel.Size = New System.Drawing.Size(51, 17)
         Me.searchBarLabel.TabIndex = 17
-        Me.searchBarLabel.Text = "Search (For Student Repositories only)"
+        Me.searchBarLabel.Text = "Search"
         '
         'minimizeBtn
         '

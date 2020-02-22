@@ -22,32 +22,119 @@ Partial Class AdminForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim Student_idLabel As System.Windows.Forms.Label
+        Dim Student_nameLabel As System.Windows.Forms.Label
+        Dim Student_levelLabel As System.Windows.Forms.Label
+        Dim Student_courseLabel As System.Windows.Forms.Label
+        Me.Student_passLabel = New System.Windows.Forms.Label()
         Me.topBarPanel = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.filterPanel = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.filterLabel = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.fileDataBtn = New System.Windows.Forms.Panel()
-        Me.studentBtn = New System.Windows.Forms.Panel()
-        Me.instructorBtn = New System.Windows.Forms.Panel()
-        Me.hodBtn = New System.Windows.Forms.Panel()
-        Me.searchBtn = New System.Windows.Forms.Button()
         Me.minimizeBtn = New System.Windows.Forms.PictureBox()
         Me.closeBtn = New System.Windows.Forms.PictureBox()
+        Me.FileDataTableAdapter = New PRS.repoDBDataSetTableAdapters.FileDataTableAdapter()
+        Me.HeadDataTableAdapter = New PRS.repoDBDataSetTableAdapters.HeadDataTableAdapter()
+        Me.InstructorDataTableAdapter = New PRS.repoDBDataSetTableAdapters.InstructorDataTableAdapter()
+        Me.StudentDataTableAdapter = New PRS.repoDBDataSetTableAdapters.StudentDataTableAdapter()
+        Me.DNBTabControl = New PRS.DotNetBarTabcontrol()
+        Me.HomeTab = New System.Windows.Forms.TabPage()
+        Me.StudentTab = New System.Windows.Forms.TabPage()
+        Me.StudentSubTabControl = New PRS.DotNetBarTabcontrol()
+        Me.StudentDataTab = New System.Windows.Forms.TabPage()
+        Me.StudentDataManager = New System.Windows.Forms.GroupBox()
+        Me.Student_passTextBox = New System.Windows.Forms.TextBox()
+        Me.StudentDataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RepoDBDataSet = New PRS.repoDBDataSet()
+        Me.SqlComboBox = New System.Windows.Forms.ComboBox()
+        Me.executeStudentBtn = New System.Windows.Forms.Button()
+        Me.Student_courseTextBox = New System.Windows.Forms.TextBox()
+        Me.Student_levelTextBox = New System.Windows.Forms.TextBox()
+        Me.Student_nameTextBox = New System.Windows.Forms.TextBox()
+        Me.Student_idTextBox = New System.Windows.Forms.TextBox()
+        Me.StudentView = New System.Windows.Forms.ListView()
+        Me.StudentIDHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.StudentNameHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.StudentLevelHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.StudentCourseHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.InstructorTab = New System.Windows.Forms.TabPage()
+        Me.HeadTab = New System.Windows.Forms.TabPage()
+        Me.TableAdapterManager = New PRS.repoDBDataSetTableAdapters.TableAdapterManager()
+        Me.DatabaseGroup = New System.Windows.Forms.GroupBox()
+        Me.SqlVersionLabel = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Student_idLabel = New System.Windows.Forms.Label()
+        Student_nameLabel = New System.Windows.Forms.Label()
+        Student_levelLabel = New System.Windows.Forms.Label()
+        Student_courseLabel = New System.Windows.Forms.Label()
         Me.topBarPanel.SuspendLayout()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel1.SuspendLayout()
-        Me.SplitContainer1.Panel2.SuspendLayout()
-        Me.SplitContainer1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.filterPanel.SuspendLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DNBTabControl.SuspendLayout()
+        Me.HomeTab.SuspendLayout()
+        Me.StudentTab.SuspendLayout()
+        Me.StudentSubTabControl.SuspendLayout()
+        Me.StudentDataTab.SuspendLayout()
+        Me.StudentDataManager.SuspendLayout()
+        CType(Me.StudentDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepoDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DatabaseGroup.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Student_idLabel
+        '
+        Student_idLabel.AutoSize = True
+        Student_idLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_idLabel.Location = New System.Drawing.Point(12, 22)
+        Student_idLabel.Name = "Student_idLabel"
+        Student_idLabel.Size = New System.Drawing.Size(68, 16)
+        Student_idLabel.TabIndex = 0
+        Student_idLabel.Text = "Student ID:"
+        '
+        'Student_nameLabel
+        '
+        Student_nameLabel.AutoSize = True
+        Student_nameLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_nameLabel.Location = New System.Drawing.Point(12, 48)
+        Student_nameLabel.Name = "Student_nameLabel"
+        Student_nameLabel.Size = New System.Drawing.Size(90, 16)
+        Student_nameLabel.TabIndex = 2
+        Student_nameLabel.Text = "Student Name:"
+        '
+        'Student_levelLabel
+        '
+        Student_levelLabel.AutoSize = True
+        Student_levelLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_levelLabel.Location = New System.Drawing.Point(12, 74)
+        Student_levelLabel.Name = "Student_levelLabel"
+        Student_levelLabel.Size = New System.Drawing.Size(86, 16)
+        Student_levelLabel.TabIndex = 4
+        Student_levelLabel.Text = "Student Level:"
+        '
+        'Student_courseLabel
+        '
+        Student_courseLabel.AutoSize = True
+        Student_courseLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_courseLabel.Location = New System.Drawing.Point(12, 100)
+        Student_courseLabel.Name = "Student_courseLabel"
+        Student_courseLabel.Size = New System.Drawing.Size(94, 16)
+        Student_courseLabel.TabIndex = 6
+        Student_courseLabel.Text = "Student Course:"
+        '
+        'Student_passLabel
+        '
+        Me.Student_passLabel.AutoSize = True
+        Me.Student_passLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Me.Student_passLabel.Location = New System.Drawing.Point(332, 78)
+        Me.Student_passLabel.Name = "Student_passLabel"
+        Me.Student_passLabel.Size = New System.Drawing.Size(108, 16)
+        Me.Student_passLabel.TabIndex = 35
+        Me.Student_passLabel.Text = "Student Password:"
         '
         'topBarPanel
         '
@@ -72,142 +159,6 @@ Partial Class AdminForm
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Admin Form"
         '
-        'SplitContainer1
-        '
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 29)
-        Me.SplitContainer1.Name = "SplitContainer1"
-        '
-        'SplitContainer1.Panel1
-        '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Panel1)
-        '
-        'SplitContainer1.Panel2
-        '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Panel2)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.filterPanel)
-        Me.SplitContainer1.Size = New System.Drawing.Size(842, 438)
-        Me.SplitContainer1.SplitterDistance = 295
-        Me.SplitContainer1.TabIndex = 8
-        '
-        'Panel1
-        '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.fileDataBtn)
-        Me.Panel1.Controls.Add(Me.studentBtn)
-        Me.Panel1.Controls.Add(Me.instructorBtn)
-        Me.Panel1.Controls.Add(Me.hodBtn)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(295, 438)
-        Me.Panel1.TabIndex = 0
-        '
-        'Panel2
-        '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 53)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(543, 385)
-        Me.Panel2.TabIndex = 1
-        '
-        'filterPanel
-        '
-        Me.filterPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.filterPanel.Controls.Add(Me.searchBtn)
-        Me.filterPanel.Controls.Add(Me.TextBox1)
-        Me.filterPanel.Controls.Add(Me.filterLabel)
-        Me.filterPanel.Controls.Add(Me.ComboBox2)
-        Me.filterPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.filterPanel.Location = New System.Drawing.Point(0, 0)
-        Me.filterPanel.Name = "filterPanel"
-        Me.filterPanel.Size = New System.Drawing.Size(543, 53)
-        Me.filterPanel.TabIndex = 0
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(189, 26)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(256, 20)
-        Me.TextBox1.TabIndex = 16
-        '
-        'filterLabel
-        '
-        Me.filterLabel.AutoSize = True
-        Me.filterLabel.BackColor = System.Drawing.Color.Transparent
-        Me.filterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.filterLabel.ForeColor = System.Drawing.Color.White
-        Me.filterLabel.Location = New System.Drawing.Point(3, 6)
-        Me.filterLabel.Name = "filterLabel"
-        Me.filterLabel.Size = New System.Drawing.Size(37, 17)
-        Me.filterLabel.TabIndex = 15
-        Me.filterLabel.Text = "Filter"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(6, 25)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(178, 21)
-        Me.ComboBox2.TabIndex = 1
-        '
-        'fileDataBtn
-        '
-        Me.fileDataBtn.BackgroundImage = Global.PRS.My.Resources.Resources.pendingProjectsBtn
-        Me.fileDataBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.fileDataBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fileDataBtn.Location = New System.Drawing.Point(0, 256)
-        Me.fileDataBtn.Name = "fileDataBtn"
-        Me.fileDataBtn.Size = New System.Drawing.Size(290, 55)
-        Me.fileDataBtn.TabIndex = 16
-        '
-        'studentBtn
-        '
-        Me.studentBtn.BackgroundImage = Global.PRS.My.Resources.Resources.studentsBtn
-        Me.studentBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.studentBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.studentBtn.Location = New System.Drawing.Point(0, 91)
-        Me.studentBtn.Name = "studentBtn"
-        Me.studentBtn.Size = New System.Drawing.Size(290, 55)
-        Me.studentBtn.TabIndex = 13
-        '
-        'instructorBtn
-        '
-        Me.instructorBtn.BackgroundImage = Global.PRS.My.Resources.Resources.myProjectsBtn
-        Me.instructorBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.instructorBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.instructorBtn.Location = New System.Drawing.Point(0, 146)
-        Me.instructorBtn.Name = "instructorBtn"
-        Me.instructorBtn.Size = New System.Drawing.Size(290, 55)
-        Me.instructorBtn.TabIndex = 14
-        '
-        'hodBtn
-        '
-        Me.hodBtn.BackgroundImage = Global.PRS.My.Resources.Resources.pendingProjectsBtn
-        Me.hodBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.hodBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.hodBtn.Location = New System.Drawing.Point(0, 201)
-        Me.hodBtn.Name = "hodBtn"
-        Me.hodBtn.Size = New System.Drawing.Size(290, 55)
-        Me.hodBtn.TabIndex = 15
-        '
-        'searchBtn
-        '
-        Me.searchBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.searchBtn.FlatAppearance.BorderSize = 0
-        Me.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.searchBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchBtn.ForeColor = System.Drawing.Color.Black
-        Me.searchBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
-        Me.searchBtn.Location = New System.Drawing.Point(451, 25)
-        Me.searchBtn.Name = "searchBtn"
-        Me.searchBtn.Size = New System.Drawing.Size(86, 22)
-        Me.searchBtn.TabIndex = 20
-        Me.searchBtn.Text = "Enter"
-        Me.searchBtn.UseVisualStyleBackColor = True
-        '
         'minimizeBtn
         '
         Me.minimizeBtn.BackColor = System.Drawing.Color.Transparent
@@ -230,28 +181,365 @@ Partial Class AdminForm
         Me.closeBtn.TabIndex = 2
         Me.closeBtn.TabStop = False
         '
+        'FileDataTableAdapter
+        '
+        Me.FileDataTableAdapter.ClearBeforeFill = True
+        '
+        'HeadDataTableAdapter
+        '
+        Me.HeadDataTableAdapter.ClearBeforeFill = True
+        '
+        'InstructorDataTableAdapter
+        '
+        Me.InstructorDataTableAdapter.ClearBeforeFill = True
+        '
+        'StudentDataTableAdapter
+        '
+        Me.StudentDataTableAdapter.ClearBeforeFill = True
+        '
+        'DNBTabControl
+        '
+        Me.DNBTabControl.Alignment = System.Windows.Forms.TabAlignment.Left
+        Me.DNBTabControl.Controls.Add(Me.HomeTab)
+        Me.DNBTabControl.Controls.Add(Me.StudentTab)
+        Me.DNBTabControl.Controls.Add(Me.InstructorTab)
+        Me.DNBTabControl.Controls.Add(Me.HeadTab)
+        Me.DNBTabControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DNBTabControl.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Me.DNBTabControl.HotTrack = True
+        Me.DNBTabControl.ItemSize = New System.Drawing.Size(44, 136)
+        Me.DNBTabControl.Location = New System.Drawing.Point(0, 29)
+        Me.DNBTabControl.Multiline = True
+        Me.DNBTabControl.Name = "DNBTabControl"
+        Me.DNBTabControl.SelectedIndex = 0
+        Me.DNBTabControl.Size = New System.Drawing.Size(842, 438)
+        Me.DNBTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.DNBTabControl.TabIndex = 8
+        '
+        'HomeTab
+        '
+        Me.HomeTab.BackColor = System.Drawing.Color.White
+        Me.HomeTab.Controls.Add(Me.GroupBox1)
+        Me.HomeTab.Controls.Add(Me.DatabaseGroup)
+        Me.HomeTab.Location = New System.Drawing.Point(140, 4)
+        Me.HomeTab.Name = "HomeTab"
+        Me.HomeTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.HomeTab.Size = New System.Drawing.Size(698, 430)
+        Me.HomeTab.TabIndex = 0
+        Me.HomeTab.Text = "Home"
+        '
+        'StudentTab
+        '
+        Me.StudentTab.BackColor = System.Drawing.Color.White
+        Me.StudentTab.Controls.Add(Me.StudentSubTabControl)
+        Me.StudentTab.Location = New System.Drawing.Point(140, 4)
+        Me.StudentTab.Name = "StudentTab"
+        Me.StudentTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.StudentTab.Size = New System.Drawing.Size(698, 430)
+        Me.StudentTab.TabIndex = 1
+        Me.StudentTab.Text = "Student"
+        '
+        'StudentSubTabControl
+        '
+        Me.StudentSubTabControl.Alignment = System.Windows.Forms.TabAlignment.Left
+        Me.StudentSubTabControl.Controls.Add(Me.StudentDataTab)
+        Me.StudentSubTabControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.StudentSubTabControl.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Me.StudentSubTabControl.ItemSize = New System.Drawing.Size(44, 136)
+        Me.StudentSubTabControl.Location = New System.Drawing.Point(3, 3)
+        Me.StudentSubTabControl.Multiline = True
+        Me.StudentSubTabControl.Name = "StudentSubTabControl"
+        Me.StudentSubTabControl.SelectedIndex = 0
+        Me.StudentSubTabControl.Size = New System.Drawing.Size(692, 424)
+        Me.StudentSubTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.StudentSubTabControl.TabIndex = 2
+        '
+        'StudentDataTab
+        '
+        Me.StudentDataTab.AutoScroll = True
+        Me.StudentDataTab.BackColor = System.Drawing.Color.White
+        Me.StudentDataTab.Controls.Add(Me.StudentDataManager)
+        Me.StudentDataTab.Controls.Add(Me.StudentView)
+        Me.StudentDataTab.Location = New System.Drawing.Point(140, 4)
+        Me.StudentDataTab.Name = "StudentDataTab"
+        Me.StudentDataTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.StudentDataTab.Size = New System.Drawing.Size(548, 416)
+        Me.StudentDataTab.TabIndex = 0
+        Me.StudentDataTab.Text = "Student Data"
+        '
+        'StudentDataManager
+        '
+        Me.StudentDataManager.Controls.Add(Me.Student_passLabel)
+        Me.StudentDataManager.Controls.Add(Me.Student_passTextBox)
+        Me.StudentDataManager.Controls.Add(Me.SqlComboBox)
+        Me.StudentDataManager.Controls.Add(Me.executeStudentBtn)
+        Me.StudentDataManager.Controls.Add(Student_courseLabel)
+        Me.StudentDataManager.Controls.Add(Me.Student_courseTextBox)
+        Me.StudentDataManager.Controls.Add(Student_levelLabel)
+        Me.StudentDataManager.Controls.Add(Me.Student_levelTextBox)
+        Me.StudentDataManager.Controls.Add(Student_nameLabel)
+        Me.StudentDataManager.Controls.Add(Me.Student_nameTextBox)
+        Me.StudentDataManager.Controls.Add(Student_idLabel)
+        Me.StudentDataManager.Controls.Add(Me.Student_idTextBox)
+        Me.StudentDataManager.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Me.StudentDataManager.Location = New System.Drawing.Point(6, 271)
+        Me.StudentDataManager.Name = "StudentDataManager"
+        Me.StudentDataManager.Size = New System.Drawing.Size(539, 125)
+        Me.StudentDataManager.TabIndex = 2
+        Me.StudentDataManager.TabStop = False
+        Me.StudentDataManager.Text = "Student Data Manager"
+        '
+        'Student_passTextBox
+        '
+        Me.Student_passTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_pass", True))
+        Me.Student_passTextBox.Location = New System.Drawing.Point(335, 97)
+        Me.Student_passTextBox.Name = "Student_passTextBox"
+        Me.Student_passTextBox.Size = New System.Drawing.Size(155, 21)
+        Me.Student_passTextBox.TabIndex = 36
+        '
+        'StudentDataBindingSource
+        '
+        Me.StudentDataBindingSource.DataMember = "StudentData"
+        Me.StudentDataBindingSource.DataSource = Me.RepoDBDataSet
+        '
+        'RepoDBDataSet
+        '
+        Me.RepoDBDataSet.DataSetName = "repoDBDataSet"
+        Me.RepoDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SqlComboBox
+        '
+        Me.SqlComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.SqlComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.SqlComboBox.FormattingEnabled = True
+        Me.SqlComboBox.Items.AddRange(New Object() {"SHOW ALL DATA", "SELECT (By ID)", "INSERT", "UPDATE", "DELETE (By ID)"})
+        Me.SqlComboBox.Location = New System.Drawing.Point(335, 19)
+        Me.SqlComboBox.Name = "SqlComboBox"
+        Me.SqlComboBox.Size = New System.Drawing.Size(155, 24)
+        Me.SqlComboBox.TabIndex = 35
+        '
+        'executeStudentBtn
+        '
+        Me.executeStudentBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.executeStudentBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.executeStudentBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.executeStudentBtn.FlatAppearance.BorderSize = 0
+        Me.executeStudentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.executeStudentBtn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.executeStudentBtn.ForeColor = System.Drawing.Color.White
+        Me.executeStudentBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
+        Me.executeStudentBtn.Location = New System.Drawing.Point(335, 46)
+        Me.executeStudentBtn.Name = "executeStudentBtn"
+        Me.executeStudentBtn.Size = New System.Drawing.Size(155, 20)
+        Me.executeStudentBtn.TabIndex = 34
+        Me.executeStudentBtn.Text = "Execute Query"
+        Me.executeStudentBtn.UseVisualStyleBackColor = True
+        '
+        'Student_courseTextBox
+        '
+        Me.Student_courseTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_course", True))
+        Me.Student_courseTextBox.Location = New System.Drawing.Point(111, 97)
+        Me.Student_courseTextBox.Name = "Student_courseTextBox"
+        Me.Student_courseTextBox.Size = New System.Drawing.Size(159, 21)
+        Me.Student_courseTextBox.TabIndex = 7
+        '
+        'Student_levelTextBox
+        '
+        Me.Student_levelTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_level", True))
+        Me.Student_levelTextBox.Location = New System.Drawing.Point(111, 71)
+        Me.Student_levelTextBox.Name = "Student_levelTextBox"
+        Me.Student_levelTextBox.Size = New System.Drawing.Size(159, 21)
+        Me.Student_levelTextBox.TabIndex = 5
+        '
+        'Student_nameTextBox
+        '
+        Me.Student_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_name", True))
+        Me.Student_nameTextBox.Location = New System.Drawing.Point(111, 45)
+        Me.Student_nameTextBox.Name = "Student_nameTextBox"
+        Me.Student_nameTextBox.Size = New System.Drawing.Size(159, 21)
+        Me.Student_nameTextBox.TabIndex = 3
+        '
+        'Student_idTextBox
+        '
+        Me.Student_idTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_id", True))
+        Me.Student_idTextBox.Location = New System.Drawing.Point(111, 19)
+        Me.Student_idTextBox.Name = "Student_idTextBox"
+        Me.Student_idTextBox.Size = New System.Drawing.Size(159, 21)
+        Me.Student_idTextBox.TabIndex = 1
+        '
+        'StudentView
+        '
+        Me.StudentView.BackColor = System.Drawing.Color.Silver
+        Me.StudentView.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.StudentView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.StudentIDHeader, Me.StudentNameHeader, Me.StudentLevelHeader, Me.StudentCourseHeader})
+        Me.StudentView.Dock = System.Windows.Forms.DockStyle.Top
+        Me.StudentView.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Me.StudentView.ForeColor = System.Drawing.Color.Black
+        Me.StudentView.FullRowSelect = True
+        Me.StudentView.GridLines = True
+        Me.StudentView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.StudentView.Location = New System.Drawing.Point(3, 3)
+        Me.StudentView.Name = "StudentView"
+        Me.StudentView.Size = New System.Drawing.Size(542, 262)
+        Me.StudentView.TabIndex = 1
+        Me.StudentView.UseCompatibleStateImageBehavior = False
+        Me.StudentView.View = System.Windows.Forms.View.Details
+        '
+        'StudentIDHeader
+        '
+        Me.StudentIDHeader.Text = "Student ID"
+        Me.StudentIDHeader.Width = 137
+        '
+        'StudentNameHeader
+        '
+        Me.StudentNameHeader.Text = "Student Name"
+        Me.StudentNameHeader.Width = 275
+        '
+        'StudentLevelHeader
+        '
+        Me.StudentLevelHeader.Text = "Year"
+        Me.StudentLevelHeader.Width = 47
+        '
+        'StudentCourseHeader
+        '
+        Me.StudentCourseHeader.Text = "Course"
+        Me.StudentCourseHeader.Width = 83
+        '
+        'InstructorTab
+        '
+        Me.InstructorTab.BackColor = System.Drawing.Color.White
+        Me.InstructorTab.Location = New System.Drawing.Point(140, 4)
+        Me.InstructorTab.Name = "InstructorTab"
+        Me.InstructorTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.InstructorTab.Size = New System.Drawing.Size(698, 430)
+        Me.InstructorTab.TabIndex = 2
+        Me.InstructorTab.Text = "Instructor"
+        '
+        'HeadTab
+        '
+        Me.HeadTab.BackColor = System.Drawing.Color.White
+        Me.HeadTab.Location = New System.Drawing.Point(140, 4)
+        Me.HeadTab.Name = "HeadTab"
+        Me.HeadTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.HeadTab.Size = New System.Drawing.Size(698, 430)
+        Me.HeadTab.TabIndex = 3
+        Me.HeadTab.Text = "Head of Department"
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.FileDataTableAdapter = Nothing
+        Me.TableAdapterManager.HeadDataTableAdapter = Nothing
+        Me.TableAdapterManager.InstructorDataTableAdapter = Nothing
+        Me.TableAdapterManager.StudentDataTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = PRS.repoDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'DatabaseGroup
+        '
+        Me.DatabaseGroup.Controls.Add(Me.SqlVersionLabel)
+        Me.DatabaseGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DatabaseGroup.Location = New System.Drawing.Point(6, 6)
+        Me.DatabaseGroup.Name = "DatabaseGroup"
+        Me.DatabaseGroup.Size = New System.Drawing.Size(384, 106)
+        Me.DatabaseGroup.TabIndex = 0
+        Me.DatabaseGroup.TabStop = False
+        Me.DatabaseGroup.Text = "MSSQL Server Version"
+        '
+        'SqlVersionLabel
+        '
+        Me.SqlVersionLabel.AutoSize = True
+        Me.SqlVersionLabel.Location = New System.Drawing.Point(14, 27)
+        Me.SqlVersionLabel.Name = "SqlVersionLabel"
+        Me.SqlVersionLabel.Size = New System.Drawing.Size(73, 16)
+        Me.SqlVersionLabel.TabIndex = 0
+        Me.SqlVersionLabel.Text = "mssqlVersion"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox1.Location = New System.Drawing.Point(396, 6)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(294, 106)
+        Me.GroupBox1.TabIndex = 1
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Network Monitor"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.DarkGreen
+        Me.Label2.Location = New System.Drawing.Point(6, 19)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(57, 16)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "received"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 40)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(60, 16)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "delivered"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(6, 62)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(63, 16)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "discarded"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 84)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(65, 16)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "forwarded"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 5
+        '
         'AdminForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(842, 467)
-        Me.Controls.Add(Me.SplitContainer1)
+        Me.Controls.Add(Me.DNBTabControl)
         Me.Controls.Add(Me.topBarPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AdminForm"
         Me.Text = "AdminForm"
         Me.topBarPanel.ResumeLayout(False)
         Me.topBarPanel.PerformLayout()
-        Me.SplitContainer1.Panel1.ResumeLayout(False)
-        Me.SplitContainer1.Panel2.ResumeLayout(False)
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer1.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.filterPanel.ResumeLayout(False)
-        Me.filterPanel.PerformLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DNBTabControl.ResumeLayout(False)
+        Me.HomeTab.ResumeLayout(False)
+        Me.StudentTab.ResumeLayout(False)
+        Me.StudentSubTabControl.ResumeLayout(False)
+        Me.StudentDataTab.ResumeLayout(False)
+        Me.StudentDataManager.ResumeLayout(False)
+        Me.StudentDataManager.PerformLayout()
+        CType(Me.StudentDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepoDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DatabaseGroup.ResumeLayout(False)
+        Me.DatabaseGroup.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -260,16 +548,53 @@ Partial Class AdminForm
     Friend WithEvents minimizeBtn As PictureBox
     Friend WithEvents closeBtn As PictureBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents fileDataBtn As Panel
-    Friend WithEvents studentBtn As Panel
-    Friend WithEvents instructorBtn As Panel
-    Friend WithEvents hodBtn As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents filterPanel As Panel
-    Friend WithEvents searchBtn As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents filterLabel As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents DNBTabControl As DotNetBarTabcontrol
+    Friend WithEvents HomeTab As TabPage
+    Friend WithEvents StudentTab As TabPage
+    Friend WithEvents InstructorTab As TabPage
+    Friend WithEvents HeadTab As TabPage
+    Friend WithEvents TableAdapterManager As repoDBDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents FileDataTableAdapter As repoDBDataSetTableAdapters.FileDataTableAdapter
+    Friend WithEvents HeadDataTableAdapter As repoDBDataSetTableAdapters.HeadDataTableAdapter
+    Friend WithEvents InstructorDataTableAdapter As repoDBDataSetTableAdapters.InstructorDataTableAdapter
+    Friend WithEvents StudentDataTableAdapter As repoDBDataSetTableAdapters.StudentDataTableAdapter
+    Friend WithEvents StudentView As ListView
+    Friend WithEvents StudentIDHeader As ColumnHeader
+    Friend WithEvents StudentNameHeader As ColumnHeader
+    Friend WithEvents StudentLevelHeader As ColumnHeader
+    Friend WithEvents StudentCourseHeader As ColumnHeader
+    Friend WithEvents RepoDBDataSet As repoDBDataSet
+    Friend WithEvents StudentDataBindingSource As BindingSource
+    Friend WithEvents StudentDataBindingNavigator As BindingNavigator
+    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
+    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
+    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
+    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
+    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
+    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
+    Friend WithEvents StudentDataBindingNavigatorSaveItem As ToolStripButton
+    Friend WithEvents StudentSubTabControl As DotNetBarTabcontrol
+    Friend WithEvents StudentDataTab As TabPage
+    Friend WithEvents StudentDataManager As GroupBox
+    Friend WithEvents Student_idTextBox As TextBox
+    Friend WithEvents Student_nameTextBox As TextBox
+    Friend WithEvents Student_levelTextBox As TextBox
+    Friend WithEvents Student_courseTextBox As TextBox
+    Friend WithEvents SqlComboBox As ComboBox
+    Friend WithEvents executeStudentBtn As Button
+    Friend WithEvents Student_passTextBox As TextBox
+    Friend WithEvents Student_passLabel As Label
+    Friend WithEvents DatabaseGroup As GroupBox
+    Friend WithEvents SqlVersionLabel As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Timer1 As Timer
 End Class

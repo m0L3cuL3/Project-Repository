@@ -42,12 +42,7 @@ Partial Class HeadOfDepartmentForm
         Me.bottomBar = New System.Windows.Forms.Panel()
         Me.settingsBtn = New System.Windows.Forms.PictureBox()
         Me.Dashboard = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.mainLabel = New System.Windows.Forms.Label()
-        Me.searchBtn = New System.Windows.Forms.Button()
-        Me.minimizeBtn = New System.Windows.Forms.PictureBox()
-        Me.searchBar = New System.Windows.Forms.TextBox()
-        Me.closeBtn = New System.Windows.Forms.PictureBox()
+        Me.searchBarLabel = New System.Windows.Forms.Label()
         Me.FilterBtn = New System.Windows.Forms.Button()
         Me.DateFilterCb = New System.Windows.Forms.DateTimePicker()
         Me.datefilterLabel = New System.Windows.Forms.Label()
@@ -55,7 +50,12 @@ Partial Class HeadOfDepartmentForm
         Me.yearlevelfilterLabel = New System.Windows.Forms.Label()
         Me.coursefilterLabel = New System.Windows.Forms.Label()
         Me.yearlevelFilter = New System.Windows.Forms.ComboBox()
-        Me.searchBarLabel = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.mainLabel = New System.Windows.Forms.Label()
+        Me.searchBtn = New System.Windows.Forms.Button()
+        Me.minimizeBtn = New System.Windows.Forms.PictureBox()
+        Me.searchBar = New System.Windows.Forms.TextBox()
+        Me.closeBtn = New System.Windows.Forms.PictureBox()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.profilebackBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -290,6 +290,103 @@ Partial Class HeadOfDepartmentForm
         Me.Dashboard.Size = New System.Drawing.Size(800, 182)
         Me.Dashboard.TabIndex = 9
         '
+        'searchBarLabel
+        '
+        Me.searchBarLabel.AutoSize = True
+        Me.searchBarLabel.BackColor = System.Drawing.Color.Transparent
+        Me.searchBarLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchBarLabel.Location = New System.Drawing.Point(9, 130)
+        Me.searchBarLabel.Name = "searchBarLabel"
+        Me.searchBarLabel.Size = New System.Drawing.Size(51, 17)
+        Me.searchBarLabel.TabIndex = 38
+        Me.searchBarLabel.Text = "Search"
+        '
+        'FilterBtn
+        '
+        Me.FilterBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.FilterBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.FilterBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FilterBtn.FlatAppearance.BorderSize = 0
+        Me.FilterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.FilterBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FilterBtn.ForeColor = System.Drawing.Color.White
+        Me.FilterBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
+        Me.FilterBtn.Location = New System.Drawing.Point(268, 147)
+        Me.FilterBtn.Name = "FilterBtn"
+        Me.FilterBtn.Size = New System.Drawing.Size(520, 24)
+        Me.FilterBtn.TabIndex = 37
+        Me.FilterBtn.Text = "Filter"
+        Me.FilterBtn.UseVisualStyleBackColor = True
+        '
+        'DateFilterCb
+        '
+        Me.DateFilterCb.CalendarFont = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateFilterCb.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DateFilterCb.CustomFormat = "MM/dd/yyyy"
+        Me.DateFilterCb.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DateFilterCb.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.DateFilterCb.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateFilterCb.Location = New System.Drawing.Point(586, 122)
+        Me.DateFilterCb.Name = "DateFilterCb"
+        Me.DateFilterCb.Size = New System.Drawing.Size(202, 23)
+        Me.DateFilterCb.TabIndex = 36
+        Me.DateFilterCb.Value = New Date(2020, 2, 22, 0, 0, 0, 0)
+        '
+        'datefilterLabel
+        '
+        Me.datefilterLabel.AutoSize = True
+        Me.datefilterLabel.BackColor = System.Drawing.Color.Transparent
+        Me.datefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.datefilterLabel.Location = New System.Drawing.Point(583, 104)
+        Me.datefilterLabel.Name = "datefilterLabel"
+        Me.datefilterLabel.Size = New System.Drawing.Size(40, 17)
+        Me.datefilterLabel.TabIndex = 35
+        Me.datefilterLabel.Text = "Date"
+        '
+        'courseFilter
+        '
+        Me.courseFilter.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.courseFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.courseFilter.FormattingEnabled = True
+        Me.courseFilter.Items.AddRange(New Object() {"BSCS", "BSIT", "BSIS", "Instructor"})
+        Me.courseFilter.Location = New System.Drawing.Point(268, 122)
+        Me.courseFilter.Name = "courseFilter"
+        Me.courseFilter.Size = New System.Drawing.Size(153, 21)
+        Me.courseFilter.TabIndex = 32
+        '
+        'yearlevelfilterLabel
+        '
+        Me.yearlevelfilterLabel.AutoSize = True
+        Me.yearlevelfilterLabel.BackColor = System.Drawing.Color.Transparent
+        Me.yearlevelfilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.yearlevelfilterLabel.Location = New System.Drawing.Point(424, 102)
+        Me.yearlevelfilterLabel.Name = "yearlevelfilterLabel"
+        Me.yearlevelfilterLabel.Size = New System.Drawing.Size(73, 17)
+        Me.yearlevelfilterLabel.TabIndex = 34
+        Me.yearlevelfilterLabel.Text = "Year Level"
+        '
+        'coursefilterLabel
+        '
+        Me.coursefilterLabel.AutoSize = True
+        Me.coursefilterLabel.BackColor = System.Drawing.Color.Transparent
+        Me.coursefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.coursefilterLabel.Location = New System.Drawing.Point(268, 103)
+        Me.coursefilterLabel.Name = "coursefilterLabel"
+        Me.coursefilterLabel.Size = New System.Drawing.Size(53, 17)
+        Me.coursefilterLabel.TabIndex = 33
+        Me.coursefilterLabel.Text = "Course"
+        '
+        'yearlevelFilter
+        '
+        Me.yearlevelFilter.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.yearlevelFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.yearlevelFilter.FormattingEnabled = True
+        Me.yearlevelFilter.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.yearlevelFilter.Location = New System.Drawing.Point(427, 122)
+        Me.yearlevelFilter.Name = "yearlevelFilter"
+        Me.yearlevelFilter.Size = New System.Drawing.Size(153, 21)
+        Me.yearlevelFilter.TabIndex = 31
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -356,103 +453,6 @@ Partial Class HeadOfDepartmentForm
         Me.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.closeBtn.TabIndex = 0
         Me.closeBtn.TabStop = False
-        '
-        'FilterBtn
-        '
-        Me.FilterBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.FilterBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.FilterBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FilterBtn.FlatAppearance.BorderSize = 0
-        Me.FilterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.FilterBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FilterBtn.ForeColor = System.Drawing.Color.White
-        Me.FilterBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.FilterBtn.Location = New System.Drawing.Point(268, 147)
-        Me.FilterBtn.Name = "FilterBtn"
-        Me.FilterBtn.Size = New System.Drawing.Size(520, 24)
-        Me.FilterBtn.TabIndex = 37
-        Me.FilterBtn.Text = "Filter"
-        Me.FilterBtn.UseVisualStyleBackColor = True
-        '
-        'DateFilterCb
-        '
-        Me.DateFilterCb.CalendarFont = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateFilterCb.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DateFilterCb.CustomFormat = "MM/dd/yyyy"
-        Me.DateFilterCb.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DateFilterCb.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.DateFilterCb.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilterCb.Location = New System.Drawing.Point(586, 122)
-        Me.DateFilterCb.Name = "DateFilterCb"
-        Me.DateFilterCb.Size = New System.Drawing.Size(202, 23)
-        Me.DateFilterCb.TabIndex = 36
-        Me.DateFilterCb.Value = New Date(2020, 2, 16, 0, 0, 0, 0)
-        '
-        'datefilterLabel
-        '
-        Me.datefilterLabel.AutoSize = True
-        Me.datefilterLabel.BackColor = System.Drawing.Color.Transparent
-        Me.datefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datefilterLabel.Location = New System.Drawing.Point(583, 104)
-        Me.datefilterLabel.Name = "datefilterLabel"
-        Me.datefilterLabel.Size = New System.Drawing.Size(40, 17)
-        Me.datefilterLabel.TabIndex = 35
-        Me.datefilterLabel.Text = "Date"
-        '
-        'courseFilter
-        '
-        Me.courseFilter.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.courseFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.courseFilter.FormattingEnabled = True
-        Me.courseFilter.Items.AddRange(New Object() {"BSCS", "BSIT", "BSIS", "Instructor"})
-        Me.courseFilter.Location = New System.Drawing.Point(268, 122)
-        Me.courseFilter.Name = "courseFilter"
-        Me.courseFilter.Size = New System.Drawing.Size(153, 21)
-        Me.courseFilter.TabIndex = 32
-        '
-        'yearlevelfilterLabel
-        '
-        Me.yearlevelfilterLabel.AutoSize = True
-        Me.yearlevelfilterLabel.BackColor = System.Drawing.Color.Transparent
-        Me.yearlevelfilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.yearlevelfilterLabel.Location = New System.Drawing.Point(424, 102)
-        Me.yearlevelfilterLabel.Name = "yearlevelfilterLabel"
-        Me.yearlevelfilterLabel.Size = New System.Drawing.Size(73, 17)
-        Me.yearlevelfilterLabel.TabIndex = 34
-        Me.yearlevelfilterLabel.Text = "Year Level"
-        '
-        'coursefilterLabel
-        '
-        Me.coursefilterLabel.AutoSize = True
-        Me.coursefilterLabel.BackColor = System.Drawing.Color.Transparent
-        Me.coursefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.coursefilterLabel.Location = New System.Drawing.Point(268, 103)
-        Me.coursefilterLabel.Name = "coursefilterLabel"
-        Me.coursefilterLabel.Size = New System.Drawing.Size(53, 17)
-        Me.coursefilterLabel.TabIndex = 33
-        Me.coursefilterLabel.Text = "Course"
-        '
-        'yearlevelFilter
-        '
-        Me.yearlevelFilter.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.yearlevelFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.yearlevelFilter.FormattingEnabled = True
-        Me.yearlevelFilter.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.yearlevelFilter.Location = New System.Drawing.Point(427, 122)
-        Me.yearlevelFilter.Name = "yearlevelFilter"
-        Me.yearlevelFilter.Size = New System.Drawing.Size(153, 21)
-        Me.yearlevelFilter.TabIndex = 31
-        '
-        'searchBarLabel
-        '
-        Me.searchBarLabel.AutoSize = True
-        Me.searchBarLabel.BackColor = System.Drawing.Color.Transparent
-        Me.searchBarLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchBarLabel.Location = New System.Drawing.Point(9, 130)
-        Me.searchBarLabel.Name = "searchBarLabel"
-        Me.searchBarLabel.Size = New System.Drawing.Size(246, 17)
-        Me.searchBarLabel.TabIndex = 38
-        Me.searchBarLabel.Text = "Search (For Student Repositories only)"
         '
         'HeadOfDepartmentForm
         '

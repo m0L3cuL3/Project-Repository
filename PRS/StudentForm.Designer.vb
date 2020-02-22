@@ -324,7 +324,7 @@ Partial Class StudentForm
         Me.DateFilterCb.Name = "DateFilterCb"
         Me.DateFilterCb.Size = New System.Drawing.Size(202, 23)
         Me.DateFilterCb.TabIndex = 22
-        Me.DateFilterCb.Value = New Date(2020, 2, 16, 0, 0, 0, 0)
+        Me.DateFilterCb.Value = New Date(2020, 2, 22, 0, 0, 0, 0)
         '
         'Label3
         '
@@ -373,9 +373,9 @@ Partial Class StudentForm
         Me.searchBarLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchBarLabel.Location = New System.Drawing.Point(12, 130)
         Me.searchBarLabel.Name = "searchBarLabel"
-        Me.searchBarLabel.Size = New System.Drawing.Size(246, 17)
+        Me.searchBarLabel.Size = New System.Drawing.Size(51, 17)
         Me.searchBarLabel.TabIndex = 17
-        Me.searchBarLabel.Text = "Search (For Student Repositories only)"
+        Me.searchBarLabel.Text = "Search"
         '
         'minimizeBtn
         '

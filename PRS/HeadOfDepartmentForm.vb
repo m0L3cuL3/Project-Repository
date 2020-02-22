@@ -20,6 +20,7 @@ Public Class HeadOfDepartmentForm
         idNumberLabel.Text = GetUserID()
         nameLabel.Text = GetUsername()
         titleLabel.Text = GetTitle()
+
     End Sub
 
     Private Sub profileButton_Click(sender As Object, e As EventArgs) Handles profileButton.Click
@@ -146,13 +147,15 @@ Public Class HeadOfDepartmentForm
     'home button'
     Private Sub homeBtn_Click(sender As Object, e As EventArgs) Handles homeBtn.Click
         mainLabel.Text = "Home"
-        LoadApprovedProject()
+        LoadApprovedProject() 'loads approved projects
+        ShowFilterComponent() 'shows filter functions
     End Sub
 
     'pending projects button'
     Private Sub pendingProjectsBtn_Click(sender As Object, e As EventArgs) Handles pendingProjectsBtn.Click
         mainLabel.Text = "Pending Projects"
-        LoadPendingProject()
+        HideFilterComponent() 'hides filter functions
+        LoadPendingProject() 'loads pending projects
     End Sub
 
     'closes the form'
@@ -179,18 +182,7 @@ Public Class HeadOfDepartmentForm
 
     End Sub
 
-    'adds approved project to approvedPanel (for testing only)'
-    Public Sub AddApproveProject()
-
-
-        LoadApprovedLayoutProject()
-
-        Dim pp As New projectPanel
-        pp.PictureBox1.Image = My.Resources.checkMark
-        approvedPanel.Controls.Add(pp)
-    End Sub
-
-    'adds approved project to pendingPanel (for testing only)'
+    'loads pending projects'
     Public Sub LoadPendingProject()
 
         pendingPanel.Controls.Clear()
@@ -224,7 +216,7 @@ Public Class HeadOfDepartmentForm
         End While
     End Sub
 
-    'show approved project'
+    'loads approved projects'
     Public Sub LoadApprovedProject()
         approvedPanel.Controls.Clear()
 
@@ -259,5 +251,105 @@ Public Class HeadOfDepartmentForm
     Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
         Close()
         LoginForm.Show()
+    End Sub
+
+    Private Sub FilterBtn_Click(sender As Object, e As EventArgs) Handles FilterBtn.Click
+        Filter()
+    End Sub
+
+    'filter system
+    Private Sub Filter()
+        Dim dateFilter As DateTime = DateFilterCb.Value
+
+        approvedPanel.Controls.Clear()
+        If courseFilter.SelectedItem = "Instructor" Then
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table] INNER JOIN dbo.[InstructorData] ON dbo.[Table].file_uploader = dbo.[InstructorData].instructor_id WHERE file_update = @date AND isApproved = 'approved'"
+                cmd.Parameters.AddWithValue("@date", DateFilterCb.Value)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                'removal of other component when in use'
+                mainPanel.Controls.Remove(pendingPanel)
+
+                LoadApprovedLayoutProject()
+
+                While dr.Read()
+                    Dim pp As New projectPanel
+                    pp.cloneBtn.Enabled = True
+                    pp.cloneBtn.Visible = True
+                    pp.PictureBox1.Image = My.Resources.checkMark
+                    pp.guidLabel.Text = dr.Item("file_id").ToString
+                    pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
+                    pp.projectTitle.Text = dr.Item("file_name")
+                    approvedPanel.Controls.Add(pp)
+                End While
+            Catch ex As Exception
+                MessageBox.Show("Please complete the filter settings.", "Incomplete Data Provided", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table] INNER JOIN dbo.[StudentData] ON dbo.[Table].file_uploader = dbo.[StudentData].student_id WHERE student_level = @year AND student_course = @course AND file_update = @date AND isApproved = 'approved'"
+                cmd.Parameters.AddWithValue("@year", yearlevelFilter.SelectedItem)
+                cmd.Parameters.AddWithValue("@course", courseFilter.SelectedItem)
+                cmd.Parameters.AddWithValue("@date", DateFilterCb.Value)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                'removal of other component when in use'
+                mainPanel.Controls.Remove(pendingPanel)
+
+                LoadApprovedLayoutProject()
+
+                While dr.Read()
+                    Dim pp As New projectPanel
+                    pp.cloneBtn.Enabled = True
+                    pp.cloneBtn.Visible = True
+                    pp.PictureBox1.Image = My.Resources.checkMark
+                    pp.guidLabel.Text = dr.Item("file_id").ToString
+                    pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
+                    pp.projectTitle.Text = dr.Item("file_name")
+                    approvedPanel.Controls.Add(pp)
+                End While
+            Catch ex As Exception
+                MessageBox.Show("Please complete the filter settings.", "Incomplete Data Provided", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+    'hides the global filter components
+    Private Sub HideFilterComponent()
+        coursefilterLabel.Visible = False
+        yearlevelfilterLabel.Visible = False
+        datefilterLabel.Visible = False
+        DateFilterCb.Visible = False
+        yearlevelFilter.Visible = False
+        courseFilter.Visible = False
+        FilterBtn.Visible = False
+    End Sub
+
+    'shows the global filter components
+    Private Sub ShowFilterComponent()
+        coursefilterLabel.Visible = True
+        yearlevelfilterLabel.Visible = True
+        datefilterLabel.Visible = True
+        DateFilterCb.Visible = True
+        yearlevelFilter.Visible = True
+        courseFilter.Visible = True
+        FilterBtn.Visible = True
     End Sub
 End Class

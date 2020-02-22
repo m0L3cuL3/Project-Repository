@@ -281,7 +281,7 @@ Public Class StudentForm
                     flowPanel.Controls.Add(pp)
                 End While
             Catch ex As Exception
-                MsgBox("Something went wrong.")
+                MessageBox.Show("Please complete the filter settings.", "Incomplete Data Provided", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         Else
             Try
@@ -315,11 +315,12 @@ Public Class StudentForm
                     flowPanel.Controls.Add(pp)
                 End While
             Catch ex As Exception
-                MsgBox("Something went wrong.")
+                MessageBox.Show("Please complete the filter settings.", "Incomplete Data Provided", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
 
+    'search feature
     Public Sub SearchRepository(repoName As String)
         flowPanel.Controls.Clear()
 
@@ -330,7 +331,7 @@ Public Class StudentForm
 
             Dim cmd As New SqlCommand
             cmd.Connection = conn
-            cmd.CommandText = "SELECT * FROM [Table] INNER JOIN dbo.[StudentData] ON dbo.[Table].file_uploader = dbo.[StudentData].student_id WHERE file_name = @filename AND isApproved = 'approved'"
+            cmd.CommandText = "SELECT * FROM [Table] WHERE file_name = @filename AND isApproved = 'approved'"
             cmd.Parameters.AddWithValue("@filename", repoName)
 
             Dim dr As SqlDataReader

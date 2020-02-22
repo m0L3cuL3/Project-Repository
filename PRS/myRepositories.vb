@@ -38,14 +38,14 @@ Public Class myRepositories
             Dim Item As New ListViewItem((dr.Item("file_id").ToString))
             Item.SubItems.Add(dr.Item("file_name").ToString)
             Item.SubItems.Add(dr.Item("isApproved").ToString)
-            Item.SubItems.Add(dr.Item("file_update").ToString)
+            Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
             folderListView.Items.Add(Item)
 
         End While
     End Sub
 
     'filters approved/pending
-    Public Sub FilterProjectStatus(status As String)
+    Private Sub FilterProjectStatus(status As String)
         Dim dateFilter As DateTime = DateFilterCb.Value
 
         folderListView.Items.Clear()
@@ -71,7 +71,7 @@ Public Class myRepositories
                 Dim Item As New ListViewItem((dr.Item("file_id").ToString))
                 Item.SubItems.Add(dr.Item("file_name").ToString)
                 Item.SubItems.Add(dr.Item("isApproved").ToString)
-                Item.SubItems.Add(dr.Item("file_update").ToString)
+                Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
                 folderListView.Items.Add(Item)
 
             End While

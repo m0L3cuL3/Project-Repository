@@ -96,6 +96,9 @@
     <Compile Include="AdminForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomTabControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataHandler.vb" />
     <Compile Include="HeadOfDepartmentForm.Designer.vb">
       <DependentUpon>HeadOfDepartmentForm.vb</DependentUpon>

@@ -325,7 +325,7 @@ Public Class InstructorForm
                     flowPanel.Controls.Add(pp)
                 End While
             Catch ex As Exception
-                MsgBox("Something went wrong.")
+                MessageBox.Show("Please complete the filter settings.", "Incomplete Data Provided", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         Else
             Try
@@ -359,7 +359,7 @@ Public Class InstructorForm
                     flowPanel.Controls.Add(pp)
                 End While
             Catch ex As Exception
-                MsgBox("Something went wrong.")
+                MessageBox.Show("Please complete the filter settings.", "Incomplete Data Provided", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
