@@ -9,8 +9,8 @@ of Github.
 The features of this program are the following:
 - [X] Login System
 - [X] File System
-- [ ] Project Approval System
-- [ ] MySQL Database
+- [X] Project Approval System
+- [X] MSSQL Database
 - [X] Memory Management for Database ***(Admin access only)***
 - [ ] Event Logging
 
@@ -23,9 +23,9 @@ The features of this program are the following:
 
 #### Progress
 - [X] Login System
-- [ ] Project Approval System
+- [X] Project Approval System
 - [X] File System
-- [ ] MySQL Database ***(To be implemented last)***
+- [X] MSSQL Database
 - [X] Admin Panel
 - [X] Student Panel
 - [X] Head Of Department Panel
