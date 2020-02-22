@@ -91,13 +91,16 @@
             'for instructor verification
             SetUserID(Me.InstructorDataTableAdapter.SelectInstructorID(userTb.Text, passTb.Text)) 'sets user id
             SetUsername(Me.InstructorDataTableAdapter.SelectInstructorName(userTb.Text, passTb.Text)) 'sets user name
-            SetTitle(Me.InstructorDataTableAdapter.SelectInstructorTitle(userTb.Text, passTb.Text)) 'sets title
+            SetTitle(Me.InstructorDataTableAdapter.SelectInstructorTitle(userTb.Text, passTb.Text)) 'sets user title
             InstructorForm.Show()
             Me.Hide()
 
         ElseIf Me.HeadDataTableAdapter.CheckHead(userTb.Text, passTb.Text) Then
 
             'for head of department verification
+            SetUserID(Me.HeadDataTableAdapter.SelectHeadID(userTb.Text, passTb.Text)) 'sets user id
+            SetUsername(Me.HeadDataTableAdapter.SelectHeadName(userTb.Text, passTb.Text)) 'sets user name
+            SetTitle(Me.HeadDataTableAdapter.SelectHeadTitle(userTb.Text, passTb.Text)) 'sets user title
             HeadOfDepartmentForm.Show()
             Me.Hide()
 

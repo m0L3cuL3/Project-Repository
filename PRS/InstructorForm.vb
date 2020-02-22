@@ -247,7 +247,7 @@ Public Class InstructorForm
             pp.approveBtn.Enabled = True
             pp.approveBtn.Visible = True
             pp.guidLabel.Text = dr.Item("file_id").ToString
-            pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+            pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
             pp.projectTitle.Text = dr.Item("file_name")
             pendingPanel.Controls.Add(pp)
             Refresh()
@@ -281,7 +281,7 @@ Public Class InstructorForm
             pp.cloneBtn.Visible = True
             pp.PictureBox1.Image = My.Resources.checkMark
             pp.guidLabel.Text = dr.Item("file_id").ToString
-            pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+            pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
             pp.projectTitle.Text = dr.Item("file_name")
             flowPanel.Controls.Add(pp)
         End While
@@ -317,7 +317,7 @@ Public Class InstructorForm
                     pp.cloneBtn.Visible = True
                     pp.PictureBox1.Image = My.Resources.checkMark
                     pp.guidLabel.Text = dr.Item("file_id").ToString
-                    pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+                    pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
                     pp.projectTitle.Text = dr.Item("file_name")
                     flowPanel.Controls.Add(pp)
                 End While
@@ -351,7 +351,7 @@ Public Class InstructorForm
                     pp.cloneBtn.Visible = True
                     pp.PictureBox1.Image = My.Resources.checkMark
                     pp.guidLabel.Text = dr.Item("file_id").ToString
-                    pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+                    pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
                     pp.projectTitle.Text = dr.Item("file_name")
                     flowPanel.Controls.Add(pp)
                 End While
@@ -389,7 +389,7 @@ Public Class InstructorForm
                 pp.cloneBtn.Visible = True
                 pp.PictureBox1.Image = My.Resources.checkMark
                 pp.guidLabel.Text = dr.Item("file_id").ToString
-                pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+                pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
                 pp.projectTitle.Text = dr.Item("file_name")
                 flowPanel.Controls.Add(pp)
             End While

@@ -91,7 +91,7 @@ Public Class myRepositories
             MsgBox("Repository already exists, create a new one")
             LoadUserRepository()
         Else
-            Me.FileDataTableAdapter.UploadFile(fuid, fileBar.Text, dt, GetUserID(), "pending")
+            Me.FileDataTableAdapter.UploadFile(fuid, fileBar.Text, dt, GetUserID(), "pending", GetUsername())
             LoadUserRepository()
             SecondaryDirectory(fileBar.Text) 'create directory inside C:\Documents\Repositories
         End If

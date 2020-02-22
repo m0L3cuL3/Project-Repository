@@ -1339,6 +1339,8 @@ Partial Public Class repoDBDataSet
         
         Private columnisApproved As Global.System.Data.DataColumn
         
+        Private columnfile_uploader_name As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -1415,6 +1417,14 @@ Partial Public Class repoDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property file_uploader_nameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfile_uploader_name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1451,9 +1461,9 @@ Partial Public Class repoDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddFileDataRow(ByVal file_name As String, ByVal file_update As String, ByVal parentInstructorDataRowByFK_FileData_Instructor As InstructorDataRow, ByVal isApproved As String) As FileDataRow
+        Public Overloads Function AddFileDataRow(ByVal file_name As String, ByVal file_update As String, ByVal parentInstructorDataRowByFK_FileData_Instructor As InstructorDataRow, ByVal isApproved As String, ByVal file_uploader_name As String) As FileDataRow
             Dim rowFileDataRow As FileDataRow = CType(Me.NewRow,FileDataRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, file_name, file_update, Nothing, isApproved}
+            Dim columnValuesArray() As Object = New Object() {Nothing, file_name, file_update, Nothing, isApproved, file_uploader_name}
             If (Not (parentInstructorDataRowByFK_FileData_Instructor) Is Nothing) Then
                 columnValuesArray(3) = parentInstructorDataRowByFK_FileData_Instructor(0)
             End If
@@ -1490,6 +1500,7 @@ Partial Public Class repoDBDataSet
             Me.columnfile_update = MyBase.Columns("file_update")
             Me.columnfile_uploader = MyBase.Columns("file_uploader")
             Me.columnisApproved = MyBase.Columns("isApproved")
+            Me.columnfile_uploader_name = MyBase.Columns("file_uploader_name")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1505,6 +1516,8 @@ Partial Public Class repoDBDataSet
             MyBase.Columns.Add(Me.columnfile_uploader)
             Me.columnisApproved = New Global.System.Data.DataColumn("isApproved", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnisApproved)
+            Me.columnfile_uploader_name = New Global.System.Data.DataColumn("file_uploader_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfile_uploader_name)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnfile_id}, true))
             Me.columnfile_id.AutoIncrement = true
             Me.columnfile_id.AutoIncrementSeed = -1
@@ -1515,6 +1528,7 @@ Partial Public Class repoDBDataSet
             Me.columnfile_name.MaxLength = 50
             Me.columnfile_update.MaxLength = 50
             Me.columnisApproved.MaxLength = 50
+            Me.columnfile_uploader_name.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2039,6 +2053,21 @@ Partial Public Class repoDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property file_uploader_name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableFileData.file_uploader_nameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'file_uploader_name' in table 'FileData' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableFileData.file_uploader_nameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property InstructorDataRow() As InstructorDataRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_FileData_Instructor")),InstructorDataRow)
@@ -2105,6 +2134,18 @@ Partial Public Class repoDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetisApprovedNull()
             Me(Me.tableFileData.isApprovedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isfile_uploader_nameNull() As Boolean
+            Return Me.IsNull(Me.tableFileData.file_uploader_nameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setfile_uploader_nameNull()
+            Me(Me.tableFileData.file_uploader_nameColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2445,7 +2486,7 @@ Namespace repoDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT head_id, head_name, head_pass, head_title FROM dbo.HeadData"
@@ -2457,6 +2498,27 @@ Namespace repoDBDataSetTableAdapters
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@uid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "head_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pass", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "head_pass", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        head_id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            HeadData"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (head_id = @uid) AN"& _ 
+                "D (head_pass = @pass)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@uid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "head_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pass", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "head_pass", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT        head_name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            HeadData"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (head_id = @uid) "& _ 
+                "AND (head_pass = @pass)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@uid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "head_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pass", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "head_pass", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT        head_title"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            HeadData"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (head_id = @uid)"& _ 
+                " AND (head_pass = @pass)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@uid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "head_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pass", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "head_pass", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2684,6 +2746,102 @@ Namespace repoDBDataSetTableAdapters
                 Return New Global.System.Nullable(Of Integer)()
             Else
                 Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SelectHeadID(ByVal uid As Long, ByVal pass As String) As Global.System.Nullable(Of Long)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            command.Parameters(0).Value = CType(uid,Long)
+            If (pass Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(pass,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Long)()
+            Else
+                Return New Global.System.Nullable(Of Long)(CType(returnValue,Long))
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SelectHeadName(ByVal uid As Long, ByVal pass As String) As String
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+            command.Parameters(0).Value = CType(uid,Long)
+            If (pass Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(pass,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,String)
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SelectHeadTitle(ByVal uid As Long, ByVal pass As String) As String
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            command.Parameters(0).Value = CType(uid,Long)
+            If (pass Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(pass,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,String)
             End If
         End Function
     End Class
@@ -3971,62 +4129,76 @@ Namespace repoDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("file_update", "file_update")
             tableMapping.ColumnMappings.Add("file_uploader", "file_uploader")
             tableMapping.ColumnMappings.Add("isApproved", "isApproved")
+            tableMapping.ColumnMappings.Add("file_uploader_name", "file_uploader_name")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Table] WHERE (([file_id] = @Original_file_id) AND ((@IsNull_fi"& _ 
-                "le_name = 1 AND [file_name] IS NULL) OR ([file_name] = @Original_file_name)) AND"& _ 
-                " ((@IsNull_file_update = 1 AND [file_update] IS NULL) OR ([file_update] = @Origi"& _ 
-                "nal_file_update)) AND ((@IsNull_file_uploader = 1 AND [file_uploader] IS NULL) O"& _ 
-                "R ([file_uploader] = @Original_file_uploader)) AND ((@IsNull_isApproved = 1 AND "& _ 
-                "[isApproved] IS NULL) OR ([isApproved] = @Original_isApproved)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Table] WHERE (([file_id] = @Original_file_id) AND ((@IsNull_file_nam"& _ 
+                "e = 1 AND [file_name] IS NULL) OR ([file_name] = @Original_file_name)) AND ((@Is"& _ 
+                "Null_file_update = 1 AND [file_update] IS NULL) OR ([file_update] = @Original_fi"& _ 
+                "le_update)) AND ((@IsNull_file_uploader = 1 AND [file_uploader] IS NULL) OR ([fi"& _ 
+                "le_uploader] = @Original_file_uploader)) AND ((@IsNull_isApproved = 1 AND [isApp"& _ 
+                "roved] IS NULL) OR ([isApproved] = @Original_isApproved)) AND ((@IsNull_file_upl"& _ 
+                "oader_name = 1 AND [file_uploader_name] IS NULL) OR ([file_uploader_name] = @Ori"& _ 
+                "ginal_file_uploader_name)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_id", Global.System.Data.SqlDbType.UniqueIdentifier, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_file_name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_file_update", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_update", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_update", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_file_uploader", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_uploader", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_uploader", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isApproved", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isApproved", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isApproved", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isApproved", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_file_uploader_name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader_name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_uploader_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader_name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Table] ([file_name], [file_update], [file_uploader], [isApprov"& _ 
-                "ed]) VALUES (@file_name, @file_update, @file_uploader, @isApproved);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT fil"& _ 
-                "e_id, file_name, file_update, file_uploader, isApproved FROM [Table] WHERE (file"& _ 
-                "_id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Table] ([file_id], [file_name], [file_update], [file_uploader], [isA"& _ 
+                "pproved], [file_uploader_name]) VALUES (@file_id, @file_name, @file_update, @fil"& _ 
+                "e_uploader, @isApproved, @file_uploader_name);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT file_id, file_name, file_"& _ 
+                "update, file_uploader, isApproved, file_uploader_name FROM [Table] WHERE (file_i"& _ 
+                "d = @file_id)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_id", Global.System.Data.SqlDbType.UniqueIdentifier, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_update", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_uploader", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_update", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_uploader", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isApproved", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isApproved", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_uploader_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Table] SET [file_name] = @file_name, [file_update] = @file_update, "& _ 
-                "[file_uploader] = @file_uploader, [isApproved] = @isApproved WHERE (([file_id] ="& _ 
-                " @Original_file_id) AND ((@IsNull_file_name = 1 AND [file_name] IS NULL) OR ([fi"& _ 
-                "le_name] = @Original_file_name)) AND ((@IsNull_file_update = 1 AND [file_update]"& _ 
-                " IS NULL) OR ([file_update] = @Original_file_update)) AND ((@IsNull_file_uploade"& _ 
-                "r = 1 AND [file_uploader] IS NULL) OR ([file_uploader] = @Original_file_uploader"& _ 
-                ")) AND ((@IsNull_isApproved = 1 AND [isApproved] IS NULL) OR ([isApproved] = @Or"& _ 
-                "iginal_isApproved)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT file_id, file_name, file_update, file_uploader, is"& _ 
-                "Approved FROM [Table] WHERE (file_id = @file_id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Table] SET [file_id] = @file_id, [file_name] = @file_name, [file_update] "& _ 
+                "= @file_update, [file_uploader] = @file_uploader, [isApproved] = @isApproved, [f"& _ 
+                "ile_uploader_name] = @file_uploader_name WHERE (([file_id] = @Original_file_id) "& _ 
+                "AND ((@IsNull_file_name = 1 AND [file_name] IS NULL) OR ([file_name] = @Original"& _ 
+                "_file_name)) AND ((@IsNull_file_update = 1 AND [file_update] IS NULL) OR ([file_"& _ 
+                "update] = @Original_file_update)) AND ((@IsNull_file_uploader = 1 AND [file_uplo"& _ 
+                "ader] IS NULL) OR ([file_uploader] = @Original_file_uploader)) AND ((@IsNull_isA"& _ 
+                "pproved = 1 AND [isApproved] IS NULL) OR ([isApproved] = @Original_isApproved)) "& _ 
+                "AND ((@IsNull_file_uploader_name = 1 AND [file_uploader_name] IS NULL) OR ([file"& _ 
+                "_uploader_name] = @Original_file_uploader_name)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT file_id, file_name, f"& _ 
+                "ile_update, file_uploader, isApproved, file_uploader_name FROM [Table] WHERE (fi"& _ 
+                "le_id = @file_id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_id", Global.System.Data.SqlDbType.UniqueIdentifier, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_update", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_uploader", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_update", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_uploader", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isApproved", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isApproved", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_uploader_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_id", Global.System.Data.SqlDbType.UniqueIdentifier, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_file_name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_file_update", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_update", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_update", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_file_uploader", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_uploader", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_uploader", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isApproved", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isApproved", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isApproved", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isApproved", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_file_uploader_name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader_name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_uploader_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader_name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4039,11 +4211,11 @@ Namespace repoDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT file_id, file_name, file_update, file_uploader, isApproved FROM dbo.[Table"& _ 
-                "]"
+            Me._commandCollection(0).CommandText = "SELECT file_id, file_name, file_update, file_uploader, isApproved, file_uploader_"& _ 
+                "name FROM [Table]"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -4054,21 +4226,16 @@ Namespace repoDBDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_file_id", Global.System.Data.SqlDbType.UniqueIdentifier, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        file_id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            [Table]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (file_uploader = @up"& _ 
-                "loader)"
+            Me._commandCollection(2).CommandText = "INSERT INTO [Table]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (file_id, file_name, file_update, f"& _ 
+                "ile_uploader, isApproved, file_uploader_name)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@file_id,@file_nam"& _ 
+                "e,@file_update,@file_uploader,@isApproved,@name)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@uploader", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "INSERT INTO [Table]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (file_id, file_name, file_update, f"& _ 
-                "ile_uploader, isApproved)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@file_id,@file_name,@file_update,@file"& _ 
-                "_uploader,@isApproved)"
-            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_id", Global.System.Data.SqlDbType.UniqueIdentifier, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_name", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "file_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_update", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_uploader", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isApproved", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "isApproved", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_id", Global.System.Data.SqlDbType.UniqueIdentifier, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "file_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_name", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "file_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_update", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "file_update", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@file_uploader", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isApproved", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "isApproved", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "file_uploader_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4127,8 +4294,8 @@ Namespace repoDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_file_id As Integer, ByVal Original_file_name As String, ByVal Original_file_update As String, ByVal Original_file_uploader As Global.System.Nullable(Of Integer), ByVal Original_isApproved As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_file_id,Integer)
+        Public Overloads Overridable Function Delete(ByVal Original_file_id As System.Guid, ByVal Original_file_name As String, ByVal Original_file_update As Global.System.Nullable(Of Date), ByVal Original_file_uploader As Global.System.Nullable(Of Long), ByVal Original_isApproved As String, ByVal Original_file_uploader_name As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_file_id,System.Guid)
             If (Original_file_name Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
@@ -4136,16 +4303,16 @@ Namespace repoDBDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_file_name,String)
             End If
-            If (Original_file_update Is Nothing) Then
+            If (Original_file_update.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_file_update.Value,Date)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_file_update,String)
             End If
             If (Original_file_uploader.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_file_uploader.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_file_uploader.Value,Long)
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -4156,6 +4323,13 @@ Namespace repoDBDataSetTableAdapters
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_isApproved,String)
+            End If
+            If (Original_file_uploader_name Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_file_uploader_name,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4176,26 +4350,32 @@ Namespace repoDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal file_name As String, ByVal file_update As String, ByVal file_uploader As Global.System.Nullable(Of Integer), ByVal isApproved As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal file_id As System.Guid, ByVal file_name As String, ByVal file_update As Global.System.Nullable(Of Date), ByVal file_uploader As Global.System.Nullable(Of Long), ByVal isApproved As String, ByVal file_uploader_name As String) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(file_id,System.Guid)
             If (file_name Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(file_name,String)
-            End If
-            If (file_update Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(file_update,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(file_name,String)
             End If
-            If (file_uploader.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(file_uploader.Value,Integer)
+            If (file_update.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(file_update.Value,Date)
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (isApproved Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            If (file_uploader.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(file_uploader.Value,Long)
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(isApproved,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (isApproved Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(isApproved,String)
+            End If
+            If (file_uploader_name Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(file_uploader_name,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4216,57 +4396,69 @@ Namespace repoDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal file_name As String, ByVal file_update As String, ByVal file_uploader As Global.System.Nullable(Of Integer), ByVal isApproved As String, ByVal Original_file_id As Integer, ByVal Original_file_name As String, ByVal Original_file_update As String, ByVal Original_file_uploader As Global.System.Nullable(Of Integer), ByVal Original_isApproved As String, ByVal file_id As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal file_id As System.Guid, ByVal file_name As String, ByVal file_update As Global.System.Nullable(Of Date), ByVal file_uploader As Global.System.Nullable(Of Long), ByVal isApproved As String, ByVal file_uploader_name As String, ByVal Original_file_id As System.Guid, ByVal Original_file_name As String, ByVal Original_file_update As Global.System.Nullable(Of Date), ByVal Original_file_uploader As Global.System.Nullable(Of Long), ByVal Original_isApproved As String, ByVal Original_file_uploader_name As String) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(file_id,System.Guid)
             If (file_name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(file_name,String)
-            End If
-            If (file_update Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(file_update,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(file_name,String)
             End If
-            If (file_uploader.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(file_uploader.Value,Integer)
+            If (file_update.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(file_update.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (isApproved Is Nothing) Then
+            If (file_uploader.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(file_uploader.Value,Long)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(isApproved,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_file_id,Integer)
+            If (isApproved Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(isApproved,String)
+            End If
+            If (file_uploader_name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(file_uploader_name,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_file_id,System.Guid)
             If (Original_file_name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_file_name,String)
-            End If
-            If (Original_file_update Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_file_update,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_file_name,String)
             End If
-            If (Original_file_uploader.HasValue = true) Then
+            If (Original_file_update.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_file_uploader.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_file_update.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
-            If (Original_isApproved Is Nothing) Then
+            If (Original_file_uploader.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_file_uploader.Value,Long)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_isApproved,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(file_id,Integer)
+            If (Original_isApproved Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_isApproved,String)
+            End If
+            If (Original_file_uploader_name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_file_uploader_name,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4286,8 +4478,8 @@ Namespace repoDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal file_name As String, ByVal file_update As String, ByVal file_uploader As Global.System.Nullable(Of Integer), ByVal isApproved As String, ByVal Original_file_id As Integer, ByVal Original_file_name As String, ByVal Original_file_update As String, ByVal Original_file_uploader As Global.System.Nullable(Of Integer), ByVal Original_isApproved As String) As Integer
-            Return Me.Update(file_name, file_update, file_uploader, isApproved, Original_file_id, Original_file_name, Original_file_update, Original_file_uploader, Original_isApproved, Original_file_id)
+        Public Overloads Overridable Function Update(ByVal file_name As String, ByVal file_update As Global.System.Nullable(Of Date), ByVal file_uploader As Global.System.Nullable(Of Long), ByVal isApproved As String, ByVal file_uploader_name As String, ByVal Original_file_id As System.Guid, ByVal Original_file_name As String, ByVal Original_file_update As Global.System.Nullable(Of Date), ByVal Original_file_uploader As Global.System.Nullable(Of Long), ByVal Original_isApproved As String, ByVal Original_file_uploader_name As String) As Integer
+            Return Me.Update(Original_file_id, file_name, file_update, file_uploader, isApproved, file_uploader_name, Original_file_id, Original_file_name, Original_file_update, Original_file_uploader, Original_isApproved, Original_file_uploader_name)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4320,41 +4512,10 @@ Namespace repoDBDataSetTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function GetFileID(ByVal uploader As Global.System.Nullable(Of Long)) As Global.System.Nullable(Of Global.System.Guid)
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
-            If (uploader.HasValue = true) Then
-                command.Parameters(0).Value = CType(uploader.Value,Long)
-            Else
-                command.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open
-            End If
-            Dim returnValue As Object
-            Try 
-                returnValue = command.ExecuteScalar
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close
-                End If
-            End Try
-            If ((returnValue Is Nothing)  _
-                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return New Global.System.Nullable(Of Global.System.Guid)()
-            Else
-                Return New Global.System.Nullable(Of Global.System.Guid)(CType(returnValue,Global.System.Guid))
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function UploadFile(ByVal file_id As System.Guid, ByVal file_name As String, ByVal file_update As String, ByVal file_uploader As Global.System.Nullable(Of Long), ByVal isApproved As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+        Public Overloads Overridable Function UploadFile(ByVal file_id As System.Guid, ByVal file_name As String, ByVal file_update As String, ByVal file_uploader As Global.System.Nullable(Of Long), ByVal isApproved As String, ByVal name As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             command.Parameters(0).Value = CType(file_id,System.Guid)
             If (file_name Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
@@ -4375,6 +4536,11 @@ Namespace repoDBDataSetTableAdapters
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(4).Value = CType(isApproved,String)
+            End If
+            If (name Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(name,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

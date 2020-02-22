@@ -43,13 +43,6 @@ Partial Class InstructorForm
         Me.profileLabel = New System.Windows.Forms.Label()
         Me.profilePicture = New System.Windows.Forms.PictureBox()
         Me.Dashboard = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.searchBtn = New System.Windows.Forms.Button()
-        Me.searchBarLabel = New System.Windows.Forms.Label()
-        Me.minimizeBtn = New System.Windows.Forms.PictureBox()
-        Me.searchBar = New System.Windows.Forms.TextBox()
-        Me.closeBtn = New System.Windows.Forms.PictureBox()
         Me.FilterBtn = New System.Windows.Forms.Button()
         Me.DateFilterCb = New System.Windows.Forms.DateTimePicker()
         Me.datefilterLabel = New System.Windows.Forms.Label()
@@ -57,6 +50,13 @@ Partial Class InstructorForm
         Me.yearlevelfilterLabel = New System.Windows.Forms.Label()
         Me.coursefilterLabel = New System.Windows.Forms.Label()
         Me.yearlevelFilter = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.searchBtn = New System.Windows.Forms.Button()
+        Me.searchBarLabel = New System.Windows.Forms.Label()
+        Me.minimizeBtn = New System.Windows.Forms.PictureBox()
+        Me.searchBar = New System.Windows.Forms.TextBox()
+        Me.closeBtn = New System.Windows.Forms.PictureBox()
         Me.Panel4.SuspendLayout()
         Me.bottomBar.SuspendLayout()
         CType(Me.settingsBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -302,84 +302,6 @@ Partial Class InstructorForm
         Me.Dashboard.Size = New System.Drawing.Size(800, 182)
         Me.Dashboard.TabIndex = 9
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.Label3.Location = New System.Drawing.Point(12, 9)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(182, 19)
-        Me.Label3.TabIndex = 21
-        Me.Label3.Text = "Project Repository System"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 48)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 60)
-        Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Home"
-        '
-        'searchBtn
-        '
-        Me.searchBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.searchBtn.FlatAppearance.BorderSize = 0
-        Me.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.searchBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchBtn.ForeColor = System.Drawing.Color.Black
-        Me.searchBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
-        Me.searchBtn.Location = New System.Drawing.Point(183, 149)
-        Me.searchBtn.Name = "searchBtn"
-        Me.searchBtn.Size = New System.Drawing.Size(69, 22)
-        Me.searchBtn.TabIndex = 19
-        Me.searchBtn.Text = "Enter"
-        Me.searchBtn.UseVisualStyleBackColor = True
-        '
-        'searchBarLabel
-        '
-        Me.searchBarLabel.AutoSize = True
-        Me.searchBarLabel.BackColor = System.Drawing.Color.Transparent
-        Me.searchBarLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchBarLabel.Location = New System.Drawing.Point(12, 130)
-        Me.searchBarLabel.Name = "searchBarLabel"
-        Me.searchBarLabel.Size = New System.Drawing.Size(246, 17)
-        Me.searchBarLabel.TabIndex = 17
-        Me.searchBarLabel.Text = "Search (For Student Repositories only)"
-        '
-        'minimizeBtn
-        '
-        Me.minimizeBtn.BackColor = System.Drawing.Color.Transparent
-        Me.minimizeBtn.Image = Global.PRS.My.Resources.Resources.minimizeBtn
-        Me.minimizeBtn.Location = New System.Drawing.Point(700, 0)
-        Me.minimizeBtn.Name = "minimizeBtn"
-        Me.minimizeBtn.Size = New System.Drawing.Size(50, 29)
-        Me.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.minimizeBtn.TabIndex = 1
-        Me.minimizeBtn.TabStop = False
-        '
-        'searchBar
-        '
-        Me.searchBar.Location = New System.Drawing.Point(12, 150)
-        Me.searchBar.Name = "searchBar"
-        Me.searchBar.Size = New System.Drawing.Size(164, 20)
-        Me.searchBar.TabIndex = 16
-        '
-        'closeBtn
-        '
-        Me.closeBtn.BackColor = System.Drawing.Color.Transparent
-        Me.closeBtn.Image = Global.PRS.My.Resources.Resources.closeBtn
-        Me.closeBtn.Location = New System.Drawing.Point(750, 0)
-        Me.closeBtn.Name = "closeBtn"
-        Me.closeBtn.Size = New System.Drawing.Size(50, 29)
-        Me.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.closeBtn.TabIndex = 0
-        Me.closeBtn.TabStop = False
-        '
         'FilterBtn
         '
         Me.FilterBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
@@ -465,6 +387,84 @@ Partial Class InstructorForm
         Me.yearlevelFilter.Name = "yearlevelFilter"
         Me.yearlevelFilter.Size = New System.Drawing.Size(153, 21)
         Me.yearlevelFilter.TabIndex = 24
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.0!)
+        Me.Label3.Location = New System.Drawing.Point(12, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(182, 19)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "Project Repository System"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(24, 48)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(139, 60)
+        Me.Label2.TabIndex = 20
+        Me.Label2.Text = "Home"
+        '
+        'searchBtn
+        '
+        Me.searchBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.searchBtn.FlatAppearance.BorderSize = 0
+        Me.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.searchBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchBtn.ForeColor = System.Drawing.Color.Black
+        Me.searchBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
+        Me.searchBtn.Location = New System.Drawing.Point(183, 149)
+        Me.searchBtn.Name = "searchBtn"
+        Me.searchBtn.Size = New System.Drawing.Size(69, 22)
+        Me.searchBtn.TabIndex = 19
+        Me.searchBtn.Text = "Enter"
+        Me.searchBtn.UseVisualStyleBackColor = True
+        '
+        'searchBarLabel
+        '
+        Me.searchBarLabel.AutoSize = True
+        Me.searchBarLabel.BackColor = System.Drawing.Color.Transparent
+        Me.searchBarLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchBarLabel.Location = New System.Drawing.Point(9, 130)
+        Me.searchBarLabel.Name = "searchBarLabel"
+        Me.searchBarLabel.Size = New System.Drawing.Size(246, 17)
+        Me.searchBarLabel.TabIndex = 17
+        Me.searchBarLabel.Text = "Search (For Student Repositories only)"
+        '
+        'minimizeBtn
+        '
+        Me.minimizeBtn.BackColor = System.Drawing.Color.Transparent
+        Me.minimizeBtn.Image = Global.PRS.My.Resources.Resources.minimizeBtn
+        Me.minimizeBtn.Location = New System.Drawing.Point(700, 0)
+        Me.minimizeBtn.Name = "minimizeBtn"
+        Me.minimizeBtn.Size = New System.Drawing.Size(50, 29)
+        Me.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.minimizeBtn.TabIndex = 1
+        Me.minimizeBtn.TabStop = False
+        '
+        'searchBar
+        '
+        Me.searchBar.Location = New System.Drawing.Point(12, 150)
+        Me.searchBar.Name = "searchBar"
+        Me.searchBar.Size = New System.Drawing.Size(164, 20)
+        Me.searchBar.TabIndex = 16
+        '
+        'closeBtn
+        '
+        Me.closeBtn.BackColor = System.Drawing.Color.Transparent
+        Me.closeBtn.Image = Global.PRS.My.Resources.Resources.closeBtn
+        Me.closeBtn.Location = New System.Drawing.Point(750, 0)
+        Me.closeBtn.Name = "closeBtn"
+        Me.closeBtn.Size = New System.Drawing.Size(50, 29)
+        Me.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.closeBtn.TabIndex = 0
+        Me.closeBtn.TabStop = False
         '
         'InstructorForm
         '
