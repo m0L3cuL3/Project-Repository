@@ -230,7 +230,7 @@ Public Class InstructorForm
 
         Dim cmd As New SqlCommand
         cmd.Connection = conn
-        cmd.CommandText = "SELECT * FROM [Table] WHERE isApproved = 'pending'"
+        cmd.CommandText = "SELECT * FROM [Table] INNER JOIN dbo.[StudentData] ON dbo.[Table].file_uploader = dbo.[StudentData].student_id WHERE isApproved = 'pending'"
 
         Dim dr As SqlDataReader
         dr = cmd.ExecuteReader
