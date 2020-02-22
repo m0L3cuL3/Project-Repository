@@ -40,6 +40,7 @@ Partial Class LoginForm
         Me.TableAdapterManager = New PRS.repoDBDataSetTableAdapters.TableAdapterManager()
         Me.FileDataTableAdapter = New PRS.repoDBDataSetTableAdapters.FileDataTableAdapter()
         Me.InstructorDataTableAdapter = New PRS.repoDBDataSetTableAdapters.InstructorDataTableAdapter()
+        Me.HeadDataTableAdapter = New PRS.repoDBDataSetTableAdapters.HeadDataTableAdapter()
         Me.headBoardPanel.SuspendLayout()
         CType(Me.logoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,6 +192,10 @@ Partial Class LoginForm
         '
         Me.InstructorDataTableAdapter.ClearBeforeFill = True
         '
+        'HeadDataTableAdapter
+        '
+        Me.HeadDataTableAdapter.ClearBeforeFill = True
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -238,4 +243,5 @@ Partial Class LoginForm
     Friend WithEvents TableAdapterManager As repoDBDataSetTableAdapters.TableAdapterManager
     Friend WithEvents FileDataTableAdapter As repoDBDataSetTableAdapters.FileDataTableAdapter
     Friend WithEvents InstructorDataTableAdapter As repoDBDataSetTableAdapters.InstructorDataTableAdapter
+    Friend WithEvents HeadDataTableAdapter As repoDBDataSetTableAdapters.HeadDataTableAdapter
 End Class

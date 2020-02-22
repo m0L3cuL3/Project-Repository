@@ -1,4 +1,6 @@
-﻿Public Class HeadOfDepartmentForm
+﻿Imports System.Data.SqlClient
+
+Public Class HeadOfDepartmentForm
     Dim draggable As Boolean
     Dim mouseX As Integer
     Dim mouseY As Integer
@@ -95,24 +97,6 @@
         searchBtn.Image = My.Resources.neutralBtn
     End Sub
 
-    Private Sub approveBtn_MouseEnter(sender As Object, e As EventArgs) Handles approveBtn.MouseEnter
-        approveBtn.Image = My.Resources.generalBtnHover
-        approveBtn.ForeColor = Color.White
-    End Sub
-
-    Private Sub approveBtn_MouseLeave(sender As Object, e As EventArgs) Handles approveBtn.MouseLeave
-        approveBtn.Image = My.Resources.neutralBtn
-    End Sub
-
-    Private Sub declineBtn_MouseEnter(sender As Object, e As EventArgs) Handles declineBtn.MouseEnter
-        declineBtn.Image = My.Resources.logoutBtn
-        approveBtn.ForeColor = Color.White
-    End Sub
-
-    Private Sub declineBtn_MouseLeave(sender As Object, e As EventArgs) Handles declineBtn.MouseLeave
-        declineBtn.Image = My.Resources.neutralBtn
-    End Sub
-
     Private Sub homeBtn_MouseEnter(sender As Object, e As EventArgs) Handles homeBtn.MouseEnter
         homeBtn.BackgroundImage = My.Resources.homeBtnHover
     End Sub
@@ -153,26 +137,17 @@
         pendingProjectsBtn.BackgroundImage = My.Resources.pendingProjectsBtn
     End Sub
 
-    'for testing purposes only'
-    Private Sub testBtn_Click(sender As Object, e As EventArgs) Handles testApproveBtn.Click
-        AddApproveProject()
-    End Sub
-
-    'for testing purposes only'
-    Private Sub testPendingBtn_Click(sender As Object, e As EventArgs) Handles testPendingBtn.Click
-        AddPendingProject()
-    End Sub
 
     'home button'
     Private Sub homeBtn_Click(sender As Object, e As EventArgs) Handles homeBtn.Click
         mainLabel.Text = "Home"
-        ShowApprovedLayout()
+        LoadApprovedProject()
     End Sub
 
     'pending projects button'
     Private Sub pendingProjectsBtn_Click(sender As Object, e As EventArgs) Handles pendingProjectsBtn.Click
         mainLabel.Text = "Pending Projects"
-        ShowPendingLayout()
+        LoadPendingProject()
     End Sub
 
     'closes the form'
@@ -211,32 +186,73 @@
     End Sub
 
     'adds approved project to pendingPanel (for testing only)'
-    Public Sub AddPendingProject()
+    Public Sub LoadPendingProject()
+
+        pendingPanel.Controls.Clear()
+
+        Dim conn As New SqlConnection
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+        conn.Open()
+
+        Dim cmd As New SqlCommand
+        cmd.Connection = conn
+        cmd.CommandText = "SELECT * FROM [Table] INNER JOIN dbo.[StudentData] ON dbo.[Table].file_uploader = dbo.[StudentData].student_id WHERE isApproved = 'pending'"
+
+        Dim dr As SqlDataReader
+        dr = cmd.ExecuteReader
+
+        'removal of other component when in use'
+        mainPanel.Controls.Remove(approvedPanel)
 
         LoadPendingLayoutProject()
 
-        Dim pp As New projectPanel
-        pp.PictureBox1.Image = My.Resources.pendingMark2
-        pendingPanel.Controls.Add(pp)
+        While dr.Read()
+            Dim pp As New projectPanel
+            pp.PictureBox1.Image = My.Resources.pendingMark2
+            pp.approveBtn.Enabled = True
+            pp.approveBtn.Visible = True
+            pp.guidLabel.Text = dr.Item("file_id").ToString
+            pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+            pp.projectTitle.Text = dr.Item("file_name")
+            pendingPanel.Controls.Add(pp)
+            Refresh()
+        End While
     End Sub
 
     'show approved project'
-    Public Sub ShowApprovedLayout()
+    Public Sub LoadApprovedProject()
+        approvedPanel.Controls.Clear()
+
+        Dim conn As New SqlConnection
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+        conn.Open()
+
+        Dim cmd As New SqlCommand
+        cmd.Connection = conn
+        cmd.CommandText = "SELECT * FROM [Table] WHERE isApproved = 'approved'"
+
+        Dim dr As SqlDataReader
+        dr = cmd.ExecuteReader
+
         'removal of other component when in use'
         mainPanel.Controls.Remove(pendingPanel)
 
         LoadApprovedLayoutProject()
+
+        While dr.Read()
+            Dim pp As New projectPanel
+            pp.cloneBtn.Enabled = True
+            pp.cloneBtn.Visible = True
+            pp.PictureBox1.Image = My.Resources.checkMark
+            pp.guidLabel.Text = dr.Item("file_id").ToString
+            pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader") & "]" & " on " & dr.Item("file_update")
+            pp.projectTitle.Text = dr.Item("file_name")
+            approvedPanel.Controls.Add(pp)
+        End While
     End Sub
 
     Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
         Close()
         LoginForm.Show()
-    End Sub
-    'shows pending projects'
-    Public Sub ShowPendingLayout()
-        'removal of other component when in use'
-        mainPanel.Controls.Remove(approvedPanel)
-
-        LoadPendingLayoutProject()
     End Sub
 End Class

@@ -6,15 +6,9 @@
     Dim mouseY As Integer
 
     'Sample Users'
-    Dim student As String = "student"
-    Dim instructor As String = "instructor"
-    Dim headOfDepartment As String = "headofdepartment"
     Dim admin As String = "admin"
 
     'Sample Passwords'
-    Dim studentPass As String = "student"
-    Dim instructorPass As String = "instructor"
-    Dim headOfDepartmentPass As String = "headofdepartment"
     Dim adminPass As String = "admin"
 
 
@@ -85,21 +79,28 @@
             Me.Hide()
         ElseIf Me.StudentDataTableAdapter.CheckStudent(userTb.Text, passTb.Text) = 1 Then
 
-            'for user verification
+            'for student verification
             SetUserID(Me.StudentDataTableAdapter.SelectStudentID(userTb.Text, passTb.Text)) 'sets user id
             SetUsername(Me.StudentDataTableAdapter.SelectStudentName(userTb.Text, passTb.Text)) 'sets user name
             SetStudentProgram(Me.StudentDataTableAdapter.SelectStudentCourse(userTb.Text, passTb.Text), Me.StudentDataTableAdapter.SelectStudentLevel(userTb.Text, passTb.Text)) 'sets course and year
             StudentForm.Show()
             Me.Hide()
+
         ElseIf Me.InstructorDataTableAdapter.CheckInstructor(userTb.Text, passTb.Text) Then
+
+            'for instructor verification
             SetUserID(Me.InstructorDataTableAdapter.SelectInstructorID(userTb.Text, passTb.Text)) 'sets user id
             SetUsername(Me.InstructorDataTableAdapter.SelectInstructorName(userTb.Text, passTb.Text)) 'sets user name
             SetTitle(Me.InstructorDataTableAdapter.SelectInstructorTitle(userTb.Text, passTb.Text)) 'sets title
             InstructorForm.Show()
             Me.Hide()
-        ElseIf userTb.Text = headOfDepartment And passTb.Text = headOfDepartmentPass Then
+
+        ElseIf Me.HeadDataTableAdapter.CheckHead(userTb.Text, passTb.Text) Then
+
+            'for head of department verification
             HeadOfDepartmentForm.Show()
             Me.Hide()
+
         Else
             MessageBox.Show("Incorrect Credentials entered, please try again.")
         End If
