@@ -226,8 +226,8 @@ Public Class StudentForm
 
         While dr.Read()
             Dim pp As New projectPanel
-            pp.cloneBtn.Enabled = True
-            pp.cloneBtn.Visible = True
+            pp.downloadBtn.Enabled = True
+            pp.downloadBtn.Visible = True
             pp.PictureBox1.Image = My.Resources.checkMark
             pp.guidLabel.Text = dr.Item("file_id").ToString
             pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -272,8 +272,8 @@ Public Class StudentForm
 
                 While dr.Read()
                     Dim pp As New projectPanel
-                    pp.cloneBtn.Enabled = True
-                    pp.cloneBtn.Visible = True
+                    pp.downloadBtn.Enabled = True
+                    pp.downloadBtn.Visible = True
                     pp.PictureBox1.Image = My.Resources.checkMark
                     pp.guidLabel.Text = dr.Item("file_id").ToString
                     pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -306,8 +306,8 @@ Public Class StudentForm
 
                 While dr.Read()
                     Dim pp As New projectPanel
-                    pp.cloneBtn.Enabled = True
-                    pp.cloneBtn.Visible = True
+                    pp.downloadBtn.Enabled = True
+                    pp.downloadBtn.Visible = True
                     pp.PictureBox1.Image = My.Resources.checkMark
                     pp.guidLabel.Text = dr.Item("file_id").ToString
                     pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -344,8 +344,8 @@ Public Class StudentForm
 
             While dr.Read()
                 Dim pp As New projectPanel
-                pp.cloneBtn.Enabled = True
-                pp.cloneBtn.Visible = True
+                pp.downloadBtn.Enabled = True
+                pp.downloadBtn.Visible = True
                 pp.PictureBox1.Image = My.Resources.checkMark
                 pp.guidLabel.Text = dr.Item("file_id").ToString
                 pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")

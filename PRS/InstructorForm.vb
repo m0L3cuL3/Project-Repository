@@ -10,7 +10,7 @@ Public Class InstructorForm
     Dim flowPanel, pendingPanel As New FlowLayoutPanel
     Dim repo As New myRepositories
 
-    Private Sub StudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'this is for the sliding feature.
         isHide = False
         profilePanel.Width = 0
@@ -253,7 +253,6 @@ Public Class InstructorForm
             pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
             pp.projectTitle.Text = dr.Item("file_name")
             pendingPanel.Controls.Add(pp)
-            Refresh()
         End While
     End Sub
 
@@ -280,8 +279,8 @@ Public Class InstructorForm
 
         While dr.Read()
             Dim pp As New projectPanel
-            pp.cloneBtn.Enabled = True
-            pp.cloneBtn.Visible = True
+            pp.downloadBtn.Enabled = True
+            pp.downloadBtn.Visible = True
             pp.PictureBox1.Image = My.Resources.checkMark
             pp.guidLabel.Text = dr.Item("file_id").ToString
             pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -316,8 +315,8 @@ Public Class InstructorForm
 
                 While dr.Read()
                     Dim pp As New projectPanel
-                    pp.cloneBtn.Enabled = True
-                    pp.cloneBtn.Visible = True
+                    pp.downloadBtn.Enabled = True
+                    pp.downloadBtn.Visible = True
                     pp.PictureBox1.Image = My.Resources.checkMark
                     pp.guidLabel.Text = dr.Item("file_id").ToString
                     pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -350,8 +349,8 @@ Public Class InstructorForm
 
                 While dr.Read()
                     Dim pp As New projectPanel
-                    pp.cloneBtn.Enabled = True
-                    pp.cloneBtn.Visible = True
+                    pp.downloadBtn.Enabled = True
+                    pp.downloadBtn.Visible = True
                     pp.PictureBox1.Image = My.Resources.checkMark
                     pp.guidLabel.Text = dr.Item("file_id").ToString
                     pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -388,8 +387,8 @@ Public Class InstructorForm
 
             While dr.Read()
                 Dim pp As New projectPanel
-                pp.cloneBtn.Enabled = True
-                pp.cloneBtn.Visible = True
+                pp.downloadBtn.Enabled = True
+                pp.downloadBtn.Visible = True
                 pp.PictureBox1.Image = My.Resources.checkMark
                 pp.guidLabel.Text = dr.Item("file_id").ToString
                 pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")

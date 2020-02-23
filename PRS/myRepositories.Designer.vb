@@ -23,6 +23,8 @@ Partial Class myRepositories
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.existRepoTb = New System.Windows.Forms.TextBox()
+        Me.browseFileBtn = New System.Windows.Forms.Button()
         Me.projectStatusFilter = New System.Windows.Forms.ComboBox()
         Me.approveFilterLabel = New System.Windows.Forms.Label()
         Me.FilterBtn = New System.Windows.Forms.Button()
@@ -45,6 +47,8 @@ Partial Class myRepositories
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel3.Controls.Add(Me.existRepoTb)
+        Me.Panel3.Controls.Add(Me.browseFileBtn)
         Me.Panel3.Controls.Add(Me.projectStatusFilter)
         Me.Panel3.Controls.Add(Me.approveFilterLabel)
         Me.Panel3.Controls.Add(Me.FilterBtn)
@@ -55,13 +59,37 @@ Partial Class myRepositories
         Me.Panel3.Size = New System.Drawing.Size(600, 79)
         Me.Panel3.TabIndex = 5
         '
+        'existRepoTb
+        '
+        Me.existRepoTb.Location = New System.Drawing.Point(3, 8)
+        Me.existRepoTb.Name = "existRepoTb"
+        Me.existRepoTb.Size = New System.Drawing.Size(249, 20)
+        Me.existRepoTb.TabIndex = 28
+        '
+        'browseFileBtn
+        '
+        Me.browseFileBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.browseFileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.browseFileBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.browseFileBtn.FlatAppearance.BorderSize = 0
+        Me.browseFileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.browseFileBtn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.browseFileBtn.ForeColor = System.Drawing.Color.White
+        Me.browseFileBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
+        Me.browseFileBtn.Location = New System.Drawing.Point(3, 34)
+        Me.browseFileBtn.Name = "browseFileBtn"
+        Me.browseFileBtn.Size = New System.Drawing.Size(249, 22)
+        Me.browseFileBtn.TabIndex = 38
+        Me.browseFileBtn.Text = "Add file in existing repository"
+        Me.browseFileBtn.UseVisualStyleBackColor = True
+        '
         'projectStatusFilter
         '
         Me.projectStatusFilter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.projectStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.projectStatusFilter.FormattingEnabled = True
         Me.projectStatusFilter.Items.AddRange(New Object() {"approved", "pending"})
-        Me.projectStatusFilter.Location = New System.Drawing.Point(138, 30)
+        Me.projectStatusFilter.Location = New System.Drawing.Point(459, 25)
         Me.projectStatusFilter.Name = "projectStatusFilter"
         Me.projectStatusFilter.Size = New System.Drawing.Size(129, 21)
         Me.projectStatusFilter.TabIndex = 35
@@ -71,7 +99,7 @@ Partial Class myRepositories
         Me.approveFilterLabel.AutoSize = True
         Me.approveFilterLabel.BackColor = System.Drawing.Color.Transparent
         Me.approveFilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.approveFilterLabel.Location = New System.Drawing.Point(135, 9)
+        Me.approveFilterLabel.Location = New System.Drawing.Point(456, 4)
         Me.approveFilterLabel.Name = "approveFilterLabel"
         Me.approveFilterLabel.Size = New System.Drawing.Size(132, 17)
         Me.approveFilterLabel.TabIndex = 34
@@ -87,9 +115,9 @@ Partial Class myRepositories
         Me.FilterBtn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FilterBtn.ForeColor = System.Drawing.Color.White
         Me.FilterBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.FilterBtn.Location = New System.Drawing.Point(468, 46)
+        Me.FilterBtn.Location = New System.Drawing.Point(333, 53)
         Me.FilterBtn.Name = "FilterBtn"
-        Me.FilterBtn.Size = New System.Drawing.Size(120, 22)
+        Me.FilterBtn.Size = New System.Drawing.Size(255, 22)
         Me.FilterBtn.TabIndex = 33
         Me.FilterBtn.Text = "Filter"
         Me.FilterBtn.UseVisualStyleBackColor = True
@@ -99,7 +127,7 @@ Partial Class myRepositories
         Me.datefilterLabel.AutoSize = True
         Me.datefilterLabel.BackColor = System.Drawing.Color.Transparent
         Me.datefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datefilterLabel.Location = New System.Drawing.Point(9, 9)
+        Me.datefilterLabel.Location = New System.Drawing.Point(333, 4)
         Me.datefilterLabel.Name = "datefilterLabel"
         Me.datefilterLabel.Size = New System.Drawing.Size(40, 17)
         Me.datefilterLabel.TabIndex = 32
@@ -112,7 +140,7 @@ Partial Class myRepositories
         Me.DateFilterCb.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.DateFilterCb.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.DateFilterCb.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilterCb.Location = New System.Drawing.Point(12, 29)
+        Me.DateFilterCb.Location = New System.Drawing.Point(333, 24)
         Me.DateFilterCb.Name = "DateFilterCb"
         Me.DateFilterCb.Size = New System.Drawing.Size(120, 23)
         Me.DateFilterCb.TabIndex = 31
@@ -232,4 +260,6 @@ Partial Class myRepositories
     Friend WithEvents approveFilterLabel As Label
     Friend WithEvents FilterBtn As Button
     Friend WithEvents projectStatusFilter As ComboBox
+    Friend WithEvents browseFileBtn As Button
+    Friend WithEvents existRepoTb As TextBox
 End Class

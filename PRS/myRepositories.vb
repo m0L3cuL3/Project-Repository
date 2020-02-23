@@ -94,10 +94,38 @@ Public Class myRepositories
             Me.FileDataTableAdapter.UploadFile(fuid, fileBar.Text, dt, GetUserID(), "pending", GetUsername())
             LoadUserRepository()
             SecondaryDirectory(fileBar.Text) 'create directory inside C:\Documents\Repositories
+            fileBar.Clear()
         End If
     End Sub
 
     Private Sub FilterStatusBtn_Click(sender As Object, e As EventArgs) Handles FilterBtn.Click
         FilterProjectStatus(projectStatusFilter.SelectedItem)
+    End Sub
+
+    Private Sub browseFileBtn_Click(sender As Object, e As EventArgs) Handles browseFileBtn.Click
+        Dim dir As String = "C:\Users\" & Environment.UserName & "\Documents\Repositories"
+        Dim repoDir As String = existRepoTb.Text
+        If repoDir = "" Then
+            MessageBox.Show("Please select an existing repository", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            If Directory.Exists(dir & "\" & repoDir) Then
+                If Not File.Exists(dir & "\" & repoDir & "\README.md") = True Then
+                    Dim file As FileStream
+                    file = IO.File.Create(dir & "\" & repoDir & "\README.md")
+                    file.Close()
+                    MessageBox.Show("README.md file added in " & dir & "\" & repoDir, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+                File.WriteAllText(dir & "\" & repoDir & "\README.md", "[Project-Repository] - SemiFinal Project")
+            Else
+                MessageBox.Show(dir & "\" & repoDir & " does not exists!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End If
+
+    End Sub
+
+    Private Sub folderListView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles folderListView.SelectedIndexChanged
+        If folderListView.SelectedItems.Count > 0 Then
+            existRepoTb.Text = folderListView.SelectedItems(0).SubItems(1).Text
+        End If
     End Sub
 End Class

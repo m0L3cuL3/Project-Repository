@@ -158,6 +158,14 @@ Public Class HeadOfDepartmentForm
         LoadPendingProject() 'loads pending projects
     End Sub
 
+    'search button
+    Private Sub searchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
+        If searchBar.Text = "" Then
+            MsgBox("Please enter repository name")
+        End If
+        SearchRepository(searchBar.Text)
+    End Sub
+
     'closes the form'
     Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
         Close()
@@ -238,8 +246,8 @@ Public Class HeadOfDepartmentForm
 
         While dr.Read()
             Dim pp As New projectPanel
-            pp.cloneBtn.Enabled = True
-            pp.cloneBtn.Visible = True
+            pp.downloadBtn.Enabled = True
+            pp.downloadBtn.Visible = True
             pp.PictureBox1.Image = My.Resources.checkMark
             pp.guidLabel.Text = dr.Item("file_id").ToString
             pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -283,8 +291,8 @@ Public Class HeadOfDepartmentForm
 
                 While dr.Read()
                     Dim pp As New projectPanel
-                    pp.cloneBtn.Enabled = True
-                    pp.cloneBtn.Visible = True
+                    pp.downloadBtn.Enabled = True
+                    pp.downloadBtn.Visible = True
                     pp.PictureBox1.Image = My.Resources.checkMark
                     pp.guidLabel.Text = dr.Item("file_id").ToString
                     pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -317,8 +325,8 @@ Public Class HeadOfDepartmentForm
 
                 While dr.Read()
                     Dim pp As New projectPanel
-                    pp.cloneBtn.Enabled = True
-                    pp.cloneBtn.Visible = True
+                    pp.downloadBtn.Enabled = True
+                    pp.downloadBtn.Visible = True
                     pp.PictureBox1.Image = My.Resources.checkMark
                     pp.guidLabel.Text = dr.Item("file_id").ToString
                     pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
@@ -351,5 +359,42 @@ Public Class HeadOfDepartmentForm
         yearlevelFilter.Visible = True
         courseFilter.Visible = True
         FilterBtn.Visible = True
+    End Sub
+
+    'searches through the database for user inputted repository
+    Private Sub SearchRepository(repoName As String)
+        approvedPanel.Controls.Clear()
+
+        Try
+            Dim conn As New SqlConnection
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.Open()
+
+            Dim cmd As New SqlCommand
+            cmd.Connection = conn
+            cmd.CommandText = "SELECT * FROM [Table] WHERE file_name = @filename AND isApproved = 'approved'"
+            cmd.Parameters.AddWithValue("@filename", searchBar.Text)
+
+            Dim dr As SqlDataReader
+            dr = cmd.ExecuteReader
+
+            'removal of other component when in use'
+            pendingPanel.Controls.Remove(pendingPanel)
+
+            LoadApprovedLayoutProject()
+
+            While dr.Read()
+                Dim pp As New projectPanel
+                pp.downloadBtn.Enabled = True
+                pp.downloadBtn.Visible = True
+                pp.PictureBox1.Image = My.Resources.checkMark
+                pp.guidLabel.Text = dr.Item("file_id").ToString
+                pp.uploaderLabel.Text = "Uploaded by " & "[" & dr.Item("file_uploader_name") & "]" & " on " & dr.Item("file_update")
+                pp.projectTitle.Text = dr.Item("file_name")
+                approvedPanel.Controls.Add(pp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
     End Sub
 End Class

@@ -14,11 +14,13 @@ Public Class AdminForm
         LoadMSSQLVersion() 'loads database version
         LoadStudentData() 'default loads student data
         LoadInstructorData() 'default loads instructor data
+        LoadHeadData() 'default loads head of department data
 
         HideStudentPass() 'default hides student password components
         HideInstructorPass() 'default hides instructor password components
+        HideHeadPass() 'default hides head of department password components
 
-        Timer1.Start() 'starts network monitoring
+        NetworkTimer.Start() 'starts network monitoring
     End Sub
 
     Private Sub topBarPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles topBarPanel.MouseDown
@@ -57,6 +59,15 @@ Public Class AdminForm
         End If
     End Sub
 
+    'when click display data in textbox (HEAD OF DEPARTMENT)
+    Private Sub HeadView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles HeadView.SelectedIndexChanged
+        If HeadView.SelectedItems.Count > 0 Then
+            Head_idTextBox.Text = HeadView.SelectedItems(0).SubItems(0).Text
+            Head_nameTextBox.Text = HeadView.SelectedItems(0).SubItems(1).Text
+            Head_titleTextBox.Text = HeadView.SelectedItems(0).SubItems(2).Text
+        End If
+    End Sub
+
     'logout button
     Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
         Me.Close()
@@ -71,6 +82,11 @@ Public Class AdminForm
     'execute query button (INSTRUCTOR)
     Private Sub executeInstructorBtn_Click(sender As Object, e As EventArgs) Handles executeInstructorBtn.Click
         ExecuteInstructorQuery()
+    End Sub
+
+    'execute query button (HEAD OF DEPARTMENT)
+    Private Sub executeHeadBtn_Click(sender As Object, e As EventArgs) Handles executeHeadBtn.Click
+        ExecuteHeadQuery()
     End Sub
 
     'loads student data
@@ -119,6 +135,32 @@ Public Class AdminForm
                 Item.SubItems.Add(dr.Item("instructor_user").ToString)
                 Item.SubItems.Add(dr.Item("instructor_title").ToString)
                 InstructorView.Items.Add(Item)
+
+            End While
+        Catch ex As Exception
+            ' Do nothing
+        End Try
+    End Sub
+
+    'loads head of department data
+    Private Sub LoadHeadData()
+        Try
+            Dim conn As New SqlConnection
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.Open()
+
+            Dim cmd As New SqlCommand
+            cmd.Connection = conn
+            cmd.CommandText = "SELECT * FROM [HeadData]"
+
+            Dim dr As SqlDataReader
+            dr = cmd.ExecuteReader
+
+            While dr.Read()
+                Dim Item As New ListViewItem((dr.Item("head_id").ToString))
+                Item.SubItems.Add(dr.Item("head_name").ToString)
+                Item.SubItems.Add(dr.Item("head_title").ToString)
+                HeadView.Items.Add(Item)
 
             End While
         Catch ex As Exception
@@ -349,7 +391,7 @@ Public Class AdminForm
                 While dr.Read()
                     Dim Item As New ListViewItem((dr.Item("instructor_id").ToString))
                     Item.SubItems.Add(dr.Item("instructor_user").ToString)
-                    Item.SubItems.Add(dr.Item("instructor_pass").ToString)
+                    Item.SubItems.Add(dr.Item("instructor_title").ToString)
                     InstructorView.Items.Add(Item)
                 End While
             Catch ex As Exception
@@ -460,6 +502,166 @@ Public Class AdminForm
         End If
     End Sub
 
+    'execute sql queries (HEAD OF DEPARTMENT)
+    Private Sub ExecuteHeadQuery()
+        If SqlHeadComboBox.SelectedItem = "SHOW ALL DATA" Then 'shows all head of department data
+            HideHeadPass()
+
+            HeadView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [HeadData]"
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("head_id").ToString))
+                    Item.SubItems.Add(dr.Item("head_name").ToString)
+                    Item.SubItems.Add(dr.Item("head_title").ToString)
+                    HeadView.Items.Add(Item)
+                End While
+            Catch ex As Exception
+                LoadHeadData()
+            End Try
+        ElseIf SqlHeadComboBox.SelectedItem = "SELECT (By ID)" Then ' selects instructor data by ID
+
+            HideHeadPass()
+
+            HeadView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [HeadData] WHERE head_id = @id"
+                cmd.Parameters.AddWithValue("@id", Head_idTextBox.Text)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("head_id").ToString))
+                    Item.SubItems.Add(dr.Item("head_name").ToString)
+                    Item.SubItems.Add(dr.Item("head_title").ToString)
+                    HeadView.Items.Add(Item)
+                End While
+            Catch ex As Exception
+                LoadHeadData()
+            End Try
+        ElseIf SqlHeadComboBox.SelectedItem = "INSERT" Then 'inserts a new student
+
+            ShowHeadPass()
+
+            HeadView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "INSERT INTO [HeadData](head_id, head_name, head_pass, head_title) VALUES (@id, @name, @pass, @title)"
+                cmd.Parameters.AddWithValue("@id", Head_idTextBox.Text)
+                cmd.Parameters.AddWithValue("@name", Head_nameTextBox.Text)
+                cmd.Parameters.AddWithValue("@pass", Head_passTextBox.Text)
+                cmd.Parameters.AddWithValue("@title", Head_titleTextBox.Text)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                LoadHeadData() 'reloads instructor data after insertion
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("head_id").ToString))
+                    Item.SubItems.Add(dr.Item("head_name").ToString)
+                    Item.SubItems.Add(dr.Item("head_title").ToString)
+                    HeadView.Items.Add(Item)
+                End While
+            Catch ex As SqlException
+                MessageBox.Show(ex.ToString, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoadHeadData()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString, "Unknown Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoadHeadData()
+            End Try
+        ElseIf SqlHeadComboBox.SelectedItem = "UPDATE" Then 'updates selected instrucor
+            HeadView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "UPDATE [HeadData] SET head_name = @name, head_pass = @pass, head_title = @title WHERE head_id = @id"
+                cmd.Parameters.AddWithValue("@id", Head_idTextBox.Text)
+                cmd.Parameters.AddWithValue("@name", Head_nameTextBox.Text)
+                cmd.Parameters.AddWithValue("@pass", Head_passTextBox.Text)
+                cmd.Parameters.AddWithValue("@title", Head_titleTextBox.Text)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                LoadHeadData() 'reloads student data after update
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("head_id").ToString))
+                    Item.SubItems.Add(dr.Item("head_name").ToString)
+                    Item.SubItems.Add(dr.Item("head_title").ToString)
+                    HeadView.Items.Add(Item)
+
+                End While
+            Catch ex As SqlException
+                MessageBox.Show(ex.ToString, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoadHeadData()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString, "Unknown Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoadHeadData()
+            End Try
+        ElseIf SqlHeadComboBox.SelectedItem = "DELETE (By ID)" Then 'deletes instructor by id
+            HideHeadPass()
+
+            HeadView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "DELETE FROM [HeadData] WHERE head_id = @id"
+                cmd.Parameters.AddWithValue("@id", Head_idTextBox.Text)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                LoadHeadData() 'reloads instructor data after deletion.
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("head_id").ToString))
+                    Item.SubItems.Add(dr.Item("head_name").ToString)
+                    Item.SubItems.Add(dr.Item("head_title").ToString)
+                    HeadView.Items.Add(Item)
+                End While
+            Catch ex As Exception
+                LoadHeadData()
+            End Try
+        End If
+    End Sub
+
     'hide password components (STUDENT)
     Private Sub HideStudentPass()
         'student
@@ -486,6 +688,20 @@ Public Class AdminForm
         'instructor
         Instructor_passLabel.Visible = True 'show passLabel
         Instructor_passTextBox.Visible = True 'show passTb
+    End Sub
+
+    'hide password components (HEAD OF DEPARTMENT)
+    Private Sub HideHeadPass()
+        'head of department
+        Head_passLabel.Visible = False 'hide passLabel
+        Head_passTextBox.Visible = False 'hides passTb
+    End Sub
+
+    'show password components (HEAD OF DEPARTMENT)
+    Private Sub ShowHeadPass()
+        'head of department
+        Head_passLabel.Visible = True 'hide passLabel
+        Head_passTextBox.Visible = True 'hides passTb
     End Sub
 
     'student combo box query filter selector
@@ -518,6 +734,21 @@ Public Class AdminForm
         End If
     End Sub
 
+    'head of department combo box query filter selector
+    Private Sub SqlHeadComboBox_SelectedValueChanged(sender As Object, e As EventArgs) Handles SqlHeadComboBox.SelectedValueChanged
+        If SqlHeadComboBox.SelectedItem = "SHOW ALL DATA" Then
+            HideHeadPass()
+        ElseIf SqlHeadComboBox.SelectedItem = "SELECT (By ID)" Then
+            HideHeadPass()
+        ElseIf SqlHeadComboBox.SelectedItem = "INSERT" Then
+            ShowHeadPass()
+        ElseIf SqlHeadComboBox.SelectedItem = "UPDATE" Then
+            ShowHeadPass()
+        ElseIf SqlHeadComboBox.SelectedItem = "DELETE (By ID)" Then
+            HideHeadPass()
+        End If
+    End Sub
+
     'load MSSQL Version
     Private Sub LoadMSSQLVersion()
         Try
@@ -541,7 +772,7 @@ Public Class AdminForm
     End Sub
 
     'network monitor (HOME)
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles NetworkTimer.Tick
         Label2.Text = ("")
         Label4.Text = ("")
         Label5.Text = ("")
@@ -553,5 +784,4 @@ Public Class AdminForm
         Label5.Text &= "Discarded: " & StatV4.ReceivedPacketsDiscarded & vbNewLine
         Label6.Text &= "Forwarded: " & StatV4.ReceivedPacketsForwarded & vbNewLine
     End Sub
-
 End Class

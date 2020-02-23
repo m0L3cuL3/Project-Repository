@@ -30,7 +30,7 @@ Partial Class projectPanel
         Me.FileDataTableAdapter = New PRS.repoDBDataSetTableAdapters.FileDataTableAdapter()
         Me.RepoDBDataSet = New PRS.repoDBDataSet()
         Me.uploaderLabel = New System.Windows.Forms.Label()
-        Me.cloneBtn = New System.Windows.Forms.Button()
+        Me.downloadBtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepoDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -113,31 +113,31 @@ Partial Class projectPanel
         Me.uploaderLabel.TabIndex = 26
         Me.uploaderLabel.Text = "uid"
         '
-        'cloneBtn
+        'downloadBtn
         '
-        Me.cloneBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
-        Me.cloneBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.cloneBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cloneBtn.Enabled = False
-        Me.cloneBtn.FlatAppearance.BorderSize = 0
-        Me.cloneBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cloneBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cloneBtn.ForeColor = System.Drawing.Color.White
-        Me.cloneBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.cloneBtn.Location = New System.Drawing.Point(576, 28)
-        Me.cloneBtn.Name = "cloneBtn"
-        Me.cloneBtn.Size = New System.Drawing.Size(130, 24)
-        Me.cloneBtn.TabIndex = 27
-        Me.cloneBtn.Text = "Clone"
-        Me.cloneBtn.UseVisualStyleBackColor = True
-        Me.cloneBtn.Visible = False
+        Me.downloadBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
+        Me.downloadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.downloadBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.downloadBtn.Enabled = False
+        Me.downloadBtn.FlatAppearance.BorderSize = 0
+        Me.downloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.downloadBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.downloadBtn.ForeColor = System.Drawing.Color.White
+        Me.downloadBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
+        Me.downloadBtn.Location = New System.Drawing.Point(576, 28)
+        Me.downloadBtn.Name = "downloadBtn"
+        Me.downloadBtn.Size = New System.Drawing.Size(130, 24)
+        Me.downloadBtn.TabIndex = 27
+        Me.downloadBtn.Text = "Download"
+        Me.downloadBtn.UseVisualStyleBackColor = True
+        Me.downloadBtn.Visible = False
         '
         'projectPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.Controls.Add(Me.cloneBtn)
+        Me.Controls.Add(Me.downloadBtn)
         Me.Controls.Add(Me.uploaderLabel)
         Me.Controls.Add(Me.approveBtn)
         Me.Controls.Add(Me.PictureBox1)
@@ -160,5 +160,5 @@ Partial Class projectPanel
     Friend WithEvents FileDataTableAdapter As repoDBDataSetTableAdapters.FileDataTableAdapter
     Friend WithEvents RepoDBDataSet As repoDBDataSet
     Friend WithEvents uploaderLabel As Label
-    Friend WithEvents cloneBtn As Button
+    Friend WithEvents downloadBtn As Button
 End Class
