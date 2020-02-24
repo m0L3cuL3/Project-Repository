@@ -169,14 +169,14 @@ Partial Class HeadOfDepartmentForm
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(0, 64)
+        Me.Panel2.Size = New System.Drawing.Size(288, 64)
         Me.Panel2.TabIndex = 1
         '
         'profilebackBtn
         '
         Me.profilebackBtn.Dock = System.Windows.Forms.DockStyle.Right
         Me.profilebackBtn.Image = Global.PRS.My.Resources.Resources.backBtn
-        Me.profilebackBtn.Location = New System.Drawing.Point(-62, 0)
+        Me.profilebackBtn.Location = New System.Drawing.Point(224, 0)
         Me.profilebackBtn.Name = "profilebackBtn"
         Me.profilebackBtn.Size = New System.Drawing.Size(62, 62)
         Me.profilebackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -198,7 +198,7 @@ Partial Class HeadOfDepartmentForm
         Me.profilePanel.Controls.Add(Me.profilePicture)
         Me.profilePanel.Location = New System.Drawing.Point(0, 0)
         Me.profilePanel.Name = "profilePanel"
-        Me.profilePanel.Size = New System.Drawing.Size(0, 600)
+        Me.profilePanel.Size = New System.Drawing.Size(290, 600)
         Me.profilePanel.TabIndex = 11
         '
         'logoutBtn

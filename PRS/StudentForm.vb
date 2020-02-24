@@ -379,6 +379,7 @@ Public Class StudentForm
         FilterBtn.Visible = True
     End Sub
 
+    'changes the user password
     Private Sub changePasswordLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles changePasswordLabel.LinkClicked
         Dim newPass As String
         newPass = InputBox("Please enter a new password." & vbCrLf & "Make sure you remember it.", "Change Password")

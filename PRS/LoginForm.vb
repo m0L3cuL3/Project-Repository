@@ -66,47 +66,50 @@
     'show form on login'
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
 
+        Try
+            If userTb.Text = "" And passTb.Text = "" Then
+                MessageBox.Show("Please enter Username and Password.")
+            ElseIf userTb.Text = "" Then
+                MessageBox.Show("Please enter Username")
+            ElseIf passTb.Text = "" Then
+                MessageBox.Show("Please enter Password.")
+            ElseIf Me.AdminDataTableAdapter.CheckAdmin(userTb.Text, passTb.Text) = 1 Then
+                AdminForm.Show()
+                Me.Hide()
+            ElseIf Me.StudentDataTableAdapter.CheckStudent(userTb.Text, passTb.Text) = 1 Then
 
+                'for student verification
+                SetUserID(Me.StudentDataTableAdapter.SelectStudentID(userTb.Text, passTb.Text)) 'sets user id
+                SetUsername(Me.StudentDataTableAdapter.SelectStudentName(userTb.Text, passTb.Text)) 'sets user name
+                SetStudentProgram(Me.StudentDataTableAdapter.SelectStudentCourse(userTb.Text, passTb.Text), Me.StudentDataTableAdapter.SelectStudentLevel(userTb.Text, passTb.Text)) 'sets course and year
+                StudentForm.Show()
+                Me.Hide()
 
-        If userTb.Text = "" And passTb.Text = "" Then
-            MessageBox.Show("Please enter Username and Password.")
-        ElseIf userTb.Text = "" Then
-            MessageBox.Show("Please enter Username")
-        ElseIf passTb.Text = "" Then
-            MessageBox.Show("Please enter Password.")
-        ElseIf userTb.Text = admin And passTb.Text = adminPass Then
-            AdminForm.Show()
-            Me.Hide()
-        ElseIf Me.StudentDataTableAdapter.CheckStudent(userTb.Text, passTb.Text) = 1 Then
+            ElseIf Me.InstructorDataTableAdapter.CheckInstructor(userTb.Text, passTb.Text) = 1 Then
 
-            'for student verification
-            SetUserID(Me.StudentDataTableAdapter.SelectStudentID(userTb.Text, passTb.Text)) 'sets user id
-            SetUsername(Me.StudentDataTableAdapter.SelectStudentName(userTb.Text, passTb.Text)) 'sets user name
-            SetStudentProgram(Me.StudentDataTableAdapter.SelectStudentCourse(userTb.Text, passTb.Text), Me.StudentDataTableAdapter.SelectStudentLevel(userTb.Text, passTb.Text)) 'sets course and year
-            StudentForm.Show()
-            Me.Hide()
+                'for instructor verification
+                SetUserID(Me.InstructorDataTableAdapter.SelectInstructorID(userTb.Text, passTb.Text)) 'sets user id
+                SetUsername(Me.InstructorDataTableAdapter.SelectInstructorName(userTb.Text, passTb.Text)) 'sets user name
+                SetTitle(Me.InstructorDataTableAdapter.SelectInstructorTitle(userTb.Text, passTb.Text)) 'sets user title
+                InstructorForm.Show()
+                Me.Hide()
 
-        ElseIf Me.InstructorDataTableAdapter.CheckInstructor(userTb.Text, passTb.Text) = 1 Then
+            ElseIf Me.HeadDataTableAdapter.CheckHead(userTb.Text, passTb.Text) = 1 Then
 
-            'for instructor verification
-            SetUserID(Me.InstructorDataTableAdapter.SelectInstructorID(userTb.Text, passTb.Text)) 'sets user id
-            SetUsername(Me.InstructorDataTableAdapter.SelectInstructorName(userTb.Text, passTb.Text)) 'sets user name
-            SetTitle(Me.InstructorDataTableAdapter.SelectInstructorTitle(userTb.Text, passTb.Text)) 'sets user title
-            InstructorForm.Show()
-            Me.Hide()
+                'for head of department verification
+                SetUserID(Me.HeadDataTableAdapter.SelectHeadID(userTb.Text, passTb.Text)) 'sets user id
+                SetUsername(Me.HeadDataTableAdapter.SelectHeadName(userTb.Text, passTb.Text)) 'sets user name
+                SetTitle(Me.HeadDataTableAdapter.SelectHeadTitle(userTb.Text, passTb.Text)) 'sets user title
+                HeadOfDepartmentForm.Show()
+                Me.Hide()
 
-        ElseIf Me.HeadDataTableAdapter.CheckHead(userTb.Text, passTb.Text) = 1 Then
+            Else
+                MessageBox.Show("Incorrect Credentials entered, please try again.", "Incorrect Credentials", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Incorrect Credentials entered, please try again.", "Incorrect Credentials", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
-            'for head of department verification
-            SetUserID(Me.HeadDataTableAdapter.SelectHeadID(userTb.Text, passTb.Text)) 'sets user id
-            SetUsername(Me.HeadDataTableAdapter.SelectHeadName(userTb.Text, passTb.Text)) 'sets user name
-            SetTitle(Me.HeadDataTableAdapter.SelectHeadTitle(userTb.Text, passTb.Text)) 'sets user title
-            HeadOfDepartmentForm.Show()
-            Me.Hide()
-
-        Else
-            MessageBox.Show("Incorrect Credentials entered, please try again.")
-        End If
     End Sub
 
     Private Sub passTb_KeyDown(sender As Object, e As KeyEventArgs) Handles passTb.KeyDown

@@ -41,6 +41,7 @@ Partial Class LoginForm
         Me.FileDataTableAdapter = New PRS.repoDBDataSetTableAdapters.FileDataTableAdapter()
         Me.InstructorDataTableAdapter = New PRS.repoDBDataSetTableAdapters.InstructorDataTableAdapter()
         Me.HeadDataTableAdapter = New PRS.repoDBDataSetTableAdapters.HeadDataTableAdapter()
+        Me.AdminDataTableAdapter = New PRS.repoDBDataSetTableAdapters.AdminDataTableAdapter()
         Me.headBoardPanel.SuspendLayout()
         CType(Me.logoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -177,6 +178,7 @@ Partial Class LoginForm
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AdminDataTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.FileDataTableAdapter = Nothing
         Me.TableAdapterManager.HeadDataTableAdapter = Nothing
@@ -195,6 +197,10 @@ Partial Class LoginForm
         'HeadDataTableAdapter
         '
         Me.HeadDataTableAdapter.ClearBeforeFill = True
+        '
+        'AdminDataTableAdapter
+        '
+        Me.AdminDataTableAdapter.ClearBeforeFill = True
         '
         'LoginForm
         '
@@ -244,4 +250,5 @@ Partial Class LoginForm
     Friend WithEvents FileDataTableAdapter As repoDBDataSetTableAdapters.FileDataTableAdapter
     Friend WithEvents InstructorDataTableAdapter As repoDBDataSetTableAdapters.InstructorDataTableAdapter
     Friend WithEvents HeadDataTableAdapter As repoDBDataSetTableAdapters.HeadDataTableAdapter
+    Friend WithEvents AdminDataTableAdapter As repoDBDataSetTableAdapters.AdminDataTableAdapter
 End Class

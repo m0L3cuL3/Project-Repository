@@ -421,4 +421,34 @@ Public Class InstructorForm
         courseFilter.Visible = True
         FilterBtn.Visible = True
     End Sub
+
+    Private Sub changePasswordLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles changePasswordLabel.LinkClicked
+        Dim newPass As String
+        newPass = InputBox("Please enter a new password." & vbCrLf & "Make sure you remember it.", "Change Password")
+
+        If DialogResult.OK Then
+            MessageBox.Show("Are you sure you want to use this password?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If DialogResult.Yes Then
+                Try
+                    Dim conn As New SqlConnection
+                    conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                    conn.Open()
+
+                    Dim cmd As New SqlCommand
+                    cmd.Connection = conn
+                    cmd.CommandText = "UPDATE [InstructorData] SET instructor_pass = @pass WHERE instructor_id = @id"
+                    cmd.Parameters.AddWithValue("@pass", newPass)
+                    cmd.Parameters.AddWithValue("@id", GetUserID)
+
+                    Dim dr As SqlDataReader
+                    dr = cmd.ExecuteReader
+
+                    MessageBox.Show("Password change successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+                End Try
+            End If
+        End If
+    End Sub
 End Class
