@@ -90,4 +90,13 @@ Module DataHandler
             Return False 'if file DOES exist
         End If
     End Function
+
+    Public Sub ClearTextBoxes(ByVal root As Control)
+        For Each ctrl As Control In root.Controls
+            ClearTextBoxes(ctrl)
+            If TypeOf ctrl Is TextBox Then
+                CType(ctrl, TextBox).Text = String.Empty
+            End If
+        Next ctrl
+    End Sub
 End Module

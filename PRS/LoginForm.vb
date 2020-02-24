@@ -86,7 +86,7 @@
             StudentForm.Show()
             Me.Hide()
 
-        ElseIf Me.InstructorDataTableAdapter.CheckInstructor(userTb.Text, passTb.Text) Then
+        ElseIf Me.InstructorDataTableAdapter.CheckInstructor(userTb.Text, passTb.Text) = 1 Then
 
             'for instructor verification
             SetUserID(Me.InstructorDataTableAdapter.SelectInstructorID(userTb.Text, passTb.Text)) 'sets user id
@@ -95,7 +95,7 @@
             InstructorForm.Show()
             Me.Hide()
 
-        ElseIf Me.HeadDataTableAdapter.CheckHead(userTb.Text, passTb.Text) Then
+        ElseIf Me.HeadDataTableAdapter.CheckHead(userTb.Text, passTb.Text) = 1 Then
 
             'for head of department verification
             SetUserID(Me.HeadDataTableAdapter.SelectHeadID(userTb.Text, passTb.Text)) 'sets user id

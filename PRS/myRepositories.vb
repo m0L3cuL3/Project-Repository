@@ -86,9 +86,9 @@ Public Class myRepositories
         Dim fuid As Guid = Guid.NewGuid
 
         If fileBar.Text = "" Then
-            MsgBox("Please enter repository name")
+            MessageBox.Show("Please enter a respository name", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         ElseIf CheckDirectory(fileBar.Text) = False Then
-            MsgBox("Repository already exists, create a new one")
+            MessageBox.Show("Repository already exists, please create a new one.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             LoadUserRepository()
         Else
             Me.FileDataTableAdapter.UploadFile(fuid, fileBar.Text, dt, GetUserID(), "pending", GetUsername())
@@ -117,7 +117,10 @@ Public Class myRepositories
                 End If
                 File.WriteAllText(dir & "\" & repoDir & "\README.md", "[Project-Repository] - SemiFinal Project")
             Else
-                MessageBox.Show(dir & "\" & repoDir & " does not exists!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MessageBox.Show(dir & "\" & repoDir & " does not exists! " & vbCrLf & "Want me to create a new one?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                If DialogResult.Yes Then
+                    Directory.CreateDirectory(dir & "\" & repoDir)
+                End If
             End If
         End If
 

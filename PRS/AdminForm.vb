@@ -15,6 +15,7 @@ Public Class AdminForm
         LoadStudentData() 'default loads student data
         LoadInstructorData() 'default loads instructor data
         LoadHeadData() 'default loads head of department data
+        LoadFileData() 'default loads file data
 
         HideStudentPass() 'default hides student password components
         HideInstructorPass() 'default hides instructor password components
@@ -68,6 +69,17 @@ Public Class AdminForm
         End If
     End Sub
 
+    'when click display data in textbox (FILES)
+    Private Sub FileView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FileView.SelectedIndexChanged
+        If FileView.SelectedItems.Count > 0 Then
+            File_idTextBox.Text = FileView.SelectedItems(0).SubItems(0).Text
+            File_nameTextBox.Text = FileView.SelectedItems(0).SubItems(1).Text
+            IsApprovedTextBox.Text = FileView.SelectedItems(0).SubItems(4).Text
+            File_uploaderTextBox.Text = FileView.SelectedItems(0).SubItems(3).Text
+            File_uploader_nameTextBox.Text = FileView.SelectedItems(0).SubItems(2).Text
+        End If
+    End Sub
+
     'logout button
     Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
         Me.Close()
@@ -77,16 +89,25 @@ Public Class AdminForm
     'execute query button (STUDENT)
     Private Sub executeStudentBtn_Click(sender As Object, e As EventArgs) Handles executeStudentBtn.Click
         ExecuteStudentQuery()
+        ClearTextBoxes(Me)
     End Sub
 
     'execute query button (INSTRUCTOR)
     Private Sub executeInstructorBtn_Click(sender As Object, e As EventArgs) Handles executeInstructorBtn.Click
         ExecuteInstructorQuery()
+        ClearTextBoxes(Me)
     End Sub
 
     'execute query button (HEAD OF DEPARTMENT)
     Private Sub executeHeadBtn_Click(sender As Object, e As EventArgs) Handles executeHeadBtn.Click
         ExecuteHeadQuery()
+        ClearTextBoxes(Me)
+    End Sub
+
+    'execute query button (FILES)
+    Private Sub executeFileBtn_Click(sender As Object, e As EventArgs) Handles executeFileBtn.Click
+        ExecuteFileQuery()
+        ClearTextBoxes(Me)
     End Sub
 
     'loads student data
@@ -165,6 +186,34 @@ Public Class AdminForm
             End While
         Catch ex As Exception
             ' Do nothing
+        End Try
+    End Sub
+
+    'loads file data
+    Private Sub LoadFileData()
+        Try
+            Dim conn As New SqlConnection
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.Open()
+
+            Dim cmd As New SqlCommand
+            cmd.Connection = conn
+            cmd.CommandText = "SELECT * FROM [Table]"
+
+            Dim dr As SqlDataReader
+            dr = cmd.ExecuteReader
+
+            While dr.Read()
+                Dim Item As New ListViewItem((dr.Item("file_id").ToString))
+                Item.SubItems.Add(dr.Item("file_name").ToString)
+                Item.SubItems.Add(dr.Item("file_uploader_name").ToString)
+                Item.SubItems.Add(dr.Item("file_uploader").ToString)
+                Item.SubItems.Add(dr.Item("isApproved").ToString)
+                Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
+                FileView.Items.Add(Item)
+            End While
+        Catch ex As Exception
+            'Do Nothing
         End Try
     End Sub
 
@@ -658,6 +707,221 @@ Public Class AdminForm
                 End While
             Catch ex As Exception
                 LoadHeadData()
+            End Try
+        End If
+    End Sub
+
+    'execute sql queries (FILES)
+    Private Sub ExecuteFileQuery()
+        If SqlFileComboBox.SelectedItem = "SHOW ALL DATA" Then 'shows all file data
+
+            FileView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table]"
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("file_id").ToString))
+                    Item.SubItems.Add(dr.Item("file_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader").ToString)
+                    Item.SubItems.Add(dr.Item("isApproved").ToString)
+                    Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
+                    FileView.Items.Add(Item)
+                End While
+            Catch ex As Exception
+                LoadFileData()
+            End Try
+        ElseIf SqlFileComboBox.SelectedItem = "SELECT (By User ID)" Then ' selects files by user id
+
+            FileView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table] WHERE file_uploader = @id"
+                cmd.Parameters.AddWithValue("@id", File_uploaderTextBox.Text)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("file_id").ToString))
+                    Item.SubItems.Add(dr.Item("file_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader").ToString)
+                    Item.SubItems.Add(dr.Item("isApproved").ToString)
+                    Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
+                    FileView.Items.Add(Item)
+                End While
+            Catch ex As Exception
+                LoadFileData()
+            End Try
+        ElseIf SqlFileComboBox.SelectedItem = "SELECT (By Username)" Then 'selects files by username
+            FileView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table] WHERE file_uploader_name = @name"
+                cmd.Parameters.AddWithValue("@name", File_uploader_nameTextBox.Text)
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("file_id").ToString))
+                    Item.SubItems.Add(dr.Item("file_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader").ToString)
+                    Item.SubItems.Add(dr.Item("isApproved").ToString)
+                    Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
+                    FileView.Items.Add(Item)
+                End While
+            Catch ex As SqlException
+                MessageBox.Show(ex.ToString, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoadFileData()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString, "Unknown Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoadFileData()
+            End Try
+        ElseIf SqlFileComboBox.SelectedItem = "SELECT (Approved)" Then 'selects approved files only
+            FileView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table] WHERE isApproved = 'approved'"
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("file_id").ToString))
+                    Item.SubItems.Add(dr.Item("file_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader").ToString)
+                    Item.SubItems.Add(dr.Item("isApproved").ToString)
+                    Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
+                    FileView.Items.Add(Item)
+
+                End While
+            Catch ex As SqlException
+                MessageBox.Show(ex.ToString, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoadFileData()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString, "Unknown Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoadFileData()
+            End Try
+        ElseIf SqlFileComboBox.SelectedItem = "SELECT (Pending)" Then 'selects pending files only
+            FileView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT * FROM [Table] WHERE isApproved = 'pending'"
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("file_id").ToString))
+                    Item.SubItems.Add(dr.Item("file_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader").ToString)
+                    Item.SubItems.Add(dr.Item("isApproved").ToString)
+                    Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
+                    FileView.Items.Add(Item)
+                End While
+            Catch ex As Exception
+                LoadFileData()
+            End Try
+        ElseIf SqlFileComboBox.SelectedItem = "UPDATE (Only Filename)" Then
+            FileView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "UPDATE [Table] SET file_name = @filename WHERE file_id = @id"
+                cmd.Parameters.AddWithValue("@filename", File_nameTextBox.Text)
+                cmd.Parameters.AddWithValue("@id", Guid.Parse(File_idTextBox.Text))
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                LoadFileData()
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("file_id").ToString))
+                    Item.SubItems.Add(dr.Item("file_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader").ToString)
+                    Item.SubItems.Add(dr.Item("isApproved").ToString)
+                    Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
+                    FileView.Items.Add(Item)
+                End While
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+                LoadFileData()
+            End Try
+        ElseIf SqlFileComboBox.SelectedItem = "DELETE (By File ID)" Then
+            FileView.Items.Clear()
+
+            Try
+                Dim conn As New SqlConnection
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.Open()
+
+                Dim cmd As New SqlCommand
+                cmd.Connection = conn
+                cmd.CommandText = "DELETE FROM [Table] WHERE file_id = @id"
+                cmd.Parameters.AddWithValue("@id", Guid.Parse(File_idTextBox.Text))
+
+                Dim dr As SqlDataReader
+                dr = cmd.ExecuteReader
+
+                LoadFileData()
+
+                While dr.Read()
+                    Dim Item As New ListViewItem((dr.Item("file_id").ToString))
+                    Item.SubItems.Add(dr.Item("file_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader_name").ToString)
+                    Item.SubItems.Add(dr.Item("file_uploader").ToString)
+                    Item.SubItems.Add(dr.Item("isApproved").ToString)
+                    Item.SubItems.Add(dr.Item("file_update").ToShortDateString)
+                    FileView.Items.Add(Item)
+                End While
+            Catch ex As Exception
+                LoadFileData()
             End Try
         End If
     End Sub
