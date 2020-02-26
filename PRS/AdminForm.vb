@@ -41,6 +41,26 @@ Public Class AdminForm
         End If
     End Sub
 
+    Private Sub minimizeBtn_Click(sender As Object, e As EventArgs) Handles minimizeBtn.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub closeBtn_MouseEnter(sender As Object, e As EventArgs) Handles closeBtn.MouseEnter
+        closeBtn.Image = My.Resources.closeBtnHover
+    End Sub
+
+    Private Sub closeBtn_MouseLeave(sender As Object, e As EventArgs) Handles closeBtn.MouseLeave
+        closeBtn.Image = My.Resources.closeBtn
+    End Sub
+
+    Private Sub minimizeBtn_MouseEnter(sender As Object, e As EventArgs) Handles minimizeBtn.MouseEnter
+        minimizeBtn.Image = My.Resources.minimizeBtnHover
+    End Sub
+
+    Private Sub minimizeBtn_MouseLeave(sender As Object, e As EventArgs) Handles minimizeBtn.MouseLeave
+        minimizeBtn.Image = My.Resources.minimizeBtn
+    End Sub
+
     'when click display data in textbox (STUDENT)
     Private Sub StudentView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles StudentView.SelectedIndexChanged
         If StudentView.SelectedItems.Count > 0 Then

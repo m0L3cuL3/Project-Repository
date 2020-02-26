@@ -87,6 +87,7 @@ Partial Class projectPanel
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AdminDataTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.FileDataTableAdapter = Me.FileDataTableAdapter
         Me.TableAdapterManager.HeadDataTableAdapter = Nothing

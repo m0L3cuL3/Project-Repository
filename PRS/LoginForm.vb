@@ -110,6 +110,8 @@
             MessageBox.Show("Incorrect Credentials entered, please try again.", "Incorrect Credentials", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+        ClearTextBoxes(Me)
+
     End Sub
 
     Private Sub passTb_KeyDown(sender As Object, e As KeyEventArgs) Handles passTb.KeyDown

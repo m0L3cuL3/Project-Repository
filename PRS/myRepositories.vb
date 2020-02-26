@@ -9,12 +9,28 @@ Public Class myRepositories
         LoadUserRepository()
     End Sub
 
-    Private Sub UploadBtn_Enter(sender As Object, e As EventArgs) Handles CreateRepoBtn.Enter
+    Private Sub CreateRepoBtn_MouseEnter(sender As Object, e As EventArgs) Handles CreateRepoBtn.MouseEnter
         CreateRepoBtn.Image = My.Resources.generalBtnHover
     End Sub
 
-    Private Sub UploadBtn_Leave(sender As Object, e As EventArgs) Handles CreateRepoBtn.Leave
+    Private Sub CreateRepoBtn_MouseLeave(sender As Object, e As EventArgs) Handles CreateRepoBtn.MouseLeave
         CreateRepoBtn.Image = My.Resources.generalBtn
+    End Sub
+
+    Private Sub browseFileBtn_MouseEnter(sender As Object, e As EventArgs) Handles browseFileBtn.MouseEnter
+        browseFileBtn.Image = My.Resources.generalBtnHover
+    End Sub
+
+    Private Sub browseFileBtn_MouseLeave(sender As Object, e As EventArgs) Handles browseFileBtn.MouseLeave
+        browseFileBtn.Image = My.Resources.generalBtn
+    End Sub
+
+    Private Sub FilterBtn_MouseEnter(sender As Object, e As EventArgs) Handles FilterBtn.MouseEnter
+        FilterBtn.Image = My.Resources.generalBtnHover
+    End Sub
+
+    Private Sub FilterBtn_MouseLeave(sender As Object, e As EventArgs) Handles FilterBtn.MouseLeave
+        FilterBtn.Image = My.Resources.generalBtn
     End Sub
 
     'load current user repositories

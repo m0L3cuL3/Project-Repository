@@ -6,6 +6,22 @@ Public Class projectPanel
 
     End Sub
 
+    Private Sub downloadBtn_MouseEnter(sender As Object, e As EventArgs) Handles downloadBtn.MouseEnter
+        downloadBtn.Image = My.Resources.generalBtnHover
+    End Sub
+
+    Private Sub downloadBtn_MouseLeave(sender As Object, e As EventArgs) Handles downloadBtn.MouseLeave
+        downloadBtn.Image = My.Resources.generalBtn
+    End Sub
+
+    Private Sub approveBtn_MouseEnter(sender As Object, e As EventArgs) Handles approveBtn.MouseEnter
+        approveBtn.Image = My.Resources.generalBtnHover
+    End Sub
+
+    Private Sub approveBtn_MouseLeave(sender As Object, e As EventArgs) Handles approveBtn.MouseLeave
+        approveBtn.Image = My.Resources.generalBtn
+    End Sub
+
     'approve button
     Private Sub approveBtn_Click(sender As Object, e As EventArgs) Handles approveBtn.Click
         Dim fuid As New Guid(guidLabel.Text)

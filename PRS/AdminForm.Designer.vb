@@ -168,145 +168,6 @@ Partial Class AdminForm
         Me.FileDataManager.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Student_courseLabel
-        '
-        Student_courseLabel.AutoSize = True
-        Student_courseLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Student_courseLabel.Location = New System.Drawing.Point(12, 100)
-        Student_courseLabel.Name = "Student_courseLabel"
-        Student_courseLabel.Size = New System.Drawing.Size(94, 16)
-        Student_courseLabel.TabIndex = 6
-        Student_courseLabel.Text = "Student Course:"
-        '
-        'Student_levelLabel
-        '
-        Student_levelLabel.AutoSize = True
-        Student_levelLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Student_levelLabel.Location = New System.Drawing.Point(12, 74)
-        Student_levelLabel.Name = "Student_levelLabel"
-        Student_levelLabel.Size = New System.Drawing.Size(86, 16)
-        Student_levelLabel.TabIndex = 4
-        Student_levelLabel.Text = "Student Level:"
-        '
-        'Student_nameLabel
-        '
-        Student_nameLabel.AutoSize = True
-        Student_nameLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Student_nameLabel.Location = New System.Drawing.Point(12, 48)
-        Student_nameLabel.Name = "Student_nameLabel"
-        Student_nameLabel.Size = New System.Drawing.Size(90, 16)
-        Student_nameLabel.TabIndex = 2
-        Student_nameLabel.Text = "Student Name:"
-        '
-        'Student_idLabel
-        '
-        Student_idLabel.AutoSize = True
-        Student_idLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Student_idLabel.Location = New System.Drawing.Point(12, 22)
-        Student_idLabel.Name = "Student_idLabel"
-        Student_idLabel.Size = New System.Drawing.Size(68, 16)
-        Student_idLabel.TabIndex = 0
-        Student_idLabel.Text = "Student ID:"
-        '
-        'Instructor_titleLabel
-        '
-        Instructor_titleLabel.AutoSize = True
-        Instructor_titleLabel.Location = New System.Drawing.Point(7, 77)
-        Instructor_titleLabel.Name = "Instructor_titleLabel"
-        Instructor_titleLabel.Size = New System.Drawing.Size(83, 16)
-        Instructor_titleLabel.TabIndex = 37
-        Instructor_titleLabel.Text = "Instructor Title:"
-        '
-        'Instructor_userLabel
-        '
-        Instructor_userLabel.AutoSize = True
-        Instructor_userLabel.Location = New System.Drawing.Point(7, 50)
-        Instructor_userLabel.Name = "Instructor_userLabel"
-        Instructor_userLabel.Size = New System.Drawing.Size(85, 16)
-        Instructor_userLabel.TabIndex = 36
-        Instructor_userLabel.Text = "Instructor User:"
-        '
-        'Instructor_idLabel
-        '
-        Instructor_idLabel.AutoSize = True
-        Instructor_idLabel.Location = New System.Drawing.Point(7, 25)
-        Instructor_idLabel.Name = "Instructor_idLabel"
-        Instructor_idLabel.Size = New System.Drawing.Size(74, 16)
-        Instructor_idLabel.TabIndex = 35
-        Instructor_idLabel.Text = "Instructor ID:"
-        '
-        'Head_titleLabel
-        '
-        Head_titleLabel.AutoSize = True
-        Head_titleLabel.Location = New System.Drawing.Point(6, 75)
-        Head_titleLabel.Name = "Head_titleLabel"
-        Head_titleLabel.Size = New System.Drawing.Size(65, 16)
-        Head_titleLabel.TabIndex = 38
-        Head_titleLabel.Text = "Head Title:"
-        '
-        'Head_nameLabel
-        '
-        Head_nameLabel.AutoSize = True
-        Head_nameLabel.Location = New System.Drawing.Point(6, 48)
-        Head_nameLabel.Name = "Head_nameLabel"
-        Head_nameLabel.Size = New System.Drawing.Size(78, 16)
-        Head_nameLabel.TabIndex = 36
-        Head_nameLabel.Text = "Head Name:"
-        '
-        'Head_idLabel
-        '
-        Head_idLabel.AutoSize = True
-        Head_idLabel.Location = New System.Drawing.Point(6, 22)
-        Head_idLabel.Name = "Head_idLabel"
-        Head_idLabel.Size = New System.Drawing.Size(56, 16)
-        Head_idLabel.TabIndex = 35
-        Head_idLabel.Text = "Head ID:"
-        '
-        'File_uploader_nameLabel
-        '
-        File_uploader_nameLabel.AutoSize = True
-        File_uploader_nameLabel.Location = New System.Drawing.Point(6, 129)
-        File_uploader_nameLabel.Name = "File_uploader_nameLabel"
-        File_uploader_nameLabel.Size = New System.Drawing.Size(65, 16)
-        File_uploader_nameLabel.TabIndex = 39
-        File_uploader_nameLabel.Text = "Username:"
-        '
-        'File_uploaderLabel
-        '
-        File_uploaderLabel.AutoSize = True
-        File_uploaderLabel.Location = New System.Drawing.Point(6, 102)
-        File_uploaderLabel.Name = "File_uploaderLabel"
-        File_uploaderLabel.Size = New System.Drawing.Size(47, 16)
-        File_uploaderLabel.TabIndex = 38
-        File_uploaderLabel.Text = "User ID:"
-        '
-        'IsApprovedLabel
-        '
-        IsApprovedLabel.AutoSize = True
-        IsApprovedLabel.Location = New System.Drawing.Point(6, 75)
-        IsApprovedLabel.Name = "IsApprovedLabel"
-        IsApprovedLabel.Size = New System.Drawing.Size(63, 16)
-        IsApprovedLabel.TabIndex = 37
-        IsApprovedLabel.Text = "File Status:"
-        '
-        'File_nameLabel
-        '
-        File_nameLabel.AutoSize = True
-        File_nameLabel.Location = New System.Drawing.Point(6, 48)
-        File_nameLabel.Name = "File_nameLabel"
-        File_nameLabel.Size = New System.Drawing.Size(63, 16)
-        File_nameLabel.TabIndex = 36
-        File_nameLabel.Text = "File Name:"
-        '
-        'File_idLabel
-        '
-        File_idLabel.AutoSize = True
-        File_idLabel.Location = New System.Drawing.Point(6, 21)
-        File_idLabel.Name = "File_idLabel"
-        File_idLabel.Size = New System.Drawing.Size(41, 16)
-        File_idLabel.TabIndex = 35
-        File_idLabel.Text = "File ID:"
-        '
         'topBarPanel
         '
         Me.topBarPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
@@ -333,6 +194,7 @@ Partial Class AdminForm
         'minimizeBtn
         '
         Me.minimizeBtn.BackColor = System.Drawing.Color.Transparent
+        Me.minimizeBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.minimizeBtn.Image = Global.PRS.My.Resources.Resources.minimizeAdminBtn
         Me.minimizeBtn.Location = New System.Drawing.Point(742, 0)
         Me.minimizeBtn.Name = "minimizeBtn"
@@ -344,6 +206,7 @@ Partial Class AdminForm
         'closeBtn
         '
         Me.closeBtn.BackColor = System.Drawing.Color.Transparent
+        Me.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.closeBtn.Image = Global.PRS.My.Resources.Resources.closeAdminBtn
         Me.closeBtn.Location = New System.Drawing.Point(792, 0)
         Me.closeBtn.Name = "closeBtn"
@@ -395,6 +258,7 @@ Partial Class AdminForm
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AdminDataTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.FileDataTableAdapter = Nothing
@@ -619,6 +483,16 @@ Partial Class AdminForm
         Me.executeStudentBtn.Text = "Execute Query"
         Me.executeStudentBtn.UseVisualStyleBackColor = True
         '
+        'Student_courseLabel
+        '
+        Student_courseLabel.AutoSize = True
+        Student_courseLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_courseLabel.Location = New System.Drawing.Point(12, 100)
+        Student_courseLabel.Name = "Student_courseLabel"
+        Student_courseLabel.Size = New System.Drawing.Size(94, 16)
+        Student_courseLabel.TabIndex = 6
+        Student_courseLabel.Text = "Student Course:"
+        '
         'Student_courseTextBox
         '
         Me.Student_courseTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_course", True))
@@ -626,6 +500,16 @@ Partial Class AdminForm
         Me.Student_courseTextBox.Name = "Student_courseTextBox"
         Me.Student_courseTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Student_courseTextBox.TabIndex = 7
+        '
+        'Student_levelLabel
+        '
+        Student_levelLabel.AutoSize = True
+        Student_levelLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_levelLabel.Location = New System.Drawing.Point(12, 74)
+        Student_levelLabel.Name = "Student_levelLabel"
+        Student_levelLabel.Size = New System.Drawing.Size(86, 16)
+        Student_levelLabel.TabIndex = 4
+        Student_levelLabel.Text = "Student Level:"
         '
         'Student_levelTextBox
         '
@@ -635,6 +519,16 @@ Partial Class AdminForm
         Me.Student_levelTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Student_levelTextBox.TabIndex = 5
         '
+        'Student_nameLabel
+        '
+        Student_nameLabel.AutoSize = True
+        Student_nameLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_nameLabel.Location = New System.Drawing.Point(12, 48)
+        Student_nameLabel.Name = "Student_nameLabel"
+        Student_nameLabel.Size = New System.Drawing.Size(90, 16)
+        Student_nameLabel.TabIndex = 2
+        Student_nameLabel.Text = "Student Name:"
+        '
         'Student_nameTextBox
         '
         Me.Student_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_name", True))
@@ -642,6 +536,16 @@ Partial Class AdminForm
         Me.Student_nameTextBox.Name = "Student_nameTextBox"
         Me.Student_nameTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Student_nameTextBox.TabIndex = 3
+        '
+        'Student_idLabel
+        '
+        Student_idLabel.AutoSize = True
+        Student_idLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_idLabel.Location = New System.Drawing.Point(12, 22)
+        Student_idLabel.Name = "Student_idLabel"
+        Student_idLabel.Size = New System.Drawing.Size(68, 16)
+        Student_idLabel.TabIndex = 0
+        Student_idLabel.Text = "Student ID:"
         '
         'Student_idTextBox
         '
@@ -764,6 +668,15 @@ Partial Class AdminForm
         Me.Instructor_passTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Instructor_passTextBox.TabIndex = 39
         '
+        'Instructor_titleLabel
+        '
+        Instructor_titleLabel.AutoSize = True
+        Instructor_titleLabel.Location = New System.Drawing.Point(7, 77)
+        Instructor_titleLabel.Name = "Instructor_titleLabel"
+        Instructor_titleLabel.Size = New System.Drawing.Size(83, 16)
+        Instructor_titleLabel.TabIndex = 37
+        Instructor_titleLabel.Text = "Instructor Title:"
+        '
         'Instructor_titleTextBox
         '
         Me.Instructor_titleTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InstructorDataBindingSource, "instructor_title", True))
@@ -772,6 +685,15 @@ Partial Class AdminForm
         Me.Instructor_titleTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Instructor_titleTextBox.TabIndex = 38
         '
+        'Instructor_userLabel
+        '
+        Instructor_userLabel.AutoSize = True
+        Instructor_userLabel.Location = New System.Drawing.Point(7, 50)
+        Instructor_userLabel.Name = "Instructor_userLabel"
+        Instructor_userLabel.Size = New System.Drawing.Size(85, 16)
+        Instructor_userLabel.TabIndex = 36
+        Instructor_userLabel.Text = "Instructor User:"
+        '
         'Instructor_userTextBox
         '
         Me.Instructor_userTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InstructorDataBindingSource, "instructor_user", True))
@@ -779,6 +701,15 @@ Partial Class AdminForm
         Me.Instructor_userTextBox.Name = "Instructor_userTextBox"
         Me.Instructor_userTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Instructor_userTextBox.TabIndex = 37
+        '
+        'Instructor_idLabel
+        '
+        Instructor_idLabel.AutoSize = True
+        Instructor_idLabel.Location = New System.Drawing.Point(7, 25)
+        Instructor_idLabel.Name = "Instructor_idLabel"
+        Instructor_idLabel.Size = New System.Drawing.Size(74, 16)
+        Instructor_idLabel.TabIndex = 35
+        Instructor_idLabel.Text = "Instructor ID:"
         '
         'Instructor_idTextBox
         '
@@ -907,6 +838,15 @@ Partial Class AdminForm
         Me.HeadDataManager.TabStop = False
         Me.HeadDataManager.Text = "Head of Department Data Manager"
         '
+        'Head_titleLabel
+        '
+        Head_titleLabel.AutoSize = True
+        Head_titleLabel.Location = New System.Drawing.Point(6, 75)
+        Head_titleLabel.Name = "Head_titleLabel"
+        Head_titleLabel.Size = New System.Drawing.Size(65, 16)
+        Head_titleLabel.TabIndex = 38
+        Head_titleLabel.Text = "Head Title:"
+        '
         'Head_titleTextBox
         '
         Me.Head_titleTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.HeadDataBindingSource, "head_title", True))
@@ -932,6 +872,15 @@ Partial Class AdminForm
         Me.Head_passTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Head_passTextBox.TabIndex = 39
         '
+        'Head_nameLabel
+        '
+        Head_nameLabel.AutoSize = True
+        Head_nameLabel.Location = New System.Drawing.Point(6, 48)
+        Head_nameLabel.Name = "Head_nameLabel"
+        Head_nameLabel.Size = New System.Drawing.Size(78, 16)
+        Head_nameLabel.TabIndex = 36
+        Head_nameLabel.Text = "Head Name:"
+        '
         'Head_nameTextBox
         '
         Me.Head_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.HeadDataBindingSource, "head_name", True))
@@ -939,6 +888,15 @@ Partial Class AdminForm
         Me.Head_nameTextBox.Name = "Head_nameTextBox"
         Me.Head_nameTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Head_nameTextBox.TabIndex = 37
+        '
+        'Head_idLabel
+        '
+        Head_idLabel.AutoSize = True
+        Head_idLabel.Location = New System.Drawing.Point(6, 22)
+        Head_idLabel.Name = "Head_idLabel"
+        Head_idLabel.Size = New System.Drawing.Size(56, 16)
+        Head_idLabel.TabIndex = 35
+        Head_idLabel.Text = "Head ID:"
         '
         'Head_idTextBox
         '
@@ -1044,6 +1002,15 @@ Partial Class AdminForm
         Me.FileDataManager.TabStop = False
         Me.FileDataManager.Text = "File Data Manager"
         '
+        'File_uploader_nameLabel
+        '
+        File_uploader_nameLabel.AutoSize = True
+        File_uploader_nameLabel.Location = New System.Drawing.Point(6, 129)
+        File_uploader_nameLabel.Name = "File_uploader_nameLabel"
+        File_uploader_nameLabel.Size = New System.Drawing.Size(65, 16)
+        File_uploader_nameLabel.TabIndex = 39
+        File_uploader_nameLabel.Text = "Username:"
+        '
         'File_uploader_nameTextBox
         '
         Me.File_uploader_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FileDataBindingSource, "file_uploader_name", True))
@@ -1052,6 +1019,15 @@ Partial Class AdminForm
         Me.File_uploader_nameTextBox.Size = New System.Drawing.Size(175, 21)
         Me.File_uploader_nameTextBox.TabIndex = 40
         '
+        'File_uploaderLabel
+        '
+        File_uploaderLabel.AutoSize = True
+        File_uploaderLabel.Location = New System.Drawing.Point(6, 102)
+        File_uploaderLabel.Name = "File_uploaderLabel"
+        File_uploaderLabel.Size = New System.Drawing.Size(47, 16)
+        File_uploaderLabel.TabIndex = 38
+        File_uploaderLabel.Text = "User ID:"
+        '
         'File_uploaderTextBox
         '
         Me.File_uploaderTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FileDataBindingSource, "file_uploader", True))
@@ -1059,6 +1035,15 @@ Partial Class AdminForm
         Me.File_uploaderTextBox.Name = "File_uploaderTextBox"
         Me.File_uploaderTextBox.Size = New System.Drawing.Size(175, 21)
         Me.File_uploaderTextBox.TabIndex = 39
+        '
+        'IsApprovedLabel
+        '
+        IsApprovedLabel.AutoSize = True
+        IsApprovedLabel.Location = New System.Drawing.Point(6, 75)
+        IsApprovedLabel.Name = "IsApprovedLabel"
+        IsApprovedLabel.Size = New System.Drawing.Size(63, 16)
+        IsApprovedLabel.TabIndex = 37
+        IsApprovedLabel.Text = "File Status:"
         '
         'IsApprovedTextBox
         '
@@ -1069,6 +1054,15 @@ Partial Class AdminForm
         Me.IsApprovedTextBox.Size = New System.Drawing.Size(175, 21)
         Me.IsApprovedTextBox.TabIndex = 38
         '
+        'File_nameLabel
+        '
+        File_nameLabel.AutoSize = True
+        File_nameLabel.Location = New System.Drawing.Point(6, 48)
+        File_nameLabel.Name = "File_nameLabel"
+        File_nameLabel.Size = New System.Drawing.Size(63, 16)
+        File_nameLabel.TabIndex = 36
+        File_nameLabel.Text = "File Name:"
+        '
         'File_nameTextBox
         '
         Me.File_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FileDataBindingSource, "file_name", True))
@@ -1076,6 +1070,15 @@ Partial Class AdminForm
         Me.File_nameTextBox.Name = "File_nameTextBox"
         Me.File_nameTextBox.Size = New System.Drawing.Size(175, 21)
         Me.File_nameTextBox.TabIndex = 37
+        '
+        'File_idLabel
+        '
+        File_idLabel.AutoSize = True
+        File_idLabel.Location = New System.Drawing.Point(6, 21)
+        File_idLabel.Name = "File_idLabel"
+        File_idLabel.Size = New System.Drawing.Size(41, 16)
+        File_idLabel.TabIndex = 35
+        File_idLabel.Text = "File ID:"
         '
         'File_idTextBox
         '
