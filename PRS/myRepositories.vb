@@ -37,7 +37,7 @@ Public Class myRepositories
     Sub LoadUserRepository()
         folderListView.Items.Clear()
         Dim conn As New SqlConnection
-        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
         conn.Open()
 
         Dim cmd As New SqlCommand
@@ -68,7 +68,7 @@ Public Class myRepositories
 
         Try
             Dim conn As New SqlConnection
-            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
             conn.Open()
 
             Dim cmd As New SqlCommand

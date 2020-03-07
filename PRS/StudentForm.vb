@@ -209,7 +209,7 @@ Public Class StudentForm
         flowPanel.Controls.Clear()
 
         Dim conn As New SqlConnection
-        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
         conn.Open()
 
         Dim cmd As New SqlCommand
@@ -254,7 +254,7 @@ Public Class StudentForm
         If courseFilter.SelectedItem = "Instructor" Then
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -286,7 +286,7 @@ Public Class StudentForm
         Else
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -326,7 +326,7 @@ Public Class StudentForm
 
         Try
             Dim conn As New SqlConnection
-            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
             conn.Open()
 
             Dim cmd As New SqlCommand
@@ -389,7 +389,7 @@ Public Class StudentForm
             If DialogResult.Yes Then
                 Try
                     Dim conn As New SqlConnection
-                    conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                    conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                     conn.Open()
 
                     Dim cmd As New SqlCommand

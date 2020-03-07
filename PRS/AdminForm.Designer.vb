@@ -23,6 +23,11 @@ Partial Class AdminForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim File_uploader_nameLabel As System.Windows.Forms.Label
+        Dim File_uploaderLabel As System.Windows.Forms.Label
+        Dim IsApprovedLabel As System.Windows.Forms.Label
+        Dim File_nameLabel As System.Windows.Forms.Label
+        Dim File_idLabel As System.Windows.Forms.Label
         Dim Student_courseLabel As System.Windows.Forms.Label
         Dim Student_levelLabel As System.Windows.Forms.Label
         Dim Student_nameLabel As System.Windows.Forms.Label
@@ -33,11 +38,6 @@ Partial Class AdminForm
         Dim Head_titleLabel As System.Windows.Forms.Label
         Dim Head_nameLabel As System.Windows.Forms.Label
         Dim Head_idLabel As System.Windows.Forms.Label
-        Dim File_uploader_nameLabel As System.Windows.Forms.Label
-        Dim File_uploaderLabel As System.Windows.Forms.Label
-        Dim IsApprovedLabel As System.Windows.Forms.Label
-        Dim File_nameLabel As System.Windows.Forms.Label
-        Dim File_idLabel As System.Windows.Forms.Label
         Me.topBarPanel = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.minimizeBtn = New System.Windows.Forms.PictureBox()
@@ -63,8 +63,6 @@ Partial Class AdminForm
         Me.DatabaseGroup = New System.Windows.Forms.GroupBox()
         Me.SqlVersionLabel = New System.Windows.Forms.Label()
         Me.StudentTab = New System.Windows.Forms.TabPage()
-        Me.StudentSubTabControl = New PRS.DotNetBarTabcontrol()
-        Me.StudentDataTab = New System.Windows.Forms.TabPage()
         Me.StudentDataManager = New System.Windows.Forms.GroupBox()
         Me.Student_passLabel = New System.Windows.Forms.Label()
         Me.Student_passTextBox = New System.Windows.Forms.TextBox()
@@ -80,8 +78,6 @@ Partial Class AdminForm
         Me.StudentLevelHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.StudentCourseHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.InstructorTab = New System.Windows.Forms.TabPage()
-        Me.InstructorSubTabControl = New PRS.DotNetBarTabcontrol()
-        Me.InstructorDataTab = New System.Windows.Forms.TabPage()
         Me.InstructorDataManager = New System.Windows.Forms.GroupBox()
         Me.Instructor_passLabel = New System.Windows.Forms.Label()
         Me.Instructor_passTextBox = New System.Windows.Forms.TextBox()
@@ -95,8 +91,6 @@ Partial Class AdminForm
         Me.InstructorNameHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.InstructorTitleHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.HeadTab = New System.Windows.Forms.TabPage()
-        Me.HeadSubTabControl = New PRS.DotNetBarTabcontrol()
-        Me.HeadDataTab = New System.Windows.Forms.TabPage()
         Me.HeadDataManager = New System.Windows.Forms.GroupBox()
         Me.Head_titleTextBox = New System.Windows.Forms.TextBox()
         Me.Head_passLabel = New System.Windows.Forms.Label()
@@ -125,6 +119,11 @@ Partial Class AdminForm
         Me.UserIDHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.FileStatusHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DateHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        File_uploader_nameLabel = New System.Windows.Forms.Label()
+        File_uploaderLabel = New System.Windows.Forms.Label()
+        IsApprovedLabel = New System.Windows.Forms.Label()
+        File_nameLabel = New System.Windows.Forms.Label()
+        File_idLabel = New System.Windows.Forms.Label()
         Student_courseLabel = New System.Windows.Forms.Label()
         Student_levelLabel = New System.Windows.Forms.Label()
         Student_nameLabel = New System.Windows.Forms.Label()
@@ -135,11 +134,6 @@ Partial Class AdminForm
         Head_titleLabel = New System.Windows.Forms.Label()
         Head_nameLabel = New System.Windows.Forms.Label()
         Head_idLabel = New System.Windows.Forms.Label()
-        File_uploader_nameLabel = New System.Windows.Forms.Label()
-        File_uploaderLabel = New System.Windows.Forms.Label()
-        IsApprovedLabel = New System.Windows.Forms.Label()
-        File_nameLabel = New System.Windows.Forms.Label()
-        File_idLabel = New System.Windows.Forms.Label()
         Me.topBarPanel.SuspendLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,20 +147,153 @@ Partial Class AdminForm
         Me.GroupBox1.SuspendLayout()
         Me.DatabaseGroup.SuspendLayout()
         Me.StudentTab.SuspendLayout()
-        Me.StudentSubTabControl.SuspendLayout()
-        Me.StudentDataTab.SuspendLayout()
         Me.StudentDataManager.SuspendLayout()
         Me.InstructorTab.SuspendLayout()
-        Me.InstructorSubTabControl.SuspendLayout()
-        Me.InstructorDataTab.SuspendLayout()
         Me.InstructorDataManager.SuspendLayout()
         Me.HeadTab.SuspendLayout()
-        Me.HeadSubTabControl.SuspendLayout()
-        Me.HeadDataTab.SuspendLayout()
         Me.HeadDataManager.SuspendLayout()
         Me.FileTab.SuspendLayout()
         Me.FileDataManager.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'File_uploader_nameLabel
+        '
+        File_uploader_nameLabel.AutoSize = True
+        File_uploader_nameLabel.Location = New System.Drawing.Point(6, 129)
+        File_uploader_nameLabel.Name = "File_uploader_nameLabel"
+        File_uploader_nameLabel.Size = New System.Drawing.Size(65, 16)
+        File_uploader_nameLabel.TabIndex = 39
+        File_uploader_nameLabel.Text = "Username:"
+        '
+        'File_uploaderLabel
+        '
+        File_uploaderLabel.AutoSize = True
+        File_uploaderLabel.Location = New System.Drawing.Point(6, 102)
+        File_uploaderLabel.Name = "File_uploaderLabel"
+        File_uploaderLabel.Size = New System.Drawing.Size(47, 16)
+        File_uploaderLabel.TabIndex = 38
+        File_uploaderLabel.Text = "User ID:"
+        '
+        'IsApprovedLabel
+        '
+        IsApprovedLabel.AutoSize = True
+        IsApprovedLabel.Location = New System.Drawing.Point(6, 75)
+        IsApprovedLabel.Name = "IsApprovedLabel"
+        IsApprovedLabel.Size = New System.Drawing.Size(63, 16)
+        IsApprovedLabel.TabIndex = 37
+        IsApprovedLabel.Text = "File Status:"
+        '
+        'File_nameLabel
+        '
+        File_nameLabel.AutoSize = True
+        File_nameLabel.Location = New System.Drawing.Point(6, 48)
+        File_nameLabel.Name = "File_nameLabel"
+        File_nameLabel.Size = New System.Drawing.Size(63, 16)
+        File_nameLabel.TabIndex = 36
+        File_nameLabel.Text = "File Name:"
+        '
+        'File_idLabel
+        '
+        File_idLabel.AutoSize = True
+        File_idLabel.Location = New System.Drawing.Point(6, 21)
+        File_idLabel.Name = "File_idLabel"
+        File_idLabel.Size = New System.Drawing.Size(41, 16)
+        File_idLabel.TabIndex = 35
+        File_idLabel.Text = "File ID:"
+        '
+        'Student_courseLabel
+        '
+        Student_courseLabel.AutoSize = True
+        Student_courseLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_courseLabel.Location = New System.Drawing.Point(11, 102)
+        Student_courseLabel.Name = "Student_courseLabel"
+        Student_courseLabel.Size = New System.Drawing.Size(94, 16)
+        Student_courseLabel.TabIndex = 6
+        Student_courseLabel.Text = "Student Course:"
+        '
+        'Student_levelLabel
+        '
+        Student_levelLabel.AutoSize = True
+        Student_levelLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_levelLabel.Location = New System.Drawing.Point(11, 76)
+        Student_levelLabel.Name = "Student_levelLabel"
+        Student_levelLabel.Size = New System.Drawing.Size(86, 16)
+        Student_levelLabel.TabIndex = 4
+        Student_levelLabel.Text = "Student Level:"
+        '
+        'Student_nameLabel
+        '
+        Student_nameLabel.AutoSize = True
+        Student_nameLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_nameLabel.Location = New System.Drawing.Point(11, 50)
+        Student_nameLabel.Name = "Student_nameLabel"
+        Student_nameLabel.Size = New System.Drawing.Size(90, 16)
+        Student_nameLabel.TabIndex = 2
+        Student_nameLabel.Text = "Student Name:"
+        '
+        'Student_idLabel
+        '
+        Student_idLabel.AutoSize = True
+        Student_idLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Student_idLabel.Location = New System.Drawing.Point(11, 24)
+        Student_idLabel.Name = "Student_idLabel"
+        Student_idLabel.Size = New System.Drawing.Size(68, 16)
+        Student_idLabel.TabIndex = 0
+        Student_idLabel.Text = "Student ID:"
+        '
+        'Instructor_titleLabel
+        '
+        Instructor_titleLabel.AutoSize = True
+        Instructor_titleLabel.Location = New System.Drawing.Point(7, 76)
+        Instructor_titleLabel.Name = "Instructor_titleLabel"
+        Instructor_titleLabel.Size = New System.Drawing.Size(83, 16)
+        Instructor_titleLabel.TabIndex = 37
+        Instructor_titleLabel.Text = "Instructor Title:"
+        '
+        'Instructor_userLabel
+        '
+        Instructor_userLabel.AutoSize = True
+        Instructor_userLabel.Location = New System.Drawing.Point(7, 49)
+        Instructor_userLabel.Name = "Instructor_userLabel"
+        Instructor_userLabel.Size = New System.Drawing.Size(85, 16)
+        Instructor_userLabel.TabIndex = 36
+        Instructor_userLabel.Text = "Instructor User:"
+        '
+        'Instructor_idLabel
+        '
+        Instructor_idLabel.AutoSize = True
+        Instructor_idLabel.Location = New System.Drawing.Point(7, 24)
+        Instructor_idLabel.Name = "Instructor_idLabel"
+        Instructor_idLabel.Size = New System.Drawing.Size(74, 16)
+        Instructor_idLabel.TabIndex = 35
+        Instructor_idLabel.Text = "Instructor ID:"
+        '
+        'Head_titleLabel
+        '
+        Head_titleLabel.AutoSize = True
+        Head_titleLabel.Location = New System.Drawing.Point(6, 75)
+        Head_titleLabel.Name = "Head_titleLabel"
+        Head_titleLabel.Size = New System.Drawing.Size(65, 16)
+        Head_titleLabel.TabIndex = 38
+        Head_titleLabel.Text = "Head Title:"
+        '
+        'Head_nameLabel
+        '
+        Head_nameLabel.AutoSize = True
+        Head_nameLabel.Location = New System.Drawing.Point(6, 48)
+        Head_nameLabel.Name = "Head_nameLabel"
+        Head_nameLabel.Size = New System.Drawing.Size(78, 16)
+        Head_nameLabel.TabIndex = 36
+        Head_nameLabel.Text = "Head Name:"
+        '
+        'Head_idLabel
+        '
+        Head_idLabel.AutoSize = True
+        Head_idLabel.Location = New System.Drawing.Point(6, 22)
+        Head_idLabel.Name = "Head_idLabel"
+        Head_idLabel.Size = New System.Drawing.Size(56, 16)
+        Head_idLabel.TabIndex = 35
+        Head_idLabel.Text = "Head ID:"
         '
         'topBarPanel
         '
@@ -299,7 +426,7 @@ Partial Class AdminForm
         Me.HomeTab.Controls.Add(Me.DatabaseGroup)
         Me.HomeTab.Location = New System.Drawing.Point(140, 4)
         Me.HomeTab.Name = "HomeTab"
-        Me.HomeTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.HomeTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.HomeTab.Size = New System.Drawing.Size(698, 430)
         Me.HomeTab.TabIndex = 0
         Me.HomeTab.Text = "Home"
@@ -379,41 +506,14 @@ Partial Class AdminForm
         'StudentTab
         '
         Me.StudentTab.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.StudentTab.Controls.Add(Me.StudentSubTabControl)
+        Me.StudentTab.Controls.Add(Me.StudentDataManager)
+        Me.StudentTab.Controls.Add(Me.StudentView)
         Me.StudentTab.Location = New System.Drawing.Point(140, 4)
         Me.StudentTab.Name = "StudentTab"
-        Me.StudentTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.StudentTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.StudentTab.Size = New System.Drawing.Size(698, 430)
         Me.StudentTab.TabIndex = 1
         Me.StudentTab.Text = "Student"
-        '
-        'StudentSubTabControl
-        '
-        Me.StudentSubTabControl.Alignment = System.Windows.Forms.TabAlignment.Left
-        Me.StudentSubTabControl.Controls.Add(Me.StudentDataTab)
-        Me.StudentSubTabControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.StudentSubTabControl.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Me.StudentSubTabControl.ItemSize = New System.Drawing.Size(44, 136)
-        Me.StudentSubTabControl.Location = New System.Drawing.Point(3, 3)
-        Me.StudentSubTabControl.Multiline = True
-        Me.StudentSubTabControl.Name = "StudentSubTabControl"
-        Me.StudentSubTabControl.SelectedIndex = 0
-        Me.StudentSubTabControl.Size = New System.Drawing.Size(692, 424)
-        Me.StudentSubTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.StudentSubTabControl.TabIndex = 2
-        '
-        'StudentDataTab
-        '
-        Me.StudentDataTab.AutoScroll = True
-        Me.StudentDataTab.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.StudentDataTab.Controls.Add(Me.StudentDataManager)
-        Me.StudentDataTab.Controls.Add(Me.StudentView)
-        Me.StudentDataTab.Location = New System.Drawing.Point(140, 4)
-        Me.StudentDataTab.Name = "StudentDataTab"
-        Me.StudentDataTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.StudentDataTab.Size = New System.Drawing.Size(548, 416)
-        Me.StudentDataTab.TabIndex = 0
-        Me.StudentDataTab.Text = "Student Data"
         '
         'StudentDataManager
         '
@@ -430,10 +530,10 @@ Partial Class AdminForm
         Me.StudentDataManager.Controls.Add(Student_idLabel)
         Me.StudentDataManager.Controls.Add(Me.Student_idTextBox)
         Me.StudentDataManager.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Me.StudentDataManager.Location = New System.Drawing.Point(3, 271)
+        Me.StudentDataManager.Location = New System.Drawing.Point(7, 271)
         Me.StudentDataManager.Name = "StudentDataManager"
-        Me.StudentDataManager.Size = New System.Drawing.Size(542, 142)
-        Me.StudentDataManager.TabIndex = 2
+        Me.StudentDataManager.Size = New System.Drawing.Size(684, 153)
+        Me.StudentDataManager.TabIndex = 4
         Me.StudentDataManager.TabStop = False
         Me.StudentDataManager.Text = "Student Data Manager"
         '
@@ -441,7 +541,7 @@ Partial Class AdminForm
         '
         Me.Student_passLabel.AutoSize = True
         Me.Student_passLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Me.Student_passLabel.Location = New System.Drawing.Point(332, 78)
+        Me.Student_passLabel.Location = New System.Drawing.Point(383, 21)
         Me.Student_passLabel.Name = "Student_passLabel"
         Me.Student_passLabel.Size = New System.Drawing.Size(108, 16)
         Me.Student_passLabel.TabIndex = 35
@@ -450,9 +550,9 @@ Partial Class AdminForm
         'Student_passTextBox
         '
         Me.Student_passTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_pass", True))
-        Me.Student_passTextBox.Location = New System.Drawing.Point(335, 97)
+        Me.Student_passTextBox.Location = New System.Drawing.Point(497, 20)
         Me.Student_passTextBox.Name = "Student_passTextBox"
-        Me.Student_passTextBox.Size = New System.Drawing.Size(155, 21)
+        Me.Student_passTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Student_passTextBox.TabIndex = 36
         '
         'SqlStudentComboBox
@@ -461,7 +561,7 @@ Partial Class AdminForm
         Me.SqlStudentComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.SqlStudentComboBox.FormattingEnabled = True
         Me.SqlStudentComboBox.Items.AddRange(New Object() {"SHOW ALL DATA", "SELECT (By ID)", "INSERT", "UPDATE", "DELETE (By ID)"})
-        Me.SqlStudentComboBox.Location = New System.Drawing.Point(335, 19)
+        Me.SqlStudentComboBox.Location = New System.Drawing.Point(522, 99)
         Me.SqlStudentComboBox.Name = "SqlStudentComboBox"
         Me.SqlStudentComboBox.Size = New System.Drawing.Size(155, 24)
         Me.SqlStudentComboBox.TabIndex = 35
@@ -476,81 +576,41 @@ Partial Class AdminForm
         Me.executeStudentBtn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.executeStudentBtn.ForeColor = System.Drawing.Color.White
         Me.executeStudentBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.executeStudentBtn.Location = New System.Drawing.Point(335, 46)
+        Me.executeStudentBtn.Location = New System.Drawing.Point(522, 126)
         Me.executeStudentBtn.Name = "executeStudentBtn"
-        Me.executeStudentBtn.Size = New System.Drawing.Size(155, 20)
+        Me.executeStudentBtn.Size = New System.Drawing.Size(155, 21)
         Me.executeStudentBtn.TabIndex = 34
         Me.executeStudentBtn.Text = "Execute Query"
         Me.executeStudentBtn.UseVisualStyleBackColor = True
         '
-        'Student_courseLabel
-        '
-        Student_courseLabel.AutoSize = True
-        Student_courseLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Student_courseLabel.Location = New System.Drawing.Point(12, 100)
-        Student_courseLabel.Name = "Student_courseLabel"
-        Student_courseLabel.Size = New System.Drawing.Size(94, 16)
-        Student_courseLabel.TabIndex = 6
-        Student_courseLabel.Text = "Student Course:"
-        '
         'Student_courseTextBox
         '
         Me.Student_courseTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_course", True))
-        Me.Student_courseTextBox.Location = New System.Drawing.Point(111, 97)
+        Me.Student_courseTextBox.Location = New System.Drawing.Point(126, 101)
         Me.Student_courseTextBox.Name = "Student_courseTextBox"
         Me.Student_courseTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Student_courseTextBox.TabIndex = 7
         '
-        'Student_levelLabel
-        '
-        Student_levelLabel.AutoSize = True
-        Student_levelLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Student_levelLabel.Location = New System.Drawing.Point(12, 74)
-        Student_levelLabel.Name = "Student_levelLabel"
-        Student_levelLabel.Size = New System.Drawing.Size(86, 16)
-        Student_levelLabel.TabIndex = 4
-        Student_levelLabel.Text = "Student Level:"
-        '
         'Student_levelTextBox
         '
         Me.Student_levelTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_level", True))
-        Me.Student_levelTextBox.Location = New System.Drawing.Point(111, 71)
+        Me.Student_levelTextBox.Location = New System.Drawing.Point(126, 74)
         Me.Student_levelTextBox.Name = "Student_levelTextBox"
         Me.Student_levelTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Student_levelTextBox.TabIndex = 5
         '
-        'Student_nameLabel
-        '
-        Student_nameLabel.AutoSize = True
-        Student_nameLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Student_nameLabel.Location = New System.Drawing.Point(12, 48)
-        Student_nameLabel.Name = "Student_nameLabel"
-        Student_nameLabel.Size = New System.Drawing.Size(90, 16)
-        Student_nameLabel.TabIndex = 2
-        Student_nameLabel.Text = "Student Name:"
-        '
         'Student_nameTextBox
         '
         Me.Student_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_name", True))
-        Me.Student_nameTextBox.Location = New System.Drawing.Point(111, 45)
+        Me.Student_nameTextBox.Location = New System.Drawing.Point(126, 47)
         Me.Student_nameTextBox.Name = "Student_nameTextBox"
         Me.Student_nameTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Student_nameTextBox.TabIndex = 3
         '
-        'Student_idLabel
-        '
-        Student_idLabel.AutoSize = True
-        Student_idLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Student_idLabel.Location = New System.Drawing.Point(12, 22)
-        Student_idLabel.Name = "Student_idLabel"
-        Student_idLabel.Size = New System.Drawing.Size(68, 16)
-        Student_idLabel.TabIndex = 0
-        Student_idLabel.Text = "Student ID:"
-        '
         'Student_idTextBox
         '
         Me.Student_idTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.StudentDataBindingSource, "student_id", True))
-        Me.Student_idTextBox.Location = New System.Drawing.Point(111, 19)
+        Me.Student_idTextBox.Location = New System.Drawing.Point(126, 21)
         Me.Student_idTextBox.Name = "Student_idTextBox"
         Me.Student_idTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Student_idTextBox.TabIndex = 1
@@ -566,70 +626,45 @@ Partial Class AdminForm
         Me.StudentView.FullRowSelect = True
         Me.StudentView.GridLines = True
         Me.StudentView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.StudentView.HideSelection = False
         Me.StudentView.Location = New System.Drawing.Point(3, 3)
         Me.StudentView.Name = "StudentView"
-        Me.StudentView.Size = New System.Drawing.Size(542, 262)
-        Me.StudentView.TabIndex = 1
+        Me.StudentView.Size = New System.Drawing.Size(692, 262)
+        Me.StudentView.TabIndex = 3
         Me.StudentView.UseCompatibleStateImageBehavior = False
         Me.StudentView.View = System.Windows.Forms.View.Details
         '
         'StudentIDHeader
         '
         Me.StudentIDHeader.Text = "Student ID"
-        Me.StudentIDHeader.Width = 137
+        Me.StudentIDHeader.Width = 88
         '
         'StudentNameHeader
         '
         Me.StudentNameHeader.Text = "Student Name"
-        Me.StudentNameHeader.Width = 275
+        Me.StudentNameHeader.Width = 119
         '
         'StudentLevelHeader
         '
         Me.StudentLevelHeader.Text = "Year"
-        Me.StudentLevelHeader.Width = 47
+        Me.StudentLevelHeader.Width = 122
         '
         'StudentCourseHeader
         '
         Me.StudentCourseHeader.Text = "Course"
-        Me.StudentCourseHeader.Width = 83
+        Me.StudentCourseHeader.Width = 210
         '
         'InstructorTab
         '
         Me.InstructorTab.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.InstructorTab.Controls.Add(Me.InstructorSubTabControl)
+        Me.InstructorTab.Controls.Add(Me.InstructorDataManager)
+        Me.InstructorTab.Controls.Add(Me.InstructorView)
         Me.InstructorTab.Location = New System.Drawing.Point(140, 4)
         Me.InstructorTab.Name = "InstructorTab"
-        Me.InstructorTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.InstructorTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.InstructorTab.Size = New System.Drawing.Size(698, 430)
         Me.InstructorTab.TabIndex = 2
         Me.InstructorTab.Text = "Instructor"
-        '
-        'InstructorSubTabControl
-        '
-        Me.InstructorSubTabControl.Alignment = System.Windows.Forms.TabAlignment.Left
-        Me.InstructorSubTabControl.Controls.Add(Me.InstructorDataTab)
-        Me.InstructorSubTabControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.InstructorSubTabControl.ItemSize = New System.Drawing.Size(44, 136)
-        Me.InstructorSubTabControl.Location = New System.Drawing.Point(3, 3)
-        Me.InstructorSubTabControl.Multiline = True
-        Me.InstructorSubTabControl.Name = "InstructorSubTabControl"
-        Me.InstructorSubTabControl.SelectedIndex = 0
-        Me.InstructorSubTabControl.Size = New System.Drawing.Size(692, 424)
-        Me.InstructorSubTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.InstructorSubTabControl.TabIndex = 0
-        '
-        'InstructorDataTab
-        '
-        Me.InstructorDataTab.AutoScroll = True
-        Me.InstructorDataTab.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.InstructorDataTab.Controls.Add(Me.InstructorDataManager)
-        Me.InstructorDataTab.Controls.Add(Me.InstructorView)
-        Me.InstructorDataTab.Location = New System.Drawing.Point(140, 4)
-        Me.InstructorDataTab.Name = "InstructorDataTab"
-        Me.InstructorDataTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.InstructorDataTab.Size = New System.Drawing.Size(548, 416)
-        Me.InstructorDataTab.TabIndex = 0
-        Me.InstructorDataTab.Text = "Instructor Data"
         '
         'InstructorDataManager
         '
@@ -644,17 +679,17 @@ Partial Class AdminForm
         Me.InstructorDataManager.Controls.Add(Me.SqlInstructorComboBox)
         Me.InstructorDataManager.Controls.Add(Me.executeInstructorBtn)
         Me.InstructorDataManager.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Me.InstructorDataManager.Location = New System.Drawing.Point(3, 271)
+        Me.InstructorDataManager.Location = New System.Drawing.Point(6, 271)
         Me.InstructorDataManager.Name = "InstructorDataManager"
-        Me.InstructorDataManager.Size = New System.Drawing.Size(542, 142)
-        Me.InstructorDataManager.TabIndex = 3
+        Me.InstructorDataManager.Size = New System.Drawing.Size(684, 153)
+        Me.InstructorDataManager.TabIndex = 5
         Me.InstructorDataManager.TabStop = False
         Me.InstructorDataManager.Text = "Instructor Data Manager"
         '
         'Instructor_passLabel
         '
         Me.Instructor_passLabel.AutoSize = True
-        Me.Instructor_passLabel.Location = New System.Drawing.Point(7, 104)
+        Me.Instructor_passLabel.Location = New System.Drawing.Point(7, 103)
         Me.Instructor_passLabel.Name = "Instructor_passLabel"
         Me.Instructor_passLabel.Size = New System.Drawing.Size(114, 16)
         Me.Instructor_passLabel.TabIndex = 38
@@ -668,15 +703,6 @@ Partial Class AdminForm
         Me.Instructor_passTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Instructor_passTextBox.TabIndex = 39
         '
-        'Instructor_titleLabel
-        '
-        Instructor_titleLabel.AutoSize = True
-        Instructor_titleLabel.Location = New System.Drawing.Point(7, 77)
-        Instructor_titleLabel.Name = "Instructor_titleLabel"
-        Instructor_titleLabel.Size = New System.Drawing.Size(83, 16)
-        Instructor_titleLabel.TabIndex = 37
-        Instructor_titleLabel.Text = "Instructor Title:"
-        '
         'Instructor_titleTextBox
         '
         Me.Instructor_titleTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InstructorDataBindingSource, "instructor_title", True))
@@ -684,15 +710,6 @@ Partial Class AdminForm
         Me.Instructor_titleTextBox.Name = "Instructor_titleTextBox"
         Me.Instructor_titleTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Instructor_titleTextBox.TabIndex = 38
-        '
-        'Instructor_userLabel
-        '
-        Instructor_userLabel.AutoSize = True
-        Instructor_userLabel.Location = New System.Drawing.Point(7, 50)
-        Instructor_userLabel.Name = "Instructor_userLabel"
-        Instructor_userLabel.Size = New System.Drawing.Size(85, 16)
-        Instructor_userLabel.TabIndex = 36
-        Instructor_userLabel.Text = "Instructor User:"
         '
         'Instructor_userTextBox
         '
@@ -702,19 +719,10 @@ Partial Class AdminForm
         Me.Instructor_userTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Instructor_userTextBox.TabIndex = 37
         '
-        'Instructor_idLabel
-        '
-        Instructor_idLabel.AutoSize = True
-        Instructor_idLabel.Location = New System.Drawing.Point(7, 25)
-        Instructor_idLabel.Name = "Instructor_idLabel"
-        Instructor_idLabel.Size = New System.Drawing.Size(74, 16)
-        Instructor_idLabel.TabIndex = 35
-        Instructor_idLabel.Text = "Instructor ID:"
-        '
         'Instructor_idTextBox
         '
         Me.Instructor_idTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InstructorDataBindingSource, "instructor_id", True))
-        Me.Instructor_idTextBox.Location = New System.Drawing.Point(127, 22)
+        Me.Instructor_idTextBox.Location = New System.Drawing.Point(127, 21)
         Me.Instructor_idTextBox.Name = "Instructor_idTextBox"
         Me.Instructor_idTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Instructor_idTextBox.TabIndex = 36
@@ -725,7 +733,7 @@ Partial Class AdminForm
         Me.SqlInstructorComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.SqlInstructorComboBox.FormattingEnabled = True
         Me.SqlInstructorComboBox.Items.AddRange(New Object() {"SHOW ALL DATA", "SELECT (By ID)", "INSERT", "UPDATE", "DELETE (By ID)"})
-        Me.SqlInstructorComboBox.Location = New System.Drawing.Point(335, 19)
+        Me.SqlInstructorComboBox.Location = New System.Drawing.Point(523, 99)
         Me.SqlInstructorComboBox.Name = "SqlInstructorComboBox"
         Me.SqlInstructorComboBox.Size = New System.Drawing.Size(155, 24)
         Me.SqlInstructorComboBox.TabIndex = 35
@@ -740,9 +748,9 @@ Partial Class AdminForm
         Me.executeInstructorBtn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.executeInstructorBtn.ForeColor = System.Drawing.Color.White
         Me.executeInstructorBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.executeInstructorBtn.Location = New System.Drawing.Point(335, 46)
+        Me.executeInstructorBtn.Location = New System.Drawing.Point(523, 126)
         Me.executeInstructorBtn.Name = "executeInstructorBtn"
-        Me.executeInstructorBtn.Size = New System.Drawing.Size(155, 20)
+        Me.executeInstructorBtn.Size = New System.Drawing.Size(155, 21)
         Me.executeInstructorBtn.TabIndex = 34
         Me.executeInstructorBtn.Text = "Execute Query"
         Me.executeInstructorBtn.UseVisualStyleBackColor = True
@@ -758,10 +766,11 @@ Partial Class AdminForm
         Me.InstructorView.FullRowSelect = True
         Me.InstructorView.GridLines = True
         Me.InstructorView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.InstructorView.HideSelection = False
         Me.InstructorView.Location = New System.Drawing.Point(3, 3)
         Me.InstructorView.Name = "InstructorView"
-        Me.InstructorView.Size = New System.Drawing.Size(542, 262)
-        Me.InstructorView.TabIndex = 2
+        Me.InstructorView.Size = New System.Drawing.Size(692, 262)
+        Me.InstructorView.TabIndex = 4
         Me.InstructorView.UseCompatibleStateImageBehavior = False
         Me.InstructorView.View = System.Windows.Forms.View.Details
         '
@@ -778,45 +787,19 @@ Partial Class AdminForm
         'InstructorTitleHeader
         '
         Me.InstructorTitleHeader.Text = "Instructor Title"
-        Me.InstructorTitleHeader.Width = 129
+        Me.InstructorTitleHeader.Width = 128
         '
         'HeadTab
         '
         Me.HeadTab.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.HeadTab.Controls.Add(Me.HeadSubTabControl)
+        Me.HeadTab.Controls.Add(Me.HeadDataManager)
+        Me.HeadTab.Controls.Add(Me.HeadView)
         Me.HeadTab.Location = New System.Drawing.Point(140, 4)
         Me.HeadTab.Name = "HeadTab"
-        Me.HeadTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.HeadTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.HeadTab.Size = New System.Drawing.Size(698, 430)
         Me.HeadTab.TabIndex = 3
         Me.HeadTab.Text = "Head of Department"
-        '
-        'HeadSubTabControl
-        '
-        Me.HeadSubTabControl.Alignment = System.Windows.Forms.TabAlignment.Left
-        Me.HeadSubTabControl.Controls.Add(Me.HeadDataTab)
-        Me.HeadSubTabControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.HeadSubTabControl.ItemSize = New System.Drawing.Size(44, 136)
-        Me.HeadSubTabControl.Location = New System.Drawing.Point(3, 3)
-        Me.HeadSubTabControl.Multiline = True
-        Me.HeadSubTabControl.Name = "HeadSubTabControl"
-        Me.HeadSubTabControl.SelectedIndex = 0
-        Me.HeadSubTabControl.Size = New System.Drawing.Size(692, 424)
-        Me.HeadSubTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.HeadSubTabControl.TabIndex = 0
-        '
-        'HeadDataTab
-        '
-        Me.HeadDataTab.AutoScroll = True
-        Me.HeadDataTab.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.HeadDataTab.Controls.Add(Me.HeadDataManager)
-        Me.HeadDataTab.Controls.Add(Me.HeadView)
-        Me.HeadDataTab.Location = New System.Drawing.Point(140, 4)
-        Me.HeadDataTab.Name = "HeadDataTab"
-        Me.HeadDataTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.HeadDataTab.Size = New System.Drawing.Size(548, 416)
-        Me.HeadDataTab.TabIndex = 0
-        Me.HeadDataTab.Text = "HoD Data"
         '
         'HeadDataManager
         '
@@ -831,26 +814,17 @@ Partial Class AdminForm
         Me.HeadDataManager.Controls.Add(Me.SqlHeadComboBox)
         Me.HeadDataManager.Controls.Add(Me.executeHeadBtn)
         Me.HeadDataManager.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        Me.HeadDataManager.Location = New System.Drawing.Point(3, 271)
+        Me.HeadDataManager.Location = New System.Drawing.Point(6, 271)
         Me.HeadDataManager.Name = "HeadDataManager"
-        Me.HeadDataManager.Size = New System.Drawing.Size(542, 142)
-        Me.HeadDataManager.TabIndex = 4
+        Me.HeadDataManager.Size = New System.Drawing.Size(684, 153)
+        Me.HeadDataManager.TabIndex = 6
         Me.HeadDataManager.TabStop = False
         Me.HeadDataManager.Text = "Head of Department Data Manager"
-        '
-        'Head_titleLabel
-        '
-        Head_titleLabel.AutoSize = True
-        Head_titleLabel.Location = New System.Drawing.Point(6, 75)
-        Head_titleLabel.Name = "Head_titleLabel"
-        Head_titleLabel.Size = New System.Drawing.Size(65, 16)
-        Head_titleLabel.TabIndex = 38
-        Head_titleLabel.Text = "Head Title:"
         '
         'Head_titleTextBox
         '
         Me.Head_titleTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.HeadDataBindingSource, "head_title", True))
-        Me.Head_titleTextBox.Location = New System.Drawing.Point(108, 72)
+        Me.Head_titleTextBox.Location = New System.Drawing.Point(127, 74)
         Me.Head_titleTextBox.Name = "Head_titleTextBox"
         Me.Head_titleTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Head_titleTextBox.TabIndex = 38
@@ -867,41 +841,23 @@ Partial Class AdminForm
         'Head_passTextBox
         '
         Me.Head_passTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.HeadDataBindingSource, "head_pass", True))
-        Me.Head_passTextBox.Location = New System.Drawing.Point(108, 99)
+        Me.Head_passTextBox.Location = New System.Drawing.Point(127, 101)
         Me.Head_passTextBox.Name = "Head_passTextBox"
         Me.Head_passTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Head_passTextBox.TabIndex = 39
         '
-        'Head_nameLabel
-        '
-        Head_nameLabel.AutoSize = True
-        Head_nameLabel.Location = New System.Drawing.Point(6, 48)
-        Head_nameLabel.Name = "Head_nameLabel"
-        Head_nameLabel.Size = New System.Drawing.Size(78, 16)
-        Head_nameLabel.TabIndex = 36
-        Head_nameLabel.Text = "Head Name:"
-        '
         'Head_nameTextBox
         '
         Me.Head_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.HeadDataBindingSource, "head_name", True))
-        Me.Head_nameTextBox.Location = New System.Drawing.Point(108, 45)
+        Me.Head_nameTextBox.Location = New System.Drawing.Point(127, 47)
         Me.Head_nameTextBox.Name = "Head_nameTextBox"
         Me.Head_nameTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Head_nameTextBox.TabIndex = 37
         '
-        'Head_idLabel
-        '
-        Head_idLabel.AutoSize = True
-        Head_idLabel.Location = New System.Drawing.Point(6, 22)
-        Head_idLabel.Name = "Head_idLabel"
-        Head_idLabel.Size = New System.Drawing.Size(56, 16)
-        Head_idLabel.TabIndex = 35
-        Head_idLabel.Text = "Head ID:"
-        '
         'Head_idTextBox
         '
         Me.Head_idTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.HeadDataBindingSource, "head_id", True))
-        Me.Head_idTextBox.Location = New System.Drawing.Point(108, 19)
+        Me.Head_idTextBox.Location = New System.Drawing.Point(127, 21)
         Me.Head_idTextBox.Name = "Head_idTextBox"
         Me.Head_idTextBox.Size = New System.Drawing.Size(181, 21)
         Me.Head_idTextBox.TabIndex = 36
@@ -912,7 +868,7 @@ Partial Class AdminForm
         Me.SqlHeadComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.SqlHeadComboBox.FormattingEnabled = True
         Me.SqlHeadComboBox.Items.AddRange(New Object() {"SHOW ALL DATA", "SELECT (By ID)", "INSERT", "UPDATE", "DELETE (By ID)"})
-        Me.SqlHeadComboBox.Location = New System.Drawing.Point(335, 19)
+        Me.SqlHeadComboBox.Location = New System.Drawing.Point(523, 99)
         Me.SqlHeadComboBox.Name = "SqlHeadComboBox"
         Me.SqlHeadComboBox.Size = New System.Drawing.Size(155, 24)
         Me.SqlHeadComboBox.TabIndex = 35
@@ -927,9 +883,9 @@ Partial Class AdminForm
         Me.executeHeadBtn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.executeHeadBtn.ForeColor = System.Drawing.Color.White
         Me.executeHeadBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.executeHeadBtn.Location = New System.Drawing.Point(335, 46)
+        Me.executeHeadBtn.Location = New System.Drawing.Point(523, 126)
         Me.executeHeadBtn.Name = "executeHeadBtn"
-        Me.executeHeadBtn.Size = New System.Drawing.Size(155, 20)
+        Me.executeHeadBtn.Size = New System.Drawing.Size(155, 21)
         Me.executeHeadBtn.TabIndex = 34
         Me.executeHeadBtn.Text = "Execute Query"
         Me.executeHeadBtn.UseVisualStyleBackColor = True
@@ -945,10 +901,11 @@ Partial Class AdminForm
         Me.HeadView.FullRowSelect = True
         Me.HeadView.GridLines = True
         Me.HeadView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.HeadView.HideSelection = False
         Me.HeadView.Location = New System.Drawing.Point(3, 3)
         Me.HeadView.Name = "HeadView"
-        Me.HeadView.Size = New System.Drawing.Size(542, 262)
-        Me.HeadView.TabIndex = 3
+        Me.HeadView.Size = New System.Drawing.Size(692, 262)
+        Me.HeadView.TabIndex = 5
         Me.HeadView.UseCompatibleStateImageBehavior = False
         Me.HeadView.View = System.Windows.Forms.View.Details
         '
@@ -960,12 +917,12 @@ Partial Class AdminForm
         'HeadNameHeader
         '
         Me.HeadNameHeader.Text = "Head of Department Name"
-        Me.HeadNameHeader.Width = 248
+        Me.HeadNameHeader.Width = 178
         '
         'HeadTitleHeader
         '
         Me.HeadTitleHeader.Text = "Head of Department Title"
-        Me.HeadTitleHeader.Width = 152
+        Me.HeadTitleHeader.Width = 221
         '
         'FileTab
         '
@@ -975,7 +932,7 @@ Partial Class AdminForm
         Me.FileTab.Controls.Add(Me.FileView)
         Me.FileTab.Location = New System.Drawing.Point(140, 4)
         Me.FileTab.Name = "FileTab"
-        Me.FileTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.FileTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.FileTab.Size = New System.Drawing.Size(698, 430)
         Me.FileTab.TabIndex = 4
         Me.FileTab.Text = "User Files"
@@ -997,96 +954,51 @@ Partial Class AdminForm
         Me.FileDataManager.Font = New System.Drawing.Font("Century Gothic", 8.25!)
         Me.FileDataManager.Location = New System.Drawing.Point(6, 271)
         Me.FileDataManager.Name = "FileDataManager"
-        Me.FileDataManager.Size = New System.Drawing.Size(686, 151)
+        Me.FileDataManager.Size = New System.Drawing.Size(684, 153)
         Me.FileDataManager.TabIndex = 6
         Me.FileDataManager.TabStop = False
         Me.FileDataManager.Text = "File Data Manager"
         '
-        'File_uploader_nameLabel
-        '
-        File_uploader_nameLabel.AutoSize = True
-        File_uploader_nameLabel.Location = New System.Drawing.Point(6, 129)
-        File_uploader_nameLabel.Name = "File_uploader_nameLabel"
-        File_uploader_nameLabel.Size = New System.Drawing.Size(65, 16)
-        File_uploader_nameLabel.TabIndex = 39
-        File_uploader_nameLabel.Text = "Username:"
-        '
         'File_uploader_nameTextBox
         '
         Me.File_uploader_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FileDataBindingSource, "file_uploader_name", True))
-        Me.File_uploader_nameTextBox.Location = New System.Drawing.Point(107, 126)
+        Me.File_uploader_nameTextBox.Location = New System.Drawing.Point(127, 126)
         Me.File_uploader_nameTextBox.Name = "File_uploader_nameTextBox"
-        Me.File_uploader_nameTextBox.Size = New System.Drawing.Size(175, 21)
+        Me.File_uploader_nameTextBox.Size = New System.Drawing.Size(181, 21)
         Me.File_uploader_nameTextBox.TabIndex = 40
-        '
-        'File_uploaderLabel
-        '
-        File_uploaderLabel.AutoSize = True
-        File_uploaderLabel.Location = New System.Drawing.Point(6, 102)
-        File_uploaderLabel.Name = "File_uploaderLabel"
-        File_uploaderLabel.Size = New System.Drawing.Size(47, 16)
-        File_uploaderLabel.TabIndex = 38
-        File_uploaderLabel.Text = "User ID:"
         '
         'File_uploaderTextBox
         '
         Me.File_uploaderTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FileDataBindingSource, "file_uploader", True))
-        Me.File_uploaderTextBox.Location = New System.Drawing.Point(107, 99)
+        Me.File_uploaderTextBox.Location = New System.Drawing.Point(127, 99)
         Me.File_uploaderTextBox.Name = "File_uploaderTextBox"
-        Me.File_uploaderTextBox.Size = New System.Drawing.Size(175, 21)
+        Me.File_uploaderTextBox.Size = New System.Drawing.Size(181, 21)
         Me.File_uploaderTextBox.TabIndex = 39
-        '
-        'IsApprovedLabel
-        '
-        IsApprovedLabel.AutoSize = True
-        IsApprovedLabel.Location = New System.Drawing.Point(6, 75)
-        IsApprovedLabel.Name = "IsApprovedLabel"
-        IsApprovedLabel.Size = New System.Drawing.Size(63, 16)
-        IsApprovedLabel.TabIndex = 37
-        IsApprovedLabel.Text = "File Status:"
         '
         'IsApprovedTextBox
         '
         Me.IsApprovedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FileDataBindingSource, "isApproved", True))
-        Me.IsApprovedTextBox.Location = New System.Drawing.Point(107, 72)
+        Me.IsApprovedTextBox.Location = New System.Drawing.Point(127, 72)
         Me.IsApprovedTextBox.Name = "IsApprovedTextBox"
         Me.IsApprovedTextBox.ReadOnly = True
-        Me.IsApprovedTextBox.Size = New System.Drawing.Size(175, 21)
+        Me.IsApprovedTextBox.Size = New System.Drawing.Size(181, 21)
         Me.IsApprovedTextBox.TabIndex = 38
-        '
-        'File_nameLabel
-        '
-        File_nameLabel.AutoSize = True
-        File_nameLabel.Location = New System.Drawing.Point(6, 48)
-        File_nameLabel.Name = "File_nameLabel"
-        File_nameLabel.Size = New System.Drawing.Size(63, 16)
-        File_nameLabel.TabIndex = 36
-        File_nameLabel.Text = "File Name:"
         '
         'File_nameTextBox
         '
         Me.File_nameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FileDataBindingSource, "file_name", True))
-        Me.File_nameTextBox.Location = New System.Drawing.Point(107, 45)
+        Me.File_nameTextBox.Location = New System.Drawing.Point(127, 45)
         Me.File_nameTextBox.Name = "File_nameTextBox"
-        Me.File_nameTextBox.Size = New System.Drawing.Size(175, 21)
+        Me.File_nameTextBox.Size = New System.Drawing.Size(181, 21)
         Me.File_nameTextBox.TabIndex = 37
-        '
-        'File_idLabel
-        '
-        File_idLabel.AutoSize = True
-        File_idLabel.Location = New System.Drawing.Point(6, 21)
-        File_idLabel.Name = "File_idLabel"
-        File_idLabel.Size = New System.Drawing.Size(41, 16)
-        File_idLabel.TabIndex = 35
-        File_idLabel.Text = "File ID:"
         '
         'File_idTextBox
         '
         Me.File_idTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FileDataBindingSource, "file_id", True))
-        Me.File_idTextBox.Location = New System.Drawing.Point(107, 18)
+        Me.File_idTextBox.Location = New System.Drawing.Point(127, 18)
         Me.File_idTextBox.Name = "File_idTextBox"
         Me.File_idTextBox.ReadOnly = True
-        Me.File_idTextBox.Size = New System.Drawing.Size(175, 21)
+        Me.File_idTextBox.Size = New System.Drawing.Size(181, 21)
         Me.File_idTextBox.TabIndex = 36
         '
         'SqlFileComboBox
@@ -1095,9 +1007,9 @@ Partial Class AdminForm
         Me.SqlFileComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.SqlFileComboBox.FormattingEnabled = True
         Me.SqlFileComboBox.Items.AddRange(New Object() {"SHOW ALL DATA", "SELECT (By User ID)", "SELECT (By Username)", "SELECT (Approved)", "SELECT (Pending)", "UPDATE (Only Filename)", "DELETE (By File ID)"})
-        Me.SqlFileComboBox.Location = New System.Drawing.Point(391, 18)
+        Me.SqlFileComboBox.Location = New System.Drawing.Point(523, 99)
         Me.SqlFileComboBox.Name = "SqlFileComboBox"
-        Me.SqlFileComboBox.Size = New System.Drawing.Size(206, 24)
+        Me.SqlFileComboBox.Size = New System.Drawing.Size(155, 24)
         Me.SqlFileComboBox.TabIndex = 35
         '
         'executeFileBtn
@@ -1110,9 +1022,9 @@ Partial Class AdminForm
         Me.executeFileBtn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.executeFileBtn.ForeColor = System.Drawing.Color.White
         Me.executeFileBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.executeFileBtn.Location = New System.Drawing.Point(391, 45)
+        Me.executeFileBtn.Location = New System.Drawing.Point(523, 126)
         Me.executeFileBtn.Name = "executeFileBtn"
-        Me.executeFileBtn.Size = New System.Drawing.Size(206, 21)
+        Me.executeFileBtn.Size = New System.Drawing.Size(155, 21)
         Me.executeFileBtn.TabIndex = 34
         Me.executeFileBtn.Text = "Execute Query"
         Me.executeFileBtn.UseVisualStyleBackColor = True
@@ -1128,6 +1040,7 @@ Partial Class AdminForm
         Me.FileView.FullRowSelect = True
         Me.FileView.GridLines = True
         Me.FileView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.FileView.HideSelection = False
         Me.FileView.Location = New System.Drawing.Point(3, 3)
         Me.FileView.Name = "FileView"
         Me.FileView.Size = New System.Drawing.Size(692, 262)
@@ -1138,12 +1051,12 @@ Partial Class AdminForm
         'FileIDHeader
         '
         Me.FileIDHeader.Text = "UUID"
-        Me.FileIDHeader.Width = 195
+        Me.FileIDHeader.Width = 218
         '
         'FileNameHeader
         '
         Me.FileNameHeader.Text = "File Name"
-        Me.FileNameHeader.Width = 126
+        Me.FileNameHeader.Width = 87
         '
         'UserNameHeader
         '
@@ -1153,17 +1066,17 @@ Partial Class AdminForm
         'UserIDHeader
         '
         Me.UserIDHeader.Text = "User ID"
-        Me.UserIDHeader.Width = 86
+        Me.UserIDHeader.Width = 112
         '
         'FileStatusHeader
         '
         Me.FileStatusHeader.Text = "File Status"
-        Me.FileStatusHeader.Width = 79
+        Me.FileStatusHeader.Width = 75
         '
         'DateHeader
         '
         Me.DateHeader.Text = "Upload Date"
-        Me.DateHeader.Width = 105
+        Me.DateHeader.Width = 98
         '
         'AdminForm
         '
@@ -1192,18 +1105,12 @@ Partial Class AdminForm
         Me.DatabaseGroup.ResumeLayout(False)
         Me.DatabaseGroup.PerformLayout()
         Me.StudentTab.ResumeLayout(False)
-        Me.StudentSubTabControl.ResumeLayout(False)
-        Me.StudentDataTab.ResumeLayout(False)
         Me.StudentDataManager.ResumeLayout(False)
         Me.StudentDataManager.PerformLayout()
         Me.InstructorTab.ResumeLayout(False)
-        Me.InstructorSubTabControl.ResumeLayout(False)
-        Me.InstructorDataTab.ResumeLayout(False)
         Me.InstructorDataManager.ResumeLayout(False)
         Me.InstructorDataManager.PerformLayout()
         Me.HeadTab.ResumeLayout(False)
-        Me.HeadSubTabControl.ResumeLayout(False)
-        Me.HeadDataTab.ResumeLayout(False)
         Me.HeadDataManager.ResumeLayout(False)
         Me.HeadDataManager.PerformLayout()
         Me.FileTab.ResumeLayout(False)
@@ -1227,11 +1134,6 @@ Partial Class AdminForm
     Friend WithEvents HeadDataTableAdapter As repoDBDataSetTableAdapters.HeadDataTableAdapter
     Friend WithEvents InstructorDataTableAdapter As repoDBDataSetTableAdapters.InstructorDataTableAdapter
     Friend WithEvents StudentDataTableAdapter As repoDBDataSetTableAdapters.StudentDataTableAdapter
-    Friend WithEvents StudentView As ListView
-    Friend WithEvents StudentIDHeader As ColumnHeader
-    Friend WithEvents StudentNameHeader As ColumnHeader
-    Friend WithEvents StudentLevelHeader As ColumnHeader
-    Friend WithEvents StudentCourseHeader As ColumnHeader
     Friend WithEvents RepoDBDataSet As repoDBDataSet
     Friend WithEvents StudentDataBindingSource As BindingSource
     Friend WithEvents StudentDataBindingNavigator As BindingNavigator
@@ -1247,17 +1149,6 @@ Partial Class AdminForm
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents StudentDataBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents StudentSubTabControl As DotNetBarTabcontrol
-    Friend WithEvents StudentDataTab As TabPage
-    Friend WithEvents StudentDataManager As GroupBox
-    Friend WithEvents Student_idTextBox As TextBox
-    Friend WithEvents Student_nameTextBox As TextBox
-    Friend WithEvents Student_levelTextBox As TextBox
-    Friend WithEvents Student_courseTextBox As TextBox
-    Friend WithEvents SqlStudentComboBox As ComboBox
-    Friend WithEvents executeStudentBtn As Button
-    Friend WithEvents Student_passTextBox As TextBox
-    Friend WithEvents Student_passLabel As Label
     Friend WithEvents DatabaseGroup As GroupBox
     Friend WithEvents SqlVersionLabel As Label
     Friend WithEvents GroupBox1 As GroupBox
@@ -1266,36 +1157,8 @@ Partial Class AdminForm
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents NetworkTimer As Timer
-    Friend WithEvents InstructorSubTabControl As DotNetBarTabcontrol
-    Friend WithEvents InstructorDataTab As TabPage
-    Friend WithEvents InstructorDataManager As GroupBox
-    Friend WithEvents Instructor_passTextBox As TextBox
     Friend WithEvents InstructorDataBindingSource As BindingSource
-    Friend WithEvents Instructor_titleTextBox As TextBox
-    Friend WithEvents Instructor_userTextBox As TextBox
-    Friend WithEvents Instructor_idTextBox As TextBox
-    Friend WithEvents SqlInstructorComboBox As ComboBox
-    Friend WithEvents executeInstructorBtn As Button
-    Friend WithEvents InstructorView As ListView
-    Friend WithEvents InstructorIDHeader As ColumnHeader
-    Friend WithEvents InstructorNameHeader As ColumnHeader
-    Friend WithEvents InstructorTitleHeader As ColumnHeader
-    Friend WithEvents Instructor_passLabel As Label
-    Friend WithEvents HeadSubTabControl As DotNetBarTabcontrol
-    Friend WithEvents HeadDataTab As TabPage
-    Friend WithEvents HeadDataManager As GroupBox
-    Friend WithEvents Head_titleTextBox As TextBox
     Friend WithEvents HeadDataBindingSource As BindingSource
-    Friend WithEvents Head_passTextBox As TextBox
-    Friend WithEvents Head_nameTextBox As TextBox
-    Friend WithEvents Head_idTextBox As TextBox
-    Friend WithEvents SqlHeadComboBox As ComboBox
-    Friend WithEvents executeHeadBtn As Button
-    Friend WithEvents HeadView As ListView
-    Friend WithEvents HeadIDHeader As ColumnHeader
-    Friend WithEvents HeadNameHeader As ColumnHeader
-    Friend WithEvents HeadTitleHeader As ColumnHeader
-    Friend WithEvents Head_passLabel As Label
     Friend WithEvents FileTab As TabPage
     Friend WithEvents FileDataManager As GroupBox
     Friend WithEvents IsApprovedTextBox As TextBox
@@ -1313,4 +1176,42 @@ Partial Class AdminForm
     Friend WithEvents DateHeader As ColumnHeader
     Friend WithEvents File_uploaderTextBox As TextBox
     Friend WithEvents File_uploader_nameTextBox As TextBox
+    Friend WithEvents StudentDataManager As GroupBox
+    Friend WithEvents Student_passLabel As Label
+    Friend WithEvents Student_passTextBox As TextBox
+    Friend WithEvents SqlStudentComboBox As ComboBox
+    Friend WithEvents executeStudentBtn As Button
+    Friend WithEvents Student_courseTextBox As TextBox
+    Friend WithEvents Student_levelTextBox As TextBox
+    Friend WithEvents Student_nameTextBox As TextBox
+    Friend WithEvents Student_idTextBox As TextBox
+    Friend WithEvents StudentView As ListView
+    Friend WithEvents StudentIDHeader As ColumnHeader
+    Friend WithEvents StudentNameHeader As ColumnHeader
+    Friend WithEvents StudentLevelHeader As ColumnHeader
+    Friend WithEvents StudentCourseHeader As ColumnHeader
+    Friend WithEvents InstructorDataManager As GroupBox
+    Friend WithEvents Instructor_passLabel As Label
+    Friend WithEvents Instructor_passTextBox As TextBox
+    Friend WithEvents Instructor_titleTextBox As TextBox
+    Friend WithEvents Instructor_userTextBox As TextBox
+    Friend WithEvents Instructor_idTextBox As TextBox
+    Friend WithEvents SqlInstructorComboBox As ComboBox
+    Friend WithEvents executeInstructorBtn As Button
+    Friend WithEvents InstructorView As ListView
+    Friend WithEvents InstructorIDHeader As ColumnHeader
+    Friend WithEvents InstructorNameHeader As ColumnHeader
+    Friend WithEvents InstructorTitleHeader As ColumnHeader
+    Friend WithEvents HeadDataManager As GroupBox
+    Friend WithEvents Head_titleTextBox As TextBox
+    Friend WithEvents Head_passLabel As Label
+    Friend WithEvents Head_passTextBox As TextBox
+    Friend WithEvents Head_nameTextBox As TextBox
+    Friend WithEvents Head_idTextBox As TextBox
+    Friend WithEvents SqlHeadComboBox As ComboBox
+    Friend WithEvents executeHeadBtn As Button
+    Friend WithEvents HeadView As ListView
+    Friend WithEvents HeadIDHeader As ColumnHeader
+    Friend WithEvents HeadNameHeader As ColumnHeader
+    Friend WithEvents HeadTitleHeader As ColumnHeader
 End Class

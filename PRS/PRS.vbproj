@@ -63,6 +63,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PRSlogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -157,6 +160,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewFilesForm.Designer.vb">
+      <DependentUpon>ViewFilesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFilesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminForm.resx">
@@ -185,6 +194,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewFilesForm.resx">
+      <DependentUpon>ViewFilesForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -344,6 +356,7 @@
   <ItemGroup>
     <None Include="Images\studentsBtn.png" />
     <None Include="Images\studentsBtnHover.png" />
+    <Content Include="PRSlogo.ico" />
     <Content Include="repoDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -76,9 +76,10 @@ Partial Class InstructorForm
         'mainPanel
         '
         Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mainPanel.Location = New System.Drawing.Point(0, 182)
+        Me.mainPanel.Location = New System.Drawing.Point(0, 224)
+        Me.mainPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.mainPanel.Name = "mainPanel"
-        Me.mainPanel.Size = New System.Drawing.Size(800, 341)
+        Me.mainPanel.Size = New System.Drawing.Size(1067, 420)
         Me.mainPanel.TabIndex = 12
         '
         'Panel4
@@ -87,9 +88,10 @@ Partial Class InstructorForm
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.profileButton)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(0, 523)
+        Me.Panel4.Location = New System.Drawing.Point(0, 644)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(800, 47)
+        Me.Panel4.Size = New System.Drawing.Size(1067, 57)
         Me.Panel4.TabIndex = 6
         '
         'profileButton
@@ -101,8 +103,9 @@ Partial Class InstructorForm
         Me.profileButton.ForeColor = System.Drawing.Color.White
         Me.profileButton.Image = Global.PRS.My.Resources.Resources.generalBtn
         Me.profileButton.Location = New System.Drawing.Point(0, 0)
+        Me.profileButton.Margin = New System.Windows.Forms.Padding(4)
         Me.profileButton.Name = "profileButton"
-        Me.profileButton.Size = New System.Drawing.Size(200, 45)
+        Me.profileButton.Size = New System.Drawing.Size(267, 55)
         Me.profileButton.TabIndex = 1
         Me.profileButton.Text = "My Profile"
         Me.profileButton.UseVisualStyleBackColor = True
@@ -112,18 +115,20 @@ Partial Class InstructorForm
         Me.bottomBar.BackColor = System.Drawing.SystemColors.ControlLight
         Me.bottomBar.Controls.Add(Me.settingsBtn)
         Me.bottomBar.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.bottomBar.Location = New System.Drawing.Point(0, 570)
+        Me.bottomBar.Location = New System.Drawing.Point(0, 701)
+        Me.bottomBar.Margin = New System.Windows.Forms.Padding(4)
         Me.bottomBar.Name = "bottomBar"
-        Me.bottomBar.Size = New System.Drawing.Size(800, 30)
+        Me.bottomBar.Size = New System.Drawing.Size(1067, 37)
         Me.bottomBar.TabIndex = 10
         '
         'settingsBtn
         '
         Me.settingsBtn.BackColor = System.Drawing.Color.Transparent
         Me.settingsBtn.Image = Global.PRS.My.Resources.Resources.settingsBtn
-        Me.settingsBtn.Location = New System.Drawing.Point(751, 3)
+        Me.settingsBtn.Location = New System.Drawing.Point(1001, 4)
+        Me.settingsBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.settingsBtn.Name = "settingsBtn"
-        Me.settingsBtn.Size = New System.Drawing.Size(46, 24)
+        Me.settingsBtn.Size = New System.Drawing.Size(61, 30)
         Me.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.settingsBtn.TabIndex = 0
         Me.settingsBtn.TabStop = False
@@ -143,8 +148,9 @@ Partial Class InstructorForm
         Me.profilePanel.Controls.Add(Me.Panel2)
         Me.profilePanel.Controls.Add(Me.profilePicture)
         Me.profilePanel.Location = New System.Drawing.Point(0, 0)
+        Me.profilePanel.Margin = New System.Windows.Forms.Padding(4)
         Me.profilePanel.Name = "profilePanel"
-        Me.profilePanel.Size = New System.Drawing.Size(290, 600)
+        Me.profilePanel.Size = New System.Drawing.Size(42, 738)
         Me.profilePanel.TabIndex = 11
         '
         'pendingProjectsBtn
@@ -152,9 +158,10 @@ Partial Class InstructorForm
         Me.pendingProjectsBtn.BackgroundImage = Global.PRS.My.Resources.Resources.pendingProjectsBtn
         Me.pendingProjectsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pendingProjectsBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.pendingProjectsBtn.Location = New System.Drawing.Point(0, 333)
+        Me.pendingProjectsBtn.Location = New System.Drawing.Point(0, 410)
+        Me.pendingProjectsBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.pendingProjectsBtn.Name = "pendingProjectsBtn"
-        Me.pendingProjectsBtn.Size = New System.Drawing.Size(290, 55)
+        Me.pendingProjectsBtn.Size = New System.Drawing.Size(387, 68)
         Me.pendingProjectsBtn.TabIndex = 8
         '
         'logoutBtn
@@ -165,9 +172,10 @@ Partial Class InstructorForm
         Me.logoutBtn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.logoutBtn.ForeColor = System.Drawing.Color.White
         Me.logoutBtn.Image = Global.PRS.My.Resources.Resources.logoutBtn
-        Me.logoutBtn.Location = New System.Drawing.Point(0, 560)
+        Me.logoutBtn.Location = New System.Drawing.Point(0, 689)
+        Me.logoutBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.logoutBtn.Name = "logoutBtn"
-        Me.logoutBtn.Size = New System.Drawing.Size(288, 38)
+        Me.logoutBtn.Size = New System.Drawing.Size(384, 47)
         Me.logoutBtn.TabIndex = 8
         Me.logoutBtn.Text = "LOG OUT"
         Me.logoutBtn.UseVisualStyleBackColor = False
@@ -177,9 +185,10 @@ Partial Class InstructorForm
         Me.myprojectsBtn.BackgroundImage = Global.PRS.My.Resources.Resources.myProjectsBtn
         Me.myprojectsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.myprojectsBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.myprojectsBtn.Location = New System.Drawing.Point(0, 278)
+        Me.myprojectsBtn.Location = New System.Drawing.Point(0, 342)
+        Me.myprojectsBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.myprojectsBtn.Name = "myprojectsBtn"
-        Me.myprojectsBtn.Size = New System.Drawing.Size(290, 55)
+        Me.myprojectsBtn.Size = New System.Drawing.Size(387, 68)
         Me.myprojectsBtn.TabIndex = 7
         '
         'homeBtn
@@ -187,9 +196,10 @@ Partial Class InstructorForm
         Me.homeBtn.BackgroundImage = Global.PRS.My.Resources.Resources.homeBtn
         Me.homeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.homeBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.homeBtn.Location = New System.Drawing.Point(0, 223)
+        Me.homeBtn.Location = New System.Drawing.Point(0, 274)
+        Me.homeBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.homeBtn.Name = "homeBtn"
-        Me.homeBtn.Size = New System.Drawing.Size(290, 55)
+        Me.homeBtn.Size = New System.Drawing.Size(387, 68)
         Me.homeBtn.TabIndex = 6
         '
         'changePasswordLabel
@@ -197,9 +207,10 @@ Partial Class InstructorForm
         Me.changePasswordLabel.AutoSize = True
         Me.changePasswordLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.changePasswordLabel.LinkColor = System.Drawing.Color.SteelBlue
-        Me.changePasswordLabel.Location = New System.Drawing.Point(119, 143)
+        Me.changePasswordLabel.Location = New System.Drawing.Point(159, 176)
+        Me.changePasswordLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.changePasswordLabel.Name = "changePasswordLabel"
-        Me.changePasswordLabel.Size = New System.Drawing.Size(113, 17)
+        Me.changePasswordLabel.Size = New System.Drawing.Size(143, 20)
         Me.changePasswordLabel.TabIndex = 5
         Me.changePasswordLabel.TabStop = True
         Me.changePasswordLabel.Text = "Change Password"
@@ -208,9 +219,10 @@ Partial Class InstructorForm
         '
         Me.idNumberLabel.AutoSize = True
         Me.idNumberLabel.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.idNumberLabel.Location = New System.Drawing.Point(119, 78)
+        Me.idNumberLabel.Location = New System.Drawing.Point(159, 96)
+        Me.idNumberLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idNumberLabel.Name = "idNumberLabel"
-        Me.idNumberLabel.Size = New System.Drawing.Size(39, 23)
+        Me.idNumberLabel.Size = New System.Drawing.Size(48, 28)
         Me.idNumberLabel.TabIndex = 4
         Me.idNumberLabel.Text = "uid"
         '
@@ -218,9 +230,10 @@ Partial Class InstructorForm
         '
         Me.titleLabel.AutoSize = True
         Me.titleLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.titleLabel.Location = New System.Drawing.Point(119, 118)
+        Me.titleLabel.Location = New System.Drawing.Point(159, 145)
+        Me.titleLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.titleLabel.Name = "titleLabel"
-        Me.titleLabel.Size = New System.Drawing.Size(60, 16)
+        Me.titleLabel.Size = New System.Drawing.Size(74, 18)
         Me.titleLabel.TabIndex = 3
         Me.titleLabel.Text = "instructor"
         '
@@ -228,9 +241,10 @@ Partial Class InstructorForm
         '
         Me.nameLabel.AutoSize = True
         Me.nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nameLabel.Location = New System.Drawing.Point(119, 102)
+        Me.nameLabel.Location = New System.Drawing.Point(159, 126)
+        Me.nameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.nameLabel.Name = "nameLabel"
-        Me.nameLabel.Size = New System.Drawing.Size(66, 16)
+        Me.nameLabel.Size = New System.Drawing.Size(81, 18)
         Me.nameLabel.TabIndex = 2
         Me.nameLabel.Text = "username"
         '
@@ -242,17 +256,19 @@ Partial Class InstructorForm
         Me.Panel2.Controls.Add(Me.profileLabel)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(288, 64)
+        Me.Panel2.Size = New System.Drawing.Size(40, 78)
         Me.Panel2.TabIndex = 1
         '
         'profilebackBtn
         '
         Me.profilebackBtn.Dock = System.Windows.Forms.DockStyle.Right
         Me.profilebackBtn.Image = Global.PRS.My.Resources.Resources.backBtn
-        Me.profilebackBtn.Location = New System.Drawing.Point(224, 0)
+        Me.profilebackBtn.Location = New System.Drawing.Point(-45, 0)
+        Me.profilebackBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.profilebackBtn.Name = "profilebackBtn"
-        Me.profilebackBtn.Size = New System.Drawing.Size(62, 62)
+        Me.profilebackBtn.Size = New System.Drawing.Size(83, 76)
         Me.profilebackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.profilebackBtn.TabIndex = 1
         Me.profilebackBtn.TabStop = False
@@ -263,18 +279,20 @@ Partial Class InstructorForm
         Me.profileLabel.BackColor = System.Drawing.Color.Transparent
         Me.profileLabel.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.profileLabel.ForeColor = System.Drawing.Color.White
-        Me.profileLabel.Location = New System.Drawing.Point(10, 18)
+        Me.profileLabel.Location = New System.Drawing.Point(13, 22)
+        Me.profileLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.profileLabel.Name = "profileLabel"
-        Me.profileLabel.Size = New System.Drawing.Size(68, 23)
+        Me.profileLabel.Size = New System.Drawing.Size(89, 31)
         Me.profileLabel.TabIndex = 0
         Me.profileLabel.Text = "Profile"
         '
         'profilePicture
         '
         Me.profilePicture.Image = Global.PRS.My.Resources.Resources.instructorPP
-        Me.profilePicture.Location = New System.Drawing.Point(12, 70)
+        Me.profilePicture.Location = New System.Drawing.Point(16, 86)
+        Me.profilePicture.Margin = New System.Windows.Forms.Padding(4)
         Me.profilePicture.Name = "profilePicture"
-        Me.profilePicture.Size = New System.Drawing.Size(101, 100)
+        Me.profilePicture.Size = New System.Drawing.Size(135, 123)
         Me.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.profilePicture.TabIndex = 0
         Me.profilePicture.TabStop = False
@@ -298,8 +316,9 @@ Partial Class InstructorForm
         Me.Dashboard.Controls.Add(Me.closeBtn)
         Me.Dashboard.Dock = System.Windows.Forms.DockStyle.Top
         Me.Dashboard.Location = New System.Drawing.Point(0, 0)
+        Me.Dashboard.Margin = New System.Windows.Forms.Padding(4)
         Me.Dashboard.Name = "Dashboard"
-        Me.Dashboard.Size = New System.Drawing.Size(800, 182)
+        Me.Dashboard.Size = New System.Drawing.Size(1067, 224)
         Me.Dashboard.TabIndex = 9
         '
         'FilterBtn
@@ -312,9 +331,10 @@ Partial Class InstructorForm
         Me.FilterBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FilterBtn.ForeColor = System.Drawing.Color.White
         Me.FilterBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.FilterBtn.Location = New System.Drawing.Point(268, 147)
+        Me.FilterBtn.Location = New System.Drawing.Point(357, 181)
+        Me.FilterBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.FilterBtn.Name = "FilterBtn"
-        Me.FilterBtn.Size = New System.Drawing.Size(520, 24)
+        Me.FilterBtn.Size = New System.Drawing.Size(693, 30)
         Me.FilterBtn.TabIndex = 30
         Me.FilterBtn.Text = "Filter"
         Me.FilterBtn.UseVisualStyleBackColor = True
@@ -327,9 +347,10 @@ Partial Class InstructorForm
         Me.DateFilterCb.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.DateFilterCb.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.DateFilterCb.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFilterCb.Location = New System.Drawing.Point(586, 121)
+        Me.DateFilterCb.Location = New System.Drawing.Point(781, 149)
+        Me.DateFilterCb.Margin = New System.Windows.Forms.Padding(4)
         Me.DateFilterCb.Name = "DateFilterCb"
-        Me.DateFilterCb.Size = New System.Drawing.Size(202, 23)
+        Me.DateFilterCb.Size = New System.Drawing.Size(268, 27)
         Me.DateFilterCb.TabIndex = 29
         Me.DateFilterCb.Value = New Date(2020, 2, 22, 0, 0, 0, 0)
         '
@@ -338,9 +359,10 @@ Partial Class InstructorForm
         Me.datefilterLabel.AutoSize = True
         Me.datefilterLabel.BackColor = System.Drawing.Color.Transparent
         Me.datefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datefilterLabel.Location = New System.Drawing.Point(583, 103)
+        Me.datefilterLabel.Location = New System.Drawing.Point(777, 127)
+        Me.datefilterLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.datefilterLabel.Name = "datefilterLabel"
-        Me.datefilterLabel.Size = New System.Drawing.Size(40, 17)
+        Me.datefilterLabel.Size = New System.Drawing.Size(53, 21)
         Me.datefilterLabel.TabIndex = 28
         Me.datefilterLabel.Text = "Date"
         '
@@ -350,9 +372,10 @@ Partial Class InstructorForm
         Me.courseFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.courseFilter.FormattingEnabled = True
         Me.courseFilter.Items.AddRange(New Object() {"BSCS", "BSIT", "BSIS", "Instructor"})
-        Me.courseFilter.Location = New System.Drawing.Point(268, 122)
+        Me.courseFilter.Location = New System.Drawing.Point(357, 150)
+        Me.courseFilter.Margin = New System.Windows.Forms.Padding(4)
         Me.courseFilter.Name = "courseFilter"
-        Me.courseFilter.Size = New System.Drawing.Size(153, 21)
+        Me.courseFilter.Size = New System.Drawing.Size(203, 24)
         Me.courseFilter.TabIndex = 25
         '
         'yearlevelfilterLabel
@@ -360,9 +383,10 @@ Partial Class InstructorForm
         Me.yearlevelfilterLabel.AutoSize = True
         Me.yearlevelfilterLabel.BackColor = System.Drawing.Color.Transparent
         Me.yearlevelfilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.yearlevelfilterLabel.Location = New System.Drawing.Point(424, 102)
+        Me.yearlevelfilterLabel.Location = New System.Drawing.Point(565, 126)
+        Me.yearlevelfilterLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.yearlevelfilterLabel.Name = "yearlevelfilterLabel"
-        Me.yearlevelfilterLabel.Size = New System.Drawing.Size(73, 17)
+        Me.yearlevelfilterLabel.Size = New System.Drawing.Size(98, 21)
         Me.yearlevelfilterLabel.TabIndex = 27
         Me.yearlevelfilterLabel.Text = "Year Level"
         '
@@ -371,9 +395,10 @@ Partial Class InstructorForm
         Me.coursefilterLabel.AutoSize = True
         Me.coursefilterLabel.BackColor = System.Drawing.Color.Transparent
         Me.coursefilterLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.coursefilterLabel.Location = New System.Drawing.Point(268, 103)
+        Me.coursefilterLabel.Location = New System.Drawing.Point(357, 127)
+        Me.coursefilterLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.coursefilterLabel.Name = "coursefilterLabel"
-        Me.coursefilterLabel.Size = New System.Drawing.Size(53, 17)
+        Me.coursefilterLabel.Size = New System.Drawing.Size(68, 21)
         Me.coursefilterLabel.TabIndex = 26
         Me.coursefilterLabel.Text = "Course"
         '
@@ -383,9 +408,10 @@ Partial Class InstructorForm
         Me.yearlevelFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.yearlevelFilter.FormattingEnabled = True
         Me.yearlevelFilter.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.yearlevelFilter.Location = New System.Drawing.Point(427, 122)
+        Me.yearlevelFilter.Location = New System.Drawing.Point(569, 150)
+        Me.yearlevelFilter.Margin = New System.Windows.Forms.Padding(4)
         Me.yearlevelFilter.Name = "yearlevelFilter"
-        Me.yearlevelFilter.Size = New System.Drawing.Size(153, 21)
+        Me.yearlevelFilter.Size = New System.Drawing.Size(203, 24)
         Me.yearlevelFilter.TabIndex = 24
         '
         'Label3
@@ -393,9 +419,10 @@ Partial Class InstructorForm
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.Label3.Location = New System.Drawing.Point(12, 9)
+        Me.Label3.Location = New System.Drawing.Point(16, 11)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(182, 19)
+        Me.Label3.Size = New System.Drawing.Size(219, 21)
         Me.Label3.TabIndex = 21
         Me.Label3.Text = "Project Repository System"
         '
@@ -404,9 +431,10 @@ Partial Class InstructorForm
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 48)
+        Me.Label2.Location = New System.Drawing.Point(32, 59)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 60)
+        Me.Label2.Size = New System.Drawing.Size(173, 75)
         Me.Label2.TabIndex = 20
         Me.Label2.Text = "Home"
         '
@@ -419,9 +447,10 @@ Partial Class InstructorForm
         Me.searchBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchBtn.ForeColor = System.Drawing.Color.Black
         Me.searchBtn.Image = Global.PRS.My.Resources.Resources.neutralBtn
-        Me.searchBtn.Location = New System.Drawing.Point(183, 149)
+        Me.searchBtn.Location = New System.Drawing.Point(244, 183)
+        Me.searchBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.searchBtn.Name = "searchBtn"
-        Me.searchBtn.Size = New System.Drawing.Size(69, 22)
+        Me.searchBtn.Size = New System.Drawing.Size(92, 27)
         Me.searchBtn.TabIndex = 19
         Me.searchBtn.Text = "Enter"
         Me.searchBtn.UseVisualStyleBackColor = True
@@ -431,9 +460,10 @@ Partial Class InstructorForm
         Me.searchBarLabel.AutoSize = True
         Me.searchBarLabel.BackColor = System.Drawing.Color.Transparent
         Me.searchBarLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchBarLabel.Location = New System.Drawing.Point(9, 130)
+        Me.searchBarLabel.Location = New System.Drawing.Point(12, 160)
+        Me.searchBarLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.searchBarLabel.Name = "searchBarLabel"
-        Me.searchBarLabel.Size = New System.Drawing.Size(51, 17)
+        Me.searchBarLabel.Size = New System.Drawing.Size(67, 21)
         Me.searchBarLabel.TabIndex = 17
         Me.searchBarLabel.Text = "Search"
         '
@@ -441,42 +471,46 @@ Partial Class InstructorForm
         '
         Me.minimizeBtn.BackColor = System.Drawing.Color.Transparent
         Me.minimizeBtn.Image = Global.PRS.My.Resources.Resources.minimizeBtn
-        Me.minimizeBtn.Location = New System.Drawing.Point(700, 0)
+        Me.minimizeBtn.Location = New System.Drawing.Point(933, 0)
+        Me.minimizeBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.minimizeBtn.Name = "minimizeBtn"
-        Me.minimizeBtn.Size = New System.Drawing.Size(50, 29)
+        Me.minimizeBtn.Size = New System.Drawing.Size(67, 36)
         Me.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.minimizeBtn.TabIndex = 1
         Me.minimizeBtn.TabStop = False
         '
         'searchBar
         '
-        Me.searchBar.Location = New System.Drawing.Point(12, 150)
+        Me.searchBar.Location = New System.Drawing.Point(16, 185)
+        Me.searchBar.Margin = New System.Windows.Forms.Padding(4)
         Me.searchBar.Name = "searchBar"
-        Me.searchBar.Size = New System.Drawing.Size(164, 20)
+        Me.searchBar.Size = New System.Drawing.Size(217, 22)
         Me.searchBar.TabIndex = 16
         '
         'closeBtn
         '
         Me.closeBtn.BackColor = System.Drawing.Color.Transparent
         Me.closeBtn.Image = Global.PRS.My.Resources.Resources.closeBtn
-        Me.closeBtn.Location = New System.Drawing.Point(750, 0)
+        Me.closeBtn.Location = New System.Drawing.Point(1000, 0)
+        Me.closeBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.closeBtn.Name = "closeBtn"
-        Me.closeBtn.Size = New System.Drawing.Size(50, 29)
+        Me.closeBtn.Size = New System.Drawing.Size(67, 36)
         Me.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.closeBtn.TabIndex = 0
         Me.closeBtn.TabStop = False
         '
         'InstructorForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 600)
+        Me.ClientSize = New System.Drawing.Size(1067, 738)
         Me.Controls.Add(Me.profilePanel)
         Me.Controls.Add(Me.mainPanel)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.bottomBar)
         Me.Controls.Add(Me.Dashboard)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "InstructorForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "InstructorForm"

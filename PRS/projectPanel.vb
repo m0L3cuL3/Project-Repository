@@ -26,6 +26,7 @@ Public Class projectPanel
     Private Sub approveBtn_Click(sender As Object, e As EventArgs) Handles approveBtn.Click
         Dim fuid As New Guid(guidLabel.Text)
         Me.FileDataTableAdapter.ApproveFile("approved", fuid)
+        MessageBox.Show("File approved. Please refresh the page", "System", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub downloadBtn_Click(sender As Object, e As EventArgs) Handles downloadBtn.Click '
@@ -37,21 +38,21 @@ Public Class projectPanel
             If Directory.Exists(downloadDir) Then
                 If Directory.Exists(newDir) Then
                     My.Computer.FileSystem.CopyDirectory(mainDir & "\" & repoDir, newDir)
+                    MessageBox.Show("File Downloaded.", "System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show(newDir & " does not exists!" & vbCrLf & "Want me to create one and store it there?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                    If DialogResult.Yes Then
-                        Directory.CreateDirectory(newDir)
-                    End If
                     My.Computer.FileSystem.CopyDirectory(mainDir & "\" & repoDir, newDir)
+                    MessageBox.Show("File Downloaded.", "System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Else
                 MessageBox.Show(downloadDir & "\" & " does not exists!" & vbCrLf & "Want me to create " & downloadDir & "?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 If DialogResult.Yes Then
                     Directory.CreateDirectory(downloadDir)
+                ElseIf DialogResult.No Then
+
                 End If
             End If
         Catch ex As Exception
-            MsgBox("Repository already exists!")
+            MsgBox("File Updated.")
         End Try
 
     End Sub
