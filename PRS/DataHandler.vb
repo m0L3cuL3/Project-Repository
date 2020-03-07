@@ -10,10 +10,12 @@ Module DataHandler
 
     'FILES'
     Dim file_id As Guid '
+    Dim folderName As String
 
     'FILTERS'
     Dim dt As DateTime '
 
+#Region "Account Setter and Getter"
     'sets user id
     Public Sub SetUserID(userid As Long)
         uid = userid
@@ -63,7 +65,9 @@ Module DataHandler
     Public Function GetFileID()
         Return file_id
     End Function
+#End Region
 
+#Region "Directory Handler"
     'create directory if not exists (Main Storage Directory for Repositories)
     Public Sub MainDirectory()
         Dim directory As String = "C:\Users\" & Environment.UserName & "\Documents\Repositories"
@@ -91,6 +95,8 @@ Module DataHandler
         End If
     End Function
 
+#End Region
+
     Public Sub ClearTextBoxes(ByVal root As Control)
         For Each ctrl As Control In root.Controls
             ClearTextBoxes(ctrl)
@@ -98,5 +104,13 @@ Module DataHandler
                 CType(ctrl, TextBox).Text = String.Empty
             End If
         Next ctrl
+    End Sub
+
+    Public Function GetFolderName()
+        Return folderName
+    End Function
+
+    Public Sub SetFolderName(folder As String)
+        folderName = folder
     End Sub
 End Module

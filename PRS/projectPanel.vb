@@ -56,4 +56,9 @@ Public Class projectPanel
         End Try
 
     End Sub
+
+    Private Sub viewBtn_Click(sender As Object, e As EventArgs) Handles viewBtn.Click
+        SetFolderName(projectTitle.Text)
+        ViewFilesForm.Show()
+    End Sub
 End Class

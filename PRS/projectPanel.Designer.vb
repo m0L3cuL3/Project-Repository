@@ -40,10 +40,9 @@ Partial Class projectPanel
         '
         Me.projectTitle.AutoSize = True
         Me.projectTitle.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.projectTitle.Location = New System.Drawing.Point(4, 4)
-        Me.projectTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.projectTitle.Location = New System.Drawing.Point(3, 3)
         Me.projectTitle.Name = "projectTitle"
-        Me.projectTitle.Size = New System.Drawing.Size(60, 23)
+        Me.projectTitle.Size = New System.Drawing.Size(52, 21)
         Me.projectTitle.TabIndex = 0
         Me.projectTitle.Text = "pTitle"
         '
@@ -51,10 +50,9 @@ Partial Class projectPanel
         '
         Me.guidLabel.AutoSize = True
         Me.guidLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.guidLabel.Location = New System.Drawing.Point(5, 52)
-        Me.guidLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.guidLabel.Location = New System.Drawing.Point(4, 42)
         Me.guidLabel.Name = "guidLabel"
-        Me.guidLabel.Size = New System.Drawing.Size(40, 19)
+        Me.guidLabel.Size = New System.Drawing.Size(32, 16)
         Me.guidLabel.TabIndex = 1
         Me.guidLabel.Text = "guid"
         '
@@ -62,10 +60,9 @@ Partial Class projectPanel
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.PRS.My.Resources.Resources.pendingMark2
-        Me.PictureBox1.Location = New System.Drawing.Point(949, 9)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(712, 7)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(63, 55)
+        Me.PictureBox1.Size = New System.Drawing.Size(47, 45)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -81,10 +78,9 @@ Partial Class projectPanel
         Me.approveBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.approveBtn.ForeColor = System.Drawing.Color.White
         Me.approveBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.approveBtn.Location = New System.Drawing.Point(758, 10)
-        Me.approveBtn.Margin = New System.Windows.Forms.Padding(4)
+        Me.approveBtn.Location = New System.Drawing.Point(568, 8)
         Me.approveBtn.Name = "approveBtn"
-        Me.approveBtn.Size = New System.Drawing.Size(173, 54)
+        Me.approveBtn.Size = New System.Drawing.Size(130, 44)
         Me.approveBtn.TabIndex = 25
         Me.approveBtn.Text = "Approve"
         Me.approveBtn.UseVisualStyleBackColor = True
@@ -113,10 +109,9 @@ Partial Class projectPanel
         '
         Me.uploaderLabel.AutoSize = True
         Me.uploaderLabel.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uploaderLabel.Location = New System.Drawing.Point(5, 33)
-        Me.uploaderLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.uploaderLabel.Location = New System.Drawing.Point(4, 27)
         Me.uploaderLabel.Name = "uploaderLabel"
-        Me.uploaderLabel.Size = New System.Drawing.Size(31, 19)
+        Me.uploaderLabel.Size = New System.Drawing.Size(25, 16)
         Me.uploaderLabel.TabIndex = 26
         Me.uploaderLabel.Text = "uid"
         '
@@ -131,10 +126,9 @@ Partial Class projectPanel
         Me.downloadBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.downloadBtn.ForeColor = System.Drawing.Color.White
         Me.downloadBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.downloadBtn.Location = New System.Drawing.Point(758, 10)
-        Me.downloadBtn.Margin = New System.Windows.Forms.Padding(4)
+        Me.downloadBtn.Location = New System.Drawing.Point(568, 8)
         Me.downloadBtn.Name = "downloadBtn"
-        Me.downloadBtn.Size = New System.Drawing.Size(173, 54)
+        Me.downloadBtn.Size = New System.Drawing.Size(130, 44)
         Me.downloadBtn.TabIndex = 27
         Me.downloadBtn.Text = "Download"
         Me.downloadBtn.UseVisualStyleBackColor = True
@@ -145,24 +139,21 @@ Partial Class projectPanel
         Me.viewBtn.BackgroundImage = Global.PRS.My.Resources.Resources.generalBtn
         Me.viewBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.viewBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.viewBtn.Enabled = False
         Me.viewBtn.FlatAppearance.BorderSize = 0
         Me.viewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.viewBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.viewBtn.ForeColor = System.Drawing.Color.White
         Me.viewBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.viewBtn.Location = New System.Drawing.Point(577, 10)
-        Me.viewBtn.Margin = New System.Windows.Forms.Padding(4)
+        Me.viewBtn.Location = New System.Drawing.Point(433, 8)
         Me.viewBtn.Name = "viewBtn"
-        Me.viewBtn.Size = New System.Drawing.Size(173, 55)
+        Me.viewBtn.Size = New System.Drawing.Size(130, 45)
         Me.viewBtn.TabIndex = 28
         Me.viewBtn.Text = "View"
         Me.viewBtn.UseVisualStyleBackColor = True
-        Me.viewBtn.Visible = False
         '
         'projectPanel
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.Controls.Add(Me.viewBtn)
@@ -172,9 +163,8 @@ Partial Class projectPanel
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.guidLabel)
         Me.Controls.Add(Me.projectTitle)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "projectPanel"
-        Me.Size = New System.Drawing.Size(1033, 74)
+        Me.Size = New System.Drawing.Size(775, 60)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepoDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

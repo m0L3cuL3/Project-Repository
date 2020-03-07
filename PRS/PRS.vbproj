@@ -243,8 +243,8 @@
     </None>
     <None Include="repoDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>repoDBDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>repoDBDataSet.Designer.vb</LastGenOutput>
     </None>
     <None Include="repoDBDataSet.xss">
       <DependentUpon>repoDBDataSet.xsd</DependentUpon>

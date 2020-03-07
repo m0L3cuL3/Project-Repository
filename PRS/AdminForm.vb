@@ -134,7 +134,7 @@ Public Class AdminForm
     Private Sub LoadStudentData()
         Try
             Dim conn As New SqlConnection
-            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
             conn.Open()
 
             Dim cmd As New SqlCommand
@@ -161,7 +161,7 @@ Public Class AdminForm
     Private Sub LoadInstructorData()
         Try
             Dim conn As New SqlConnection
-            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
             conn.Open()
 
             Dim cmd As New SqlCommand
@@ -187,7 +187,7 @@ Public Class AdminForm
     Private Sub LoadHeadData()
         Try
             Dim conn As New SqlConnection
-            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
             conn.Open()
 
             Dim cmd As New SqlCommand
@@ -213,7 +213,7 @@ Public Class AdminForm
     Private Sub LoadFileData()
         Try
             Dim conn As New SqlConnection
-            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
             conn.Open()
 
             Dim cmd As New SqlCommand
@@ -247,7 +247,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -276,7 +276,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -306,7 +306,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -343,7 +343,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -382,7 +382,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -419,7 +419,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -446,7 +446,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -474,7 +474,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -508,7 +508,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -545,7 +545,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -580,7 +580,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -607,7 +607,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -635,7 +635,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -669,7 +669,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -706,7 +706,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -739,7 +739,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -767,7 +767,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -795,7 +795,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -827,7 +827,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -859,7 +859,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -886,7 +886,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -918,7 +918,7 @@ Public Class AdminForm
 
             Try
                 Dim conn As New SqlConnection
-                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+                conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
                 conn.Open()
 
                 Dim cmd As New SqlCommand
@@ -1037,7 +1037,7 @@ Public Class AdminForm
     Private Sub LoadMSSQLVersion()
         Try
             Dim conn As New SqlConnection
-            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\" & Environment.UserName & "\Desktop\Project-Repository\PRS\repoDB.mdf;Integrated Security=True"
             conn.Open()
 
             Dim cmd As New SqlCommand
