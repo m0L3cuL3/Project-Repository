@@ -22,6 +22,14 @@ Public Class projectPanel
         approveBtn.Image = My.Resources.generalBtn
     End Sub
 
+    Private Sub viewBtn_MouseEnter(sender As Object, e As EventArgs) Handles viewBtn.MouseEnter
+        viewBtn.Image = My.Resources.generalBtnHover
+    End Sub
+
+    Private Sub viewBtn_MouseLeave(sender As Object, e As EventArgs) Handles viewBtn.MouseLeave
+        viewBtn.Image = My.Resources.generalBtn
+    End Sub
+
     'approve button
     Private Sub approveBtn_Click(sender As Object, e As EventArgs) Handles approveBtn.Click
         Dim fuid As New Guid(guidLabel.Text)

@@ -42,33 +42,6 @@ Public Class ViewFilesForm
         End Try
     End Sub
 
-    Private Sub downloadBtn_Click(sender As Object, e As EventArgs) Handles downloadBtn.Click
-        Dim mainDir As String = "C:\Users\" & Environment.UserName & "\Documents\Repositories"
-        Dim downloadDir As String = "C:\Users\" & Environment.UserName & "\Documents\DownloadedRepositories"
-        Dim repoDir As String = GetFolderName()
-        Dim newDir As String = downloadDir & "\" & repoDir
-        Try
-            If Directory.Exists(downloadDir) Then
-                If Directory.Exists(newDir) Then
-                    My.Computer.FileSystem.CopyDirectory(mainDir & "\" & repoDir, newDir)
-                    MessageBox.Show("File Downloaded.", "System", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    My.Computer.FileSystem.CopyDirectory(mainDir & "\" & repoDir, newDir)
-                    MessageBox.Show("File Downloaded.", "System", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-            Else
-                MessageBox.Show(downloadDir & "\" & " does not exists!" & vbCrLf & "Want me to create " & downloadDir & "?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                If DialogResult.Yes Then
-                    Directory.CreateDirectory(downloadDir)
-                ElseIf DialogResult.No Then
-
-                End If
-            End If
-        Catch ex As Exception
-            MsgBox("File Updated.")
-        End Try
-    End Sub
-
     Private Sub openDirBtn_Click(sender As Object, e As EventArgs) Handles openDirBtn.Click
 
         Try

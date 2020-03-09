@@ -144,9 +144,9 @@ Partial Class projectPanel
         Me.viewBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.viewBtn.ForeColor = System.Drawing.Color.White
         Me.viewBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.viewBtn.Location = New System.Drawing.Point(433, 8)
+        Me.viewBtn.Location = New System.Drawing.Point(432, 8)
         Me.viewBtn.Name = "viewBtn"
-        Me.viewBtn.Size = New System.Drawing.Size(130, 45)
+        Me.viewBtn.Size = New System.Drawing.Size(130, 44)
         Me.viewBtn.TabIndex = 28
         Me.viewBtn.Text = "View"
         Me.viewBtn.UseVisualStyleBackColor = True

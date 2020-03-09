@@ -23,6 +23,7 @@ Partial Class ViewFilesForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.viewFileBtn = New System.Windows.Forms.Button()
         Me.viewTextFileBox = New System.Windows.Forms.RichTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Dashboard = New System.Windows.Forms.Panel()
@@ -30,15 +31,12 @@ Partial Class ViewFilesForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.minimizeBtn = New System.Windows.Forms.PictureBox()
         Me.closeBtn = New System.Windows.Forms.PictureBox()
-        Me.viewFileBtn = New System.Windows.Forms.Button()
-        Me.downloadBtn = New System.Windows.Forms.Button()
         Me.FileView = New System.Windows.Forms.ListView()
         Me.FileNameHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.FileTypeHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.FileSizeHeader = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.openDirBtn = New System.Windows.Forms.Button()
-        Me.Panel4.SuspendLayout()
         Me.Dashboard.SuspendLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,17 +46,29 @@ Partial Class ViewFilesForm
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.viewFileBtn)
-        Me.Panel4.Controls.Add(Me.downloadBtn)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel4.Location = New System.Drawing.Point(0, 505)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(750, 47)
         Me.Panel4.TabIndex = 24
         '
+        'viewFileBtn
+        '
+        Me.viewFileBtn.FlatAppearance.BorderSize = 0
+        Me.viewFileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.viewFileBtn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.viewFileBtn.ForeColor = System.Drawing.Color.White
+        Me.viewFileBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
+        Me.viewFileBtn.Location = New System.Drawing.Point(203, 463)
+        Me.viewFileBtn.Name = "viewFileBtn"
+        Me.viewFileBtn.Size = New System.Drawing.Size(157, 36)
+        Me.viewFileBtn.TabIndex = 2
+        Me.viewFileBtn.Text = "View File"
+        Me.viewFileBtn.UseVisualStyleBackColor = True
+        '
         'viewTextFileBox
         '
-        Me.viewTextFileBox.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.viewTextFileBox.BackColor = System.Drawing.SystemColors.ControlDark
         Me.viewTextFileBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.viewTextFileBox.Location = New System.Drawing.Point(365, 207)
         Me.viewTextFileBox.Margin = New System.Windows.Forms.Padding(2)
@@ -136,34 +146,6 @@ Partial Class ViewFilesForm
         Me.closeBtn.TabIndex = 0
         Me.closeBtn.TabStop = False
         '
-        'viewFileBtn
-        '
-        Me.viewFileBtn.FlatAppearance.BorderSize = 0
-        Me.viewFileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.viewFileBtn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.viewFileBtn.ForeColor = System.Drawing.Color.White
-        Me.viewFileBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.viewFileBtn.Location = New System.Drawing.Point(428, 0)
-        Me.viewFileBtn.Name = "viewFileBtn"
-        Me.viewFileBtn.Size = New System.Drawing.Size(158, 45)
-        Me.viewFileBtn.TabIndex = 2
-        Me.viewFileBtn.Text = "View File"
-        Me.viewFileBtn.UseVisualStyleBackColor = True
-        '
-        'downloadBtn
-        '
-        Me.downloadBtn.FlatAppearance.BorderSize = 0
-        Me.downloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.downloadBtn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.downloadBtn.ForeColor = System.Drawing.Color.White
-        Me.downloadBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
-        Me.downloadBtn.Location = New System.Drawing.Point(592, 0)
-        Me.downloadBtn.Name = "downloadBtn"
-        Me.downloadBtn.Size = New System.Drawing.Size(158, 45)
-        Me.downloadBtn.TabIndex = 1
-        Me.downloadBtn.Text = "Download File"
-        Me.downloadBtn.UseVisualStyleBackColor = True
-        '
         'FileView
         '
         Me.FileView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -214,7 +196,7 @@ Partial Class ViewFilesForm
         Me.openDirBtn.Image = Global.PRS.My.Resources.Resources.generalBtn
         Me.openDirBtn.Location = New System.Drawing.Point(12, 463)
         Me.openDirBtn.Name = "openDirBtn"
-        Me.openDirBtn.Size = New System.Drawing.Size(348, 36)
+        Me.openDirBtn.Size = New System.Drawing.Size(157, 36)
         Me.openDirBtn.TabIndex = 3
         Me.openDirBtn.Text = "Open Directory"
         Me.openDirBtn.UseVisualStyleBackColor = True
@@ -224,6 +206,7 @@ Partial Class ViewFilesForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(750, 552)
+        Me.Controls.Add(Me.viewFileBtn)
         Me.Controls.Add(Me.openDirBtn)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.FileView)
@@ -235,7 +218,6 @@ Partial Class ViewFilesForm
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ViewFilesForm"
         Me.Text = "ViewFilesForm"
-        Me.Panel4.ResumeLayout(False)
         Me.Dashboard.ResumeLayout(False)
         Me.Dashboard.PerformLayout()
         CType(Me.minimizeBtn, System.ComponentModel.ISupportInitialize).EndInit()
@@ -244,7 +226,6 @@ Partial Class ViewFilesForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents downloadBtn As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents viewTextFileBox As RichTextBox
     Friend WithEvents Dashboard As Panel

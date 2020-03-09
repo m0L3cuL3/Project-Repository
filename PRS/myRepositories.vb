@@ -119,27 +119,28 @@ Public Class myRepositories
     End Sub
 
     Private Sub browseFileBtn_Click(sender As Object, e As EventArgs) Handles browseFileBtn.Click
-        Dim dir As String = "C:\Users\" & Environment.UserName & "\Documents\Repositories"
-        Dim repoDir As String = existRepoTb.Text
-        If repoDir = "" Then
-            MessageBox.Show("Please select an existing repository", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-            If Directory.Exists(dir & "\" & repoDir) Then
-                If Not File.Exists(dir & "\" & repoDir & "\README.md") = True Then
-                    Dim file As FileStream
-                    file = IO.File.Create(dir & "\" & repoDir & "\README.md")
-                    file.Close()
-                    MessageBox.Show("README.md file added in " & dir & "\" & repoDir, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-                File.WriteAllText(dir & "\" & repoDir & "\README.md", "[Project-Repository] - SemiFinal Project")
-            Else
-                MessageBox.Show(dir & "\" & repoDir & " does not exists! " & vbCrLf & "Want me to create a new one?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                If DialogResult.Yes Then
-                    Directory.CreateDirectory(dir & "\" & repoDir)
-                End If
-            End If
-        End If
 
+        Dim mainDir As String = "C:\Users\" & Environment.UserName & "\Documents\Repositories"
+        Dim currRepo As String = existRepoTb.Text
+
+        Dim destination As String = mainDir & "\" & currRepo
+
+        With ofd1
+            .InitialDirectory = "C:\windows"
+            .FileName = vbNullString
+            .Filter = "All (*.*)|*.*"
+            .FilterIndex = 1
+            .Multiselect = True
+            .CheckFileExists = True
+            .ShowReadOnly = True
+            .Title = "Upload Files"
+            If .ShowDialog() = DialogResult.OK Then
+                For Each files As String In ofd1.FileNames
+                    File.Copy(files, destination & "\" & files.Substring(files.LastIndexOf("\")), True)
+                Next
+                MessageBox.Show("Files uploaded successfully!", "File Upload", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End With
     End Sub
 
     Private Sub folderListView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles folderListView.SelectedIndexChanged

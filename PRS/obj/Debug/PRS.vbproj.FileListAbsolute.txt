@@ -15,24 +15,7 @@ C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.HeadOfDepartmentForm.resources
 C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.InstructorForm.resources
 C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.LoginForm.resources
 C:\Users\Ceon Rodriguez\Desktop\PRS\obj\Debug\PRS.AdminForm.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.vbprojResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.AdminForm.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.HeadOfDepartmentForm.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.InstructorForm.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.LoginForm.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.myRepositories.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.projectPanel.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.StudentForm.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.Resources.resources
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.vbproj.GenerateResource.Cache
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.vbproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.exe
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.xml
-C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.pdb
-C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe.config
-C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe
-C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.pdb
-C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.xml
 C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe.config
 C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe
 C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\PRS.pdb
@@ -73,4 +56,20 @@ C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\repoDB.mdf
 C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\repoDB_log.ldf
 C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\repoDB.mdf
 C:\Users\Ceon Rodriguez\Desktop\Project-Repository\PRS\bin\Debug\repoDB_log.ldf
+C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe.config
+C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.exe
+C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.pdb
+C:\Users\Administrator\Desktop\Project-Repository\PRS\bin\Debug\PRS.xml
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.AdminForm.resources
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.HeadOfDepartmentForm.resources
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.InstructorForm.resources
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.LoginForm.resources
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.myRepositories.resources
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.projectPanel.resources
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.StudentForm.resources
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.Resources.resources
 C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.ViewFilesForm.resources
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.vbproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.vbproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.xml
+C:\Users\Administrator\Desktop\Project-Repository\PRS\obj\Debug\PRS.pdb
